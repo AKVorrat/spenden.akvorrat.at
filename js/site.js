@@ -112,7 +112,7 @@ function genpdf(mode) {
 	
 	setFontSize(doc, 10);
 	doc.setFontType("bold");
-	var addText = user.newsletter === "on" ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
+	var addText = user.newsletter === "yes" ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
 	block(doc, "Ich unterstütze den Arbeitskreis Vorratsdaten Österreich " + user.interval + " mit " + user.amount + " Euro." + addText, 18);
 	
 	setFontSize(doc, 12);

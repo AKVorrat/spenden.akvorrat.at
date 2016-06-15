@@ -123,6 +123,10 @@ section {
 	padding: 6rem 2rem 2rem;
 }
 
+section:first-of-type {
+	padding-top: 2rem;
+}
+
 @media screen and (min-width: 768px) {
 	main {
 		margin-left: 20px;
@@ -138,6 +142,9 @@ section {
 	section {
 		padding: 6rem 3rem 3rem;
 	}
+	section:first-of-type {
+		padding-top: 3rem;
+	}
 }
 
 @media screen and (min-width: 1200px) {
@@ -147,6 +154,9 @@ section {
 	}
 	section {
 		padding: 6rem 4rem 4rem;
+	}
+	section:first-of-type {
+		padding-top: 4rem;
 	}
 }
 
@@ -246,7 +256,8 @@ a:focus {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
+	margin: 0 !important;
 }
 
 .noselect {
@@ -319,17 +330,20 @@ a:focus {
 	font-weight: bold;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1) inset, 0 0 10px 0 rgba(0, 0, 0, 0.1) inset;
+	border: 6px solid rgba(6, 133, 201, 0);
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
+	transition: border .3s ease;
 }
 
 #methods > label:hover {
-	border: 6px solid #0685c9;
+	border: 6px solid rgba(6, 133, 201, 1);
 }
 
 #methods > input[type="radio"]:checked + label {
 	color: #fff;
 	background-color: rgba(6, 133, 201, 1);
 	box-shadow: none;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 #methods input[type="radio"]:checked + label:hover {
@@ -378,14 +392,15 @@ label[for] {
 	box-shadow: 0 0 4px 0 rgba(6, 133, 201, .1) inset, 0 0 4px 0 rgba(6, 133, 201, .1) inset;
 }
 
-#method a.btn {
+.btn {
 	position: relative;
 	display: block;
 	z-index: 1;
+	cursor: pointer;
 	overflow: hidden;
 	width: 300px;
 	max-width: 98%;
-	margin: 6px auto 4px;
+	margin: 0.5rem auto;
 	padding: .8rem;
 	color: rgba(31, 31, 31, 0.7);
 	font-size: 90%;
@@ -398,11 +413,19 @@ label[for] {
 	transition: color .3s ease;
 }
 
-#method a.btn:hover {
+.btn.btn-default {
 	color: rgba(255, 255, 255, 1);
 }
 
-#method a.btn::after {
+.btn:hover {
+	color: rgba(255, 255, 255, 1);
+}
+
+.btn.btn-default:hover {
+	color: rgba(31, 31, 31, 0.7);
+}
+
+.btn::after {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -414,11 +437,19 @@ label[for] {
 	transition: height 0.3s ease 0s;
 }
 
-#method a.btn:hover::after {
+.btn.btn-default::after {
 	height: 100%;
 }
 
-#method form > label {
+.btn:hover::after {
+	height: 100%;
+}
+
+.btn.btn-default:hover::after {
+	height: 0%;
+}
+
+#method form label {
 	font-size: 80%;
 	text-transform: uppercase;
 }
