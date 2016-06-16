@@ -72,13 +72,31 @@ footer {
 	position: relative;
 	color: #fff;
 	text-align: center;
-	
+	overflow: hidden;
 }
 
 header {
-	padding: 5rem;
+	padding: 3rem 0.5rem;
 	background-color: #035882;
 	border-bottom: 6px solid #fff;
+}
+
+@media screen and (min-width: 768px) {
+	header {
+		padding: 3rem 1rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	header {
+		padding: 3rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	header {
+		padding: 5rem;
+	}
 }
 
 header > h2 {
@@ -120,7 +138,7 @@ main {
 
 section {
 	position: relative;
-	padding: 6rem 2rem 2rem;
+	padding: 5rem 10px 2rem;
 }
 
 section:first-of-type {
@@ -131,6 +149,10 @@ section:first-of-type {
 	main {
 		margin-left: 20px;
 		margin-right: 20px;
+	}
+	section {
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }
 
