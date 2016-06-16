@@ -111,7 +111,8 @@ footer {
 	border-top: 3px solid #fff;
 }
 
-footer a {
+footer a,
+#supporters p > a {
 	color: #ccc;
 }
 
@@ -337,6 +338,7 @@ a:focus {
 }
 
 #methods > label {
+	position: relative;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-justify-content: center;
@@ -371,6 +373,20 @@ a:focus {
 #methods input[type="radio"]:checked + label:hover {
 	background-color: rgba(6, 133, 201, 0.7);
 	border: none;
+}
+
+#methods > label > img {
+	position: absolute;
+	max-height: 100%;
+	width: calc(100% - 4rem);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: width .3s ease, height .3s ease;
+}
+
+#methods > label:hover > img {
+	width: calc(100% - 3rem);
 }
 
 
@@ -542,13 +558,14 @@ label[for] {
 
 #supporters {
 	margin-top: 2rem;
+	cursor: move;
 }
 
 #supporters .box {
 	position: relative;
 	min-width: 200px;
-	max-width: 100%;
-	padding: 1rem;
+	max-width: 240px;
+	padding: 0.5rem;
 	color: #fff;
 	text-align: center;
 	background-color: #0685c9;
@@ -558,6 +575,7 @@ label[for] {
 @media screen and (min-width: 768px) {
 	#supporters .box {
 		max-width: 300px;
+		padding: 1rem;
 	}
 }
 
@@ -568,7 +586,7 @@ label[for] {
 }
 
 #supporters img {
-	max-height: 40px;
+	height: 40px;
 	width: auto;
 	max-width: 100%;
 	margin: auto;

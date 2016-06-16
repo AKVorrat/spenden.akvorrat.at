@@ -46,30 +46,31 @@
 				<p>Weitere Informationen zu Spenden bekommst du in unseren <a href="https://akvorrat.at/spenden-faq/" target="_blank">Spenden-FAQs</a>.</p>
 			</section>
 
-			<!-- payment methods selection -->
+			<!-- payment method selection -->
 			<section id="payment">
+				<h2 class="hidden">Zahlungsmethoden</h2>
 				<div id="methods">
 					<input type="radio" name="methods" id="radio-supporter" value="supporter" checked="checked">
 					<label for="radio-supporter">Fördermitglied werden</label>
 					<input type="radio" name="methods" id="radio-transfer" value="transfer">
-					<label for="radio-transfer">Banküberweisung</label>
+					<label for="radio-transfer">Bank<wbr />überweisung</label>
 					<input type="radio" name="methods" id="radio-debit" value="debit">
 					<label for="radio-debit">Lastschrift</label>
 					<input type="radio" name="methods" id="radio-credit" value="credit">
 					<label for="radio-credit">Kreditkarte</label>
 					<input type="radio" name="methods" id="radio-paypal" value="paypal">
-					<label for="radio-paypal">Paypal</label>
+					<label for="radio-paypal"><img src="./img/methods/paypal.png" alt="Paypal"/></label>
+					<input type="radio" name="methods" id="radio-eps" value="eps">
+					<label for="radio-eps"><img src="./img/methods/eps.png" alt="eps-Überweisung"/></label>
 					<input type="radio" name="methods" id="radio-sofort" value="sofort">
-					<label for="radio-sofort">Sofortüberweisung</label>
+					<label for="radio-sofort"><img src="./img/methods/sofort.png" alt="Sofortüberweisung"/></label>
 					<input type="radio" name="methods" id="radio-bitcoin" value="bitcoin">
-					<label for="radio-bitcoin">Bitcoin</label>
+					<label for="radio-bitcoin"><img src="./img/methods/bitcoin.png" alt="Bitcoin"/></label>
 					<input type="radio" name="methods" id="radio-flattr" value="flattr">
-					<label for="radio-flattr">Flattr</label>
-					<input type="radio" name="methods" id="radio-skrill" value="skrill">
-					<label for="radio-skrill">Skrill</label>
+					<label for="radio-flattr"><img src="./img/methods/flattr.png" alt="Flattr"/></label>
 				</div>
 			</section>
-			<!-- end payment methods selection -->
+			<!-- end payment method selection -->
 
 			<section id="method">
 				<div id="method-supporter" class="accordion active">
@@ -195,17 +196,17 @@
 					<h2>Kreditkarte</h2>
 					<p>Die Abwicklung der Zahlung per Kreditkarte findet im <a href="https://www.mpay24.com/">mPay24</a>-Portal statt.</p>
 					<p>Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder.</p>
-					<form autocomplete="off">
+					<form action="mp24/checkout.php?action=pay" method="post" autocomplete="off">
 						<div class="grp-amount">
-							<input type="radio" name="credit-amount" id="credit-amount-15" value="15" required="required">
+							<input type="radio" name="amount" id="credit-amount-15" value="15" required="required">
 							<label for="credit-amount-15">15</label>
-							<input type="radio" name="credit-amount" id="credit-amount-25" value="25" required="required">
+							<input type="radio" name="amount" id="credit-amount-25" value="25" required="required">
 							<label for="credit-amount-25">25</label>
-							<input type="radio" name="credit-amount" id="credit-amount-35" value="35" required="required" checked="checked">
+							<input type="radio" name="amount" id="credit-amount-35" value="35" required="required" checked="checked">
 							<label for="credit-amount-35">35</label>
-							<input type="radio" name="credit-amount" id="credit-amount-50" value="50" required="required">
+							<input type="radio" name="amount" id="credit-amount-50" value="50" required="required">
 							<label for="credit-amount-50">50</label>
-							<input type="radio" name="credit-amount" id="credit-amount-85" value="85" required="required">
+							<input type="radio" name="amount" id="credit-amount-85" value="85" required="required">
 							<label for="credit-amount-85">85</label>
 						</div>
 						<label for="credit-lastname">Nachname *</label>
@@ -258,6 +259,11 @@
 					<button form="form-paypal-2" class="btn">Einzelspende</button>
 				</div>
 
+				<div id="method-eps" class="accordion">
+					<h2>eps-Überweisung</h2>
+					<p>Diese Option steht in Kürze zur Verfügung.</p>
+				</div>
+
 				<div id="method-sofort" class="accordion">
 					<h2>Sofortüberweisung</h2>
 					<p>Diese Option steht in Kürze zur Verfügung.</p>
@@ -274,38 +280,6 @@
 				<div id="method-flattr" class="accordion">
 					<h2>Flattr</h2>
 					<p>Diese Option steht in Kürze zur Verfügung.</p>
-				</div>
-
-				<div id="method-skrill" class="accordion">
-					<h2>Skrill</h2>
-					<form action="https://pay.skrill.com" method="post" autocomplete="off">
-						<div class="grp-amount">
-							<input type="radio" name="amount" id="skrill-amount-15" value="15" required="required" checked="checked">
-							<label for="skrill-amount-15">15</label>
-							<input type="radio" name="amount" id="skrill-amount-25" value="25" required="required">
-							<label for="skrill-amount-25">25</label>
-							<input type="radio" name="amount" id="skrill-amount-35" value="35" required="required">
-							<label for="skrill-amount-35">35</label>
-							<input type="radio" name="amount" id="skrill-amount-50" value="50" required="required">
-							<label for="skrill-amount-50">50</label>
-							<input type="radio" name="amount" id="skrill-amount-85" value="85" required="required">
-							<label for="skrill-amount-85">85</label>
-						</div>
-						<label for="skrill-lastname">Nachname</label>
-						<input type="text" name="lastname" id="skrill-lastname">
-						<label for="skrill-firstname">Vorname</label>
-						<input type="text" name="firstname" id="skrill-firstname">
-						<label for="skrill-email">E-Mail</label>
-						<input type="email" name="pay_from_email" id="skrill-email">
-						<input type="hidden" name="pay_to_email" value="info@akvorrat.at">
-						<input type="hidden" name="status_url" value="thomas@lohninger.org">
-						<input type="hidden" name="language" value="DE">
-						<input type="hidden" name="currency" value="EUR">
-						<input type="hidden" name="logo_url" value="https://spenden.akvorrat.at/img/akv-logo.jpg"/>
-						<input type="hidden" name="detail1_description" value="Arbeitskreis Vorratsdaten Österreich">
-						<input type="hidden" name="detail1_text" value="Für eine starke Stimme der Gesellschaft im digitalen Zeitalter">
-						<button class="btn btn-default">Jetzt spenden</button>
-					</form>
 				</div>
 			</section>
 
@@ -338,7 +312,7 @@
 					</div>
 					<div class="box noselect">
 						<a href="https://www.freewave.at/">
-							<h5>Freewave</h5>
+							<h5 class="hidden">Freewave</h5>
 							<img src="./img/supporters/freewave.gif" alt="Freewave Logo" />
 						</a>
 						<div class="support-amount">1.000</div>
@@ -346,13 +320,12 @@
 					<div class="box noselect">
 						<a href="http://nemox.net/">
 							<h5>nemox.net</h5>
-							<img src="./img/supporters/nemox.gif" alt="nemox.net Logo" />
 						</a>
 						<div class="support-amount">1.000</div>
 					</div>
 					<div class="box noselect">
 						<a href="https://www.kapper.net/">
-							<h5>kapper.net</h5>
+							<h5 class="hidden">kapper.net</h5>
 							<img src="./img/supporters/kapper.gif" alt="kapper.net Logo" />
 						</a>
 						<p>Netzneutralität, fairer Wettbewerb und Datenschutz sind gerade in Österreich besonders wichtige Grundsätze der Internetwirtschaft, da rund 300 Kleinst- und Kleinprovider mit ihren innovativen und kostengünstigen Lösungen die flächendeckende Internetversorgung sicherstellen. Wir sehen uns als langfristige Unterstützer und Anbieter des "Internet in Österreich" und tragen damit gerne ein wenig mehr zum Schutz eines freien Internet in Österreich und Europa bei.</p>
@@ -360,7 +333,7 @@
 					</div>
 					<div class="box noselect">
 						<a href="http://www.obdev.at/">
-							<h5>Objective Development</h5>
+							<h5 class="hidden">Objective Development</h5>
 							<img src="./img/supporters/obdev.gif" alt="Objective Development Logo" />
 						</a>
 						<p>Privatsphäre und der Schutz persönlicher Daten sind ein zentrales Anliegen unserer Arbeit. Mit <a href="http://www.obdev.at/products/littlesnitch/index.html">Little Snitch</a> bieten wir Mac-Nutzern seit fast 15 Jahren die gezielte Kontrolle darüber, welche Informationen vom Computer ins Internet gesendet werden dürfen. Wir sind der Ansicht, dass Internetnutzung und die Wahrung der Privatsphäre keinen Widerspruch darstellen sollten. In diesem Sinne begrüßen und unterstützen wir die Vorhaben des AKVorrat.</p>
@@ -368,7 +341,7 @@
 					</div>
 					<div class="box noselect">
 						<a href="http://www.easyname.com/de/hosting">
-							<h5>easyname</h5>
+							<h5 class="hidden">easyname</h5>
 							<img src="./img/supporters/easyname.gif" alt="easyname Logo" />
 						</a>
 						<p>Als Domain- und Hostinganbieter ist es uns ein Anliegen, unseren Kunden ein sicheres und gleichzeitig freies Umfeld im Web zu ermöglichen. Wir glauben, dass Sicherheit im Internet nicht durch rigorose Überwachungsmaßnahmen erreicht werden kann, sondern nur durch Bewusstseinsbildung bei allen Internetnutzern und politischen Diskurs entstehen kann. Deshalb unterstützen wir das aktuelle Projekt des AKVorrat.</p>
@@ -384,7 +357,7 @@
 					</div>
 					<div class="box noselect">
 						<a href="http://super-fi.eu/">
-							<h5>Super-Fi</h5>
+							<h5 class="hidden">Super-Fi</h5>
 							<img src="./img/supporters/super-fi.gif" alt="Super-Fi Logo" />
 						</a>
 						<div class="support-amount">500</div>
@@ -392,14 +365,13 @@
 					<div class="box noselect">
 						<a href="http://wp-entwickler.at/">
 							<h5>WP-Entwickler.at</h5>
-							<img src="./img/supporters/netidee.gif" alt="WP-Entwickler.at Logo" />
 						</a>
 						<p>Uns ist wichtig, dass sich jemand um die Einhaltung unserer Grundrechte im Internet kümmert. Deshalb unterstützen wir den AKVorrat.</p>
 						<div class="support-amount">150</div>
 					</div>
 					<div class="box noselect">
 						<a href="http://die-antwort.eu/">
-							<h5>die Antwort</h5>
+							<h5 class="hidden">die Antwort</h5>
 							<img src="./img/supporters/antwort.gif" alt="die Antwort Logo" />
 						</a>
 						<div class="support-amount">100</div>
