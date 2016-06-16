@@ -138,7 +138,7 @@ main {
 
 section {
 	position: relative;
-	padding: 5rem 10px 2rem;
+	padding: 5rem 1rem 2rem;
 }
 
 section:first-of-type {
@@ -151,8 +151,8 @@ section:first-of-type {
 		margin-right: 20px;
 	}
 	section {
-		padding-left: 20px;
-		padding-right: 20px;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 	}
 }
 
@@ -392,7 +392,7 @@ label[for] {
 	flex-wrap: wrap;
 	margin: 3rem auto 0;
 	width: 350px;
-	max-width: 98%;
+	max-width: 100%;
 }
 
 #method form input {
@@ -547,11 +547,17 @@ label[for] {
 .support-frame {
 	position: relative;
 	min-width: 200px;
-	max-width: 300px;
+	max-width: 100%;
 	text-align: center;
 	border: 6px solid #0685c9;
 	background-color: rgba(0, 0, 0, 0.05);
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1) inset, 0 0 10px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+@media screen and (min-width: 768px) {
+	.support-frame {
+		max-width: 300px;
+	}
 }
 
 .support-name {

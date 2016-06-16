@@ -39,6 +39,7 @@ jQuery(document).ready(function () {
 		dots: false,
 		margin: 32,
 		autoplay: true,
+		autoplayTimeout: 3000,
 		autoplayHoverPause: true,
 		responsive: false
 	});
