@@ -33,7 +33,7 @@ jQuery(document).ready(function () {
 jQuery(document).ready(function () {
 	$(".owl-carousel").owlCarousel({
 		loop: true,
-		center: false,
+		center: true,
 		nav: false,
 		autoWidth: true,
 		dots: false,
@@ -45,6 +45,20 @@ jQuery(document).ready(function () {
 	});
 });
 
+// Enable Paypal payment switcher
+
+jQuery(document).ready(function () {
+	$("#form-paypal-1 input[name='p3']").change(function () {
+		var i = this.value == "0" ? "2" : "1";
+		$("#form-paypal-1 [form]").attr("form", "form-paypal-" + i);
+	});
+	$("#form-paypal-1 input[name='a3']").change(function () {
+		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
+	});
+});
+
+// FUNCTIONS
+
 function scrollTo(id) {
 	$("html, body").animate({
 		scrollTop: $(id).offset().top
@@ -54,6 +68,10 @@ function scrollTo(id) {
 function becomeSupporter() {
 	if ($("#method-supporter").hasClass("active")) scrollTo("#method");
 	else $("#radio-supporter").click();
+}
+
+function becomeSponsor() {
+	scrollTo("#sponsoring");
 }
 
 // Generate SEPA PDF
