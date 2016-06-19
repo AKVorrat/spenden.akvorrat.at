@@ -45,6 +45,29 @@ jQuery(document).ready(function () {
 	});
 });
 
+// Setup variable input fields
+
+jQuery(document).ready(function () {
+	$("[id*='amount-input'").change(function () {
+		getMethodElement(this, "-amount-x").attr("value", this.value);
+	});
+	$("[id*='amount-input'").click(function () {
+		getMethodElement(this, "-amount-x").click();
+	});
+	$("input[name*='-amount']").change(function () {
+		if($(this).prop("id").indexOf("-amount-x") > -1 && $(this).prop("checked"))
+			getMethodElement(this, "-amount-input").attr("required", "required");
+		else
+			getMethodElement(this, "-amount-input").removeAttr("required");
+	});
+});
+
+function getMethodElement(object, string) {
+	var id = $(object).attr('id');
+	method = id.slice(0, id.indexOf("-"));
+	return $("#" + method + string);
+}
+
 // Enable Paypal payment switcher
 
 jQuery(document).ready(function () {

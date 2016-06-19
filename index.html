@@ -49,18 +49,18 @@
 			<!-- payment method selection -->
 			<section id="payment">
 				<h2 class="hidden">Zahlungsmethoden</h2>
-				<div id="methods">
+				<form id="methods" autocomplete="off">
 					<div class="row">
 						<input type="radio" name="methods" id="radio-supporter" value="supporter" checked="checked">
-						<label for="radio-supporter">Fördermitglied werden</label>
+						<label for="radio-supporter"><span>Fördermitglied werden</span></label>
 						<input type="radio" name="methods" id="radio-transfer" value="transfer">
-						<label for="radio-transfer">Bank<wbr />überweisung</label>
+						<label for="radio-transfer"><span>Überweisung</span></label>
 					</div>
 					<div class="row">
 						<input type="radio" name="methods" id="radio-debit" value="debit">
-						<label for="radio-debit">Lastschrift</label>
+						<label for="radio-debit"><span>Lastschrift</span></label>
 						<input type="radio" name="methods" id="radio-credit" value="credit">
-						<label for="radio-credit">Kreditkarte</label>
+						<label for="radio-credit"><span>Kreditkarte</span></label>
 					</div>
 					<div class="row">
 						<input type="radio" name="methods" id="radio-paypal" value="paypal">
@@ -74,7 +74,7 @@
 						<input type="radio" name="methods" id="radio-flattr" value="flattr">
 						<label for="radio-flattr"><img src="./img/methods/flattr.png" alt="Flattr"/></label>
 					</div>
-				</div>
+				</form>
 			</section>
 			<!-- end payment method selection -->
 
@@ -85,7 +85,7 @@
 					<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung der Fördermitgliedschaft. Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, sende es uns bitte an <a href="mailto:spenden@akvorrat.at">spenden@akvorrat.at</a>. Alternativ kannst du das leere Formular auch <a href="./data/antrag-foerdermitgliedschaft.pdf">hier herunterladen</a>.</p>
 					<p>Die Formulardaten werden von uns nur für den internen Zweck der Verwaltung von Mitgliedschaften sowie für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
 					<form autocomplete="off" action="javascript:genpdf('supporter');">
-						<div class="grp-amount">
+						<div class="grp-amount row">
 							<input type="radio" name="supporter-amount" id="supporter-amount-15" value="15" required="required" checked="checked">
 							<label for="supporter-amount-15">15</label>
 							<input type="radio" name="supporter-amount" id="supporter-amount-25" value="25" required="required">
@@ -94,10 +94,10 @@
 							<label for="supporter-amount-35">35</label>
 							<input type="radio" name="supporter-amount" id="supporter-amount-50" value="50" required="required">
 							<label for="supporter-amount-50">50</label>
-							<input type="radio" name="supporter-amount" id="supporter-amount-85" value="85" required="required">
-							<label for="supporter-amount-85">85</label>
+							<input type="radio" name="supporter-amount" id="supporter-amount-x" value="85" required="required">
+							<label for="supporter-amount-x"><input type="number" id="supporter-amount-input" class="amount-input" value="85" min="5" step="1"></label>
 						</div>
-						<div class="grp-interval">
+						<div class="grp-interval row">
 							<input type="radio" name="supporter-interval" id="supporter-interval-month" value="pro Monat" required="required" checked="checked">
 							<label for="supporter-interval-month">Monat</label>
 							<input type="radio" name="supporter-interval" id="supporter-interval-quarter" value="pro Quartal" required="required">
@@ -138,7 +138,7 @@
 				</div>
 
 				<div id="method-transfer" class="accordion">
-					<h2>Banküberweisung</h2>
+					<h2>Überweisung</h2>
 					<p>Unsere Arbeit lässt sich leichter planen, wenn wir regelmäßige Spenden erhalten. Möchtest du vielleicht <a href="javascript:becomeSupporter();">Fördermitglied werden</a>?</p>
 					<div class="grp-transfer-outer">
 						<div class="grp-transfer border">
@@ -156,7 +156,7 @@
 					<p>Die Formulardaten werden von uns nur für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
 					<form autocomplete="off" action="javascript:genpdf('debit');">
 						<input type="radio" name="debit-interval" id="debit-interval" class="hidden" value="einmalig" required="required" checked="checked">
-						<div class="grp-amount">
+						<div class="grp-amount row">
 							<input type="radio" name="debit-amount" id="debit-amount-15" value="15" required="required">
 							<label for="debit-amount-15">15</label>
 							<input type="radio" name="debit-amount" id="debit-amount-25" value="25" required="required">
@@ -165,8 +165,8 @@
 							<label for="debit-amount-35">35</label>
 							<input type="radio" name="debit-amount" id="debit-amount-50" value="50" required="required">
 							<label for="debit-amount-50">50</label>
-							<input type="radio" name="debit-amount" id="debit-amount-85" value="85" required="required">
-							<label for="debit-amount-85">85</label>
+							<input type="radio" name="debit-amount" id="debit-amount-x" value="85" required="required">
+							<label for="debit-amount-x"><input type="number" id="debit-amount-input" class="amount-input" value="85" min="5" step="1"></label>
 						</div>
 						<label for="debit-lastname">Nachname *</label>
 						<input type="text" name="lastname" id="debit-lastname" required="required">
@@ -202,7 +202,7 @@
 					<h2>Kreditkarte</h2>
 					<p>Die Abwicklung der Zahlung per Kreditkarte findet im <a href="https://www.mpay24.com/">mPay24</a>-Portal statt.</p>
 					<form action="mp24/checkout.php?action=pay" method="post" autocomplete="off">
-						<div class="grp-amount">
+						<div class="grp-amount row">
 							<input type="radio" name="amount" id="credit-amount-15" value="15" required="required">
 							<label for="credit-amount-15">15</label>
 							<input type="radio" name="amount" id="credit-amount-25" value="25" required="required">
@@ -211,8 +211,8 @@
 							<label for="credit-amount-35">35</label>
 							<input type="radio" name="amount" id="credit-amount-50" value="50" required="required">
 							<label for="credit-amount-50">50</label>
-							<input type="radio" name="amount" id="credit-amount-85" value="85" required="required">
-							<label for="credit-amount-85">85</label>
+							<input type="radio" name="amount" id="credit-amount-x" value="85" required="required">
+							<label for="credit-amount-x"><input type="number" id="credit-amount-input" class="amount-input" value="85" min="5" step="1"></label>
 						</div>
 						<label for="credit-lastname">Nachname</label>
 						<input type="text" name="lastname" id="credit-lastname">
@@ -228,19 +228,19 @@
 					<h2>Paypal</h2>
 					<p>Bei Paypal bestehen die Möglichkeiten einen Dauerauftrag einzurichten oder einmalig zu spenden. Wir möchten dich darauf hinweisen, dass selbst kleine regelmäßige Spenden unsere Arbeit deutlich erleichtern, da wir längerfristig planen können.</p>
 					<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
-						<div class="grp-amount">
-							<input type="radio" name="a3" id="paypal-amount-15" value="15.00" required="required" checked="checked">
+						<div class="grp-amount row">
+							<input type="radio" name="a3" id="paypal-amount-15" value="15" required="required" checked="checked">
 							<label for="paypal-amount-15">15</label>
-							<input type="radio" name="a3" id="paypal-amount-25" value="25.00" required="required">
+							<input type="radio" name="a3" id="paypal-amount-25" value="25" required="required">
 							<label for="paypal-amount-25">25</label>
-							<input type="radio" name="a3" id="paypal-amount-35" value="35.00" required="required">
+							<input type="radio" name="a3" id="paypal-amount-35" value="35" required="required">
 							<label for="paypal-amount-35">35</label>
-							<input type="radio" name="a3" id="paypal-amount-50" value="50.00" required="required">
+							<input type="radio" name="a3" id="paypal-amount-50" value="50" required="required">
 							<label for="paypal-amount-50">50</label>
-							<input type="radio" name="a3" id="paypal-amount-85" value="85.00" required="required">
-							<label for="paypal-amount-85">85</label>
+							<input type="radio" name="a3" id="paypal-amount-x" value="85" required="required">
+							<label for="paypal-amount-x"><input type="number" id="paypal-amount-input" class="amount-input" value="85" min="5" step="1"></label>
 						</div>
-						<div class="grp-interval">
+						<div class="grp-interval row">
 							<input type="radio" name="p3" id="paypal-interval-once" value="0" required="required">
 							<label for="paypal-interval-once">Einmal</label>
 							<input type="radio" name="p3" id="paypal-interval-month" value="1" required="required" checked="checked">

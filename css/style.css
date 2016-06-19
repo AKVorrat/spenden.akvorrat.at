@@ -397,18 +397,19 @@ section:nth-child(odd) + section::before {
 	border: none;
 }
 
-#methods label > img {
-	position: absolute;
+#methods label > * {
 	max-height: 100%;
-	width: calc(100% - 4rem);
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	transition: width .3s ease, height .3s ease;
+	max-width: 100%;
+	transition: transform .3s ease;
 }
 
-#methods label:hover > img {
-	width: calc(100% - 3rem);
+#methods label > img {
+	width: 75%;
+}
+
+#methods label:hover > * {
+	-webkit-transform: scale(1.2,1.2);
+	transform: scale(1.2,1.2);
 }
 
 
@@ -450,6 +451,11 @@ label[for] {
 #method form input[type="email"]:focus {
 	border-color: rgba(6, 133, 201, 1);
 	box-shadow: 0 0 4px 0 rgba(6, 133, 201, .1) inset, 0 0 4px 0 rgba(6, 133, 201, .1) inset;
+}
+
+#method form label {
+	font-size: 80%;
+	text-transform: uppercase;
 }
 
 .btn {
@@ -509,11 +515,6 @@ label[for] {
 	height: 0%;
 }
 
-#method form label {
-	font-size: 80%;
-	text-transform: uppercase;
-}
-
 .grp-transfer-outer {
 	display: -webkit-flex;
 	display: flex;
@@ -525,7 +526,7 @@ label[for] {
 
 .grp-amount,
 .grp-interval {
-	margin: 0 auto 32px;
+	margin: 0 auto 16px;
 }
 
 .grp-amount > input,
@@ -533,11 +534,16 @@ label[for] {
 	display: none;
 }
 
-.grp-amount > label {
+.grp-amount > label,
+.grp-interval > label {
+	display: block;
 	margin: 6px;
+}
+
+.grp-amount > label {
 	padding: 8px;
 	color: rgba(31, 31, 31, 0.7);
-	font-size: 100%;
+	font-size: 1rem !important;
 	font-weight: bold;
 	background-color: rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) inset, 0 0 4px 0 rgba(0, 0, 0, 0.1) inset;
@@ -557,9 +563,8 @@ label[for] {
 }
 
 .grp-interval >  label {
-	margin: 6px;
+	padding: 2px;
 	cursor: pointer;
-	font-size: 90%;
 	text-transform: uppercase;
 	border-bottom: 2px solid rgba(6, 133, 201, 0);
 	transition: border-bottom .1s ease;
@@ -568,6 +573,21 @@ label[for] {
 .grp-interval > input[type="radio"]:checked + label,
 .grp-interval > input[type="radio"] + label:hover {
 	border-bottom: 2px solid rgba(6, 133, 201, 1);
+}
+
+.amount-input {
+	width: 50px;
+	margin: 0 !important;
+	padding: 0;
+	color: rgba(31, 31, 31, 0.7);
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	transition: color .3s ease;
+}
+
+input[type="radio"]:checked + label > .amount-input,
+input[type="radio"] + label:hover > .amount-input {
+	color: rgba(255, 255, 255, 1);
 }
 
 
