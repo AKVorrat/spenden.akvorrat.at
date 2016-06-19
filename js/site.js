@@ -80,7 +80,7 @@ jQuery(document).ready(function () {
 	});
 });
 
-// FUNCTIONS
+// Smoothly scroll to top of element
 
 function scrollTo(id) {
 	$("html, body").animate({
@@ -88,10 +88,14 @@ function scrollTo(id) {
 	}, 800);
 }
 
+// Switch to supporter tab
+
 function becomeSupporter() {
 	if ($("#method-supporter").hasClass("active")) scrollTo("#method");
 	else $("#radio-supporter").click();
 }
+
+// Scroll to sponsoring section
 
 function becomeSponsor() {
 	scrollTo("#sponsoring");
