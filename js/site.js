@@ -111,7 +111,7 @@ function genpdf(mode) {
 		postcode: getInput("zip", mode),
 		residence: getInput("residence", mode),
 		email: getInput("email", mode),
-		newsletter: getInput("newsletter", mode),
+		newsletter: $("input[id='" + mode + "-" + "newsletter']").prop("checked"),
 		phone: getInput("phone", mode),
 		bank: getInput("bank", mode),
 		iban: getInput("iban", mode),
@@ -158,7 +158,7 @@ function genpdf(mode) {
 	
 	setFontSize(doc, 10);
 	doc.setFontType("bold");
-	var addText = user.newsletter === "yes" ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
+	var addText = user.newsletter ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
 	block(doc, "Ich unterstütze den Arbeitskreis Vorratsdaten Österreich " + user.interval + " mit " + user.amount + " Euro." + addText, 18);
 	
 	setFontSize(doc, 12);
