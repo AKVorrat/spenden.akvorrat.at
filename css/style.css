@@ -637,6 +637,22 @@ input[type="radio"] + label:hover > .amount-input {
 	margin-left: 0.2em;
 }
 
+#packages ul {
+	margin: 1rem 0;
+}
+
+#packages li {
+	list-style: none;
+}
+
+#packages li::before {
+	content: "✓";
+	margin-right: 0.2em;
+	vertical-align: bottom;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
 
 
 
