@@ -124,11 +124,14 @@ p:last-child {
 a {
 	color: #FF438E;
 	text-decoration: none;
+	border-bottom: 1px solid rgba(255, 67, 142, 0);
+	transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 a:hover,
 a:focus {
 	color: inherit;
+	border-bottom: 1px solid rgba(255, 67, 142, 1);
 }
 
 
