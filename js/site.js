@@ -73,9 +73,12 @@ function getMethodElement(object, string) {
 jQuery(document).ready(function () {
 	$("#form-paypal-1 input[name='p3']").change(function () {
 		var i = this.value == "0" ? "2" : "1";
-		$("#form-paypal-1 [form]").attr("form", "form-paypal-" + i);
+		$("#method-paypal [form]").attr("form", "form-paypal-" + i);
 	});
 	$("#form-paypal-1 input[name='a3']").change(function () {
+		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
+	});
+	$("#form-paypal-1 input[name='a3'] + label > .amount-input").on("keyup mouseup input", function () {
 		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
 	});
 });

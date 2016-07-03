@@ -257,13 +257,6 @@
 						<input type="hidden" name="src" value="1">
 						<input type="hidden" name="t3" value="M">
 						<input type="hidden" name="currency_code" value="EUR">
-						<label for="paypal-lastname">Nachname</label>
-						<input form="form-paypal-1" type="text" name="last_name" id="paypal-lastname">
-						<label for="paypal-firstname">Vorname</label>
-						<input form="form-paypal-1" type="text" name="first_name" id="paypal-firstname">
-						<label for="paypal-email">E-Mail</label>
-						<input form="form-paypal-1" type="email" name="email" id="paypal-email">
-						<button form="form-paypal-1" class="btn btn-default">Jetzt spenden</button>
 					</form>
 					<form id="form-paypal-2" class="hidden" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
 						<input type="hidden" name="business" value="info@akvorrat.at">
@@ -272,6 +265,15 @@
 						<input type="hidden" name="cmd" value="_donations">
 						<input type="hidden" name="currency_code" value="EUR">
 					</form>
+					<div class="form">
+						<label for="paypal-lastname">Nachname</label>
+						<input form="form-paypal-1" type="text" name="last_name" id="paypal-lastname">
+						<label for="paypal-firstname">Vorname</label>
+						<input form="form-paypal-1" type="text" name="first_name" id="paypal-firstname">
+						<label for="paypal-email">E-Mail</label>
+						<input form="form-paypal-1" type="email" name="email" id="paypal-email">
+						<button form="form-paypal-1" class="btn btn-default">Jetzt spenden</button>
+					</div>
 				</div>
 
 				<div id="method-eps" class="accordion">
