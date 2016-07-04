@@ -48,10 +48,10 @@ jQuery(document).ready(function () {
 // Setup variable input fields
 
 jQuery(document).ready(function () {
-	$("[id*='amount-input'").change(function () {
+	$("*[id*='amount-input']").change(function () {
 		getMethodElement(this, "-amount-x").attr("value", this.value);
 	});
-	$("[id*='amount-input'").click(function () {
+	$("*[id*='amount-input']").click(function () {
 		getMethodElement(this, "-amount-x").click();
 	});
 	$("input[name*='-amount']").change(function () {
@@ -73,7 +73,7 @@ function getMethodElement(object, string) {
 jQuery(document).ready(function () {
 	$("#form-paypal-1 input[name='p3']").change(function () {
 		var i = this.value == "0" ? "2" : "1";
-		$("#method-paypal [form]").attr("form", "form-paypal-" + i);
+		$("#method-paypal *[form]").attr("form", "form-paypal-" + i);
 	});
 	$("#form-paypal-1 input[name='a3']").change(function () {
 		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
