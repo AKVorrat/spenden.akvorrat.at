@@ -128,8 +128,8 @@ a {
 	transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-a:hover,
-a:focus {
+a:hover:not(.btn),
+a:focus:not(.btn) {
 	color: inherit;
 	border-bottom: 1px solid rgba(255, 67, 142, 1);
 }
