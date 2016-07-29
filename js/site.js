@@ -104,6 +104,17 @@ function becomeSponsor() {
 	scrollTo("#sponsoring");
 }
 
+// Format IBAN input field
+
+jQuery(document).ready(function () {
+	$("input[name='iban']").on("input propertychange", function (event) {
+		var formatArray = this.value.replace(/[^\w\d]/g, "").match(/([\w\d]{1,4})/g);
+		if (formatArray !== null && formatArray.length > 0) {
+			this.value = formatArray.join(" ");
+		}
+	});
+});
+
 // Generate SEPA PDF
 
 function genpdf(mode) {
