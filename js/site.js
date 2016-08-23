@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
 			$(".accordion.active").removeClass("active");
 			$("#method-" + this.value).addClass("active");
 			$(".accordion.active").css("height", $(".accordion.active").prop("scrollHeight") + "px");
-			scrollTo("#method");
+			scrollTo(".method");
 		}
 	);
 });

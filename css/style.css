@@ -368,7 +368,8 @@ section:nth-child(odd) + section::before {
 	display: none;
 }
 
-#methods label {
+#methods label,
+#methods a {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
@@ -390,7 +391,8 @@ section:nth-child(odd) + section::before {
 	transition: border .3s ease;
 }
 
-#methods label:hover {
+#methods label:hover,
+#methods a:hover {
 	border: 6px solid rgba(6, 133, 201, 1);
 }
 
@@ -406,17 +408,20 @@ section:nth-child(odd) + section::before {
 	border: none;
 }
 
-#methods label > * {
+#methods label > *,
+#methods a > * {
 	max-height: 100%;
 	max-width: 100%;
 	transition: transform .3s ease;
 }
 
-#methods label > img {
+#methods label > img,
+#methods a > img {
 	width: 75%;
 }
 
-#methods label:hover > * {
+#methods label:hover > *,
+#methods a:hover > * {
 	-webkit-transform: scale(1.2,1.2);
 	transform: scale(1.2,1.2);
 }
@@ -431,8 +436,8 @@ label[for] {
 	cursor: pointer;
 }
 
-#method form,
-#method .form {
+.method form,
+.method .form {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: column;
@@ -443,20 +448,20 @@ label[for] {
 	max-width: 100%;
 }
 
-#method form {
+.method form {
 	margin: 3rem auto 0;
 }
 
-#method .form {
+.method .form {
 	margin: 0 auto;
 }
 
-#method input {
+.method input {
 	margin-bottom: 8px;
 }
 
-#method input[type="text"],
-#method input[type="email"] {
+.method input[type="text"],
+.method input[type="email"] {
 	padding: .25rem;
 	background-color: #fff;
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) inset, 0 0 4px 0 rgba(0, 0, 0, 0.1) inset;
@@ -464,13 +469,13 @@ label[for] {
 	transition: background-color .3s ease, box-shadow .3s ease;
 }
 
-#method input[type="text"]:focus,
-#method input[type="email"]:focus {
+.method input[type="text"]:focus,
+.method input[type="email"]:focus {
 	border-color: rgba(6, 133, 201, 1);
 	box-shadow: 0 0 4px 0 rgba(6, 133, 201, .1) inset, 0 0 4px 0 rgba(6, 133, 201, .1) inset;
 }
 
-#method label {
+.method label {
 	font-size: 80%;
 	text-transform: uppercase;
 }

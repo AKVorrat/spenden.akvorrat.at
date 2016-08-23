@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="de" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="author" content="Arbeitskreis Vorratsdaten Österreich" />
+		<meta name="description" content="Als unabhängige, gemeinnützige Bürgerrechtsorganisation ist der Arbeitskreis Vorratsdaten Österreich auf Hilfe von außen angewiesen. Individuelle Spenden aus der Zivilgesellschaft ermöglichen unsere Arbeit für die Verteidigung der Grund- und Freiheitsrechte im digitalen Zeitalter. Daher bitten wir um deine Unterstützung." />
+		<meta name="keywords" content="Vorratsdatenspeicherung,Datenschutz,Grundrechte,Bürgerrechte,Menschenrechte,Österreich,Verein,AKVorrat,Geld,spenden,Fundraising" />
+
+		<link rel="shortcut icon" href="https://akvorrat.at/sites/default/files/favicon_0.png" type="image/png" />
+		<link type="text/css" rel="stylesheet" href="../../css/normalize.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/owl-carousel.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/owl-theme.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/style.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/embed.css" />
+		<title>Spenden | Arbeitskreis Vorratsdaten Österreich</title>
+	</head>
+
+	<body>
+		<main>
+			<div id="method-debit" class="method">
+				<h2>Lastschrift</h2>
+				<p>Wenn du schon öfter ein Formular hier generiert hast, könntest du daran interessiert sein, <a href="javascript:becomeSupporter();">Fördermitglied zu werden</a>. Regelmäßige Spenden ermöglichen uns eine besser Planung unserer Arbeit, wodurch die digitalen Grundrechte nachhaltig gestärkt werden.</p>
+				<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung der Lastschrift. Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <a href="mailto:spenden@akvorrat.at?subject=Antrag%20Lastschrift">sende es uns</a> bitte. Alternativ kannst du das leere Formular auch <a href="./data/antrag-lastschrift.pdf" target="_blank">hier herunterladen</a>.</p>
+				<p>Die Formulardaten werden von uns nur für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
+				<form autocomplete="off" action="javascript:genpdf('debit');">
+					<input type="radio" name="debit-interval" id="debit-interval" class="hidden" value="einmalig" required="required" checked="checked">
+					<div class="grp-amount row">
+						<input type="radio" name="debit-amount" id="debit-amount-15" value="15" required="required">
+						<label for="debit-amount-15">15</label>
+						<input type="radio" name="debit-amount" id="debit-amount-25" value="25" required="required">
+						<label for="debit-amount-25">25</label>
+						<input type="radio" name="debit-amount" id="debit-amount-35" value="35" required="required" checked="checked">
+						<label for="debit-amount-35">35</label>
+						<input type="radio" name="debit-amount" id="debit-amount-50" value="50" required="required">
+						<label for="debit-amount-50">50</label>
+						<input type="radio" name="debit-amount" id="debit-amount-x" value="85" required="required">
+						<label for="debit-amount-x"><input type="number" id="debit-amount-input" class="amount-input" value="85" min="5" step="1"></label>
+					</div>
+					<label for="debit-lastname">Nachname *</label>
+					<input type="text" name="lastname" id="debit-lastname" required="required">
+					<label for="debit-firstname">Vorname *</label>
+					<input type="text" name="firstname" id="debit-firstname" required="required">
+					<label for="debit-street">Straße</label>
+					<input type="text" name="street" id="debit-street">
+					<label for="debit-number">Hausnummer</label>
+					<input type="text" name="number" id="debit-number">
+					<label for="debit-zip">Postleitzahl</label>
+					<input type="text" name="zip" id="debit-zip">
+					<label for="debit-residence">Ort</label>
+					<input type="text" name="residence" id="debit-residence">
+					<label for="debit-email">E-Mail *</label>
+					<input type="email" name="email" id="debit-email" required="required">
+					<label for="debit-phone">Telefon</label>
+					<input type="text" name="phone" id="debit-phone">
+					<label for="debit-bank">Bank *</label>
+					<input type="text" name="bank" id="debit-bank" required="required">
+					<label for="debit-iban">IBAN *</label>
+					<input type="text" name="iban" id="debit-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
+					<label for="debit-bic">BIC *</label>
+					<input type="text" name="bic" id="debit-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
+					<div>
+						<input type="checkbox" name="newsletter" id="debit-newsletter" value="yes">
+						<label for="debit-newsletter">Newsletter abonnieren</label>
+					</div>
+					<button class="btn btn-default">Jetzt spenden</button>
+				</form>
+			</div>
+		</main>
+
+		<!-- scripts -->
+		<script type="text/javascript" src="../../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../../js/jspdf.min.js"></script>
+		<script type="text/javascript" src="../../js/site.js"></script>
+		<script type="text/javascript" src="../../js/owl-carousel.min.js"></script>
+		<!-- end scripts -->
+	</body>
+</html>
