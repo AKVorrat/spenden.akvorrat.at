@@ -11,21 +11,24 @@ var fontSize;
 var logo = new Image();
 logo.src = "./img/akv-logo.jpg";
 
-// Setup accordion
+
+// Scroll smoothly
 
 jQuery(document).ready(function () {
-	$(".accordion:not(.active)").css("height", "0px");
-	$(".accordion.active").css("height", $(".accordion.active").prop("scrollHeight") + "px");
-	
-	$("#methods input[type='radio']").change(
-		function () {
-			$(".accordion.active").css("height", "0px");
-			$(".accordion.active").removeClass("active");
-			$("#method-" + this.value).addClass("active");
-			$(".accordion.active").css("height", $(".accordion.active").prop("scrollHeight") + "px");
-			scrollTo(".method");
-		}
-	);
+	$(function() {
+		$("a[href*='#']:not([href='#'])").click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $("[name=" + this.hash.slice(1) +"]");
+				if (target.length) {
+					$("html,body").animate({
+						scrollTop: target.offset().top
+					}, 800);
+					return false;
+				}
+			}
+		});
+	});
 });
 
 // Enable owlCarousel
@@ -82,27 +85,6 @@ jQuery(document).ready(function () {
 		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
 	});
 });
-
-// Smoothly scroll to top of element
-
-function scrollTo(id) {
-	$("html, body").animate({
-		scrollTop: $(id).offset().top
-	}, 800);
-}
-
-// Switch to supporter tab
-
-function becomeSupporter() {
-	if ($("#method-supporter").hasClass("active")) scrollTo("#method");
-	else $("#radio-supporter").click();
-}
-
-// Scroll to sponsoring section
-
-function becomeSponsor() {
-	scrollTo("#sponsoring");
-}
 
 // Format IBAN input field
 

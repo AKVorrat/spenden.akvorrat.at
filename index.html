@@ -23,10 +23,11 @@
 		<meta name="twitter:description" content="Als unabhängige, gemeinnützige Bürgerrechtsorganisation ist der Arbeitskreis Vorratsdaten Österreich auf Hilfe von außen angewiesen. Individuelle Spenden aus der Zivilgesellschaft ermöglichen unsere Arbeit für die Verteidigung der Grund- und Freiheitsrechte im digitalen Zeitalter. Daher bitten wir um deine Unterstützung." />
 		<meta name="twitter:site" content="@AKVorrat_at" />
 
-		<link rel="shortcut icon" href="https://akvorrat.at/sites/default/files/favicon_0.png" type="image/png" />
+		<link rel="shortcut icon" href="./img/favicon.png" type="image/png" />
 		<link type="text/css" rel="stylesheet" href="./css/normalize.css" />
 		<link type="text/css" rel="stylesheet" href="./css/owl-carousel.min.css" />
 		<link type="text/css" rel="stylesheet" href="./css/owl-theme.min.css" />
+		<link type="text/css" rel="stylesheet" href="./css/font-awesome.min.css" />
 		<link type="text/css" rel="stylesheet" href="./css/style.css" />
 		<title>Spenden | Arbeitskreis Vorratsdaten Österreich</title>
 	</head>
@@ -41,8 +42,8 @@
 			<section>
 				<h2>Spenden</h2>
 				<p>Als unabhängige, gemeinnützige Bürgerrechtsorganisation ist der Arbeitskreis Vorratsdaten Österreich auf Hilfe von außen angewiesen. Individuelle Spenden aus der Zivilgesellschaft ermöglichen unsere Arbeit für die Verteidigung der Grund- und Freiheitsrechte im digitalen Zeitalter. Daher bitten wir um deine Unterstützung.</p>
-				<p>Damit es leichter ist, einen Eindruck von unserem Verein und seinen Tätigkeiten zu bekommen, bringen wir jährlich einen <strong>Jahresbericht</strong> heraus. Unser aktueller Bericht von 2015 steht <a href="https://akvorrat.at/sites/default/files/akvorrat_jahresbericht_2015_0.pdf" target="_blank">hier zum Download</a> zur Verfügung. Für Unternehmen bieten wir vorgefertigte <a href="javascript:becomeSponsor();">Sponsoring-Pakete</a> an.</p>
-				<p>Um unsere Arbeit besser planen zu können, helfen uns vor allem <strong>regelmäßige Spenden</strong>. Wir laden dich herzlich dazu ein, <a href="javascript:becomeSupporter();">Fördermitglied zu werden</a>!</p>
+				<p>Damit es leichter ist, einen Eindruck von unserem Verein und seinen Tätigkeiten zu bekommen, bringen wir jährlich einen <strong>Jahresbericht</strong> heraus. Unser aktueller Bericht von 2015 steht <a href="https://akvorrat.at/sites/default/files/akvorrat_jahresbericht_2015_0.pdf" target="_blank">hier zum Download</a> zur Verfügung. Für <a href="#supporters">Unternehmen</a> bieten wir vorgefertigte <a href="#sponsoring">Sponsoring-Pakete</a> an.</p>
+				<p>Um unsere Arbeit besser planen zu können, helfen uns vor allem <strong>regelmäßige Spenden</strong>. Wir laden dich herzlich dazu ein, <a href="#method-supporter">Fördermitglied zu werden</a>!</p>
 				<p>Weitere Informationen zu Spenden bekommst du in unseren <a href="https://akvorrat.at/spenden-faq/" target="_blank">Spenden-FAQs</a>.</p>
 			</section>
 
@@ -51,249 +52,221 @@
 				<h2 class="hidden">Zahlungsmethoden</h2>
 				<form id="methods" class="row" autocomplete="off">
 					<div class="row">
-						<input type="radio" name="methods" id="radio-supporter" value="supporter" checked="checked">
-						<label for="radio-supporter"><span>Fördermitglied werden</span></label>
-						<input type="radio" name="methods" id="radio-transfer" value="transfer">
-						<label for="radio-transfer"><span>Überweisung</span></label>
-					</div>
-					<div class="row">
-						<input type="radio" name="methods" id="radio-debit" value="debit">
-						<label for="radio-debit"><span>Lastschrift</span></label>
-						<input type="radio" name="methods" id="radio-credit" value="credit">
-						<label for="radio-credit"><span>Kreditkarte</span></label>
-					</div>
-					<div class="row">
-						<input type="radio" name="methods" id="radio-paypal" value="paypal">
-						<label for="radio-paypal"><img src="./img/methods/paypal.png" alt="Paypal"/></label>
-						<input type="radio" name="methods" id="radio-eps" value="eps">
-						<label for="radio-eps"><img src="./img/methods/eps.png" alt="eps-Überweisung"/></label>
-					</div>
-					<div class="row">
-						<input type="radio" name="methods" id="radio-bitcoin" value="bitcoin">
-						<label for="radio-bitcoin"><img src="./img/methods/bitcoin.png" alt="Bitcoin"/></label>
-						<input type="radio" name="methods" id="radio-flattr" value="flattr">
-						<label for="radio-flattr"><img src="./img/methods/flattr.png" alt="Flattr"/></label>
+						<a href="#method-debit"><div class="column"><i class="fa fa-eur fa-5x" aria-hidden="true"></i><span>Lastschrift</span></div></a>
+						<a href="#method-credit"><div class="column"><i class="fa fa-credit-card-alt fa-5x" aria-hidden="true"></i><span>Kreditkarte</span></div></a>
+						<a href="#method-paypal"><div class="column"><i class="fa fa-paypal fa-5x" aria-hidden="true"></i><span>Paypal</span></div></a>
 					</div>
 				</form>
+				<p class="center">
+					Alternative Zahlungsmethoden: <a href="#method-alternative"><span>Überweisung</span></a>, <a href="#method-alternative">Bitcoin</a>, <a href="https://flattr.com/submit/auto?user_id=AKVorrat_at&url=https://spenden.akvorrat.at/&title=Arbeitskreis%20Vorratsdaten%20Österreich&description=Für%20eine%20starke%20Stimme%20der%20Gesellschaft%20im%20digitalen%20Zeitalter" target="_blank">Flattr</a>.
+				</p>
 			</section>
 			<!-- end payment method selection -->
 
-			<section class="method">
-				<div id="method-supporter" class="accordion active">
-					<h2>Fördermitglied werden</h2>
-					<p>Als Fördermitglied des Arbeitskreis Vorratsdaten Österreich trittst du unserem Verein als außerordentliches Mitglied bei und hilfst uns in Form eines frei gewählten regelmäßigen Mitgliedsbeitrages. Regelmäßige Spenden helfen uns dabei, die Arbeit besser planen zu können.</p>
-					<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung der Fördermitgliedschaft. Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <a href="mailto:spenden@akvorrat.at?subject=Antrag%20Fördermitgliedschaft">sende es uns</a> bitte. Alternativ kannst du das leere Formular auch <a href="./data/antrag-foerdermitgliedschaft.pdf" target="_blank">hier herunterladen</a>.</p>
-					<p>Die Formulardaten werden von uns nur für den internen Zweck der Verwaltung von Mitgliedschaften sowie für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
-					<form autocomplete="off" action="javascript:genpdf('supporter');">
-						<div class="grp-amount row">
-							<input type="radio" name="supporter-amount" id="supporter-amount-15" value="15" required="required" checked="checked">
-							<label for="supporter-amount-15">15</label>
-							<input type="radio" name="supporter-amount" id="supporter-amount-25" value="25" required="required">
-							<label for="supporter-amount-25">25</label>
-							<input type="radio" name="supporter-amount" id="supporter-amount-35" value="35" required="required">
-							<label for="supporter-amount-35">35</label>
-							<input type="radio" name="supporter-amount" id="supporter-amount-50" value="50" required="required">
-							<label for="supporter-amount-50">50</label>
-							<input type="radio" name="supporter-amount" id="supporter-amount-x" value="85" required="required">
-							<label for="supporter-amount-x"><input type="number" id="supporter-amount-input" class="amount-input" value="85" min="5" step="1"></label>
-						</div>
-						<div class="grp-interval row">
-							<input type="radio" name="supporter-interval" id="supporter-interval-month" value="pro Monat" required="required" checked="checked">
-							<label for="supporter-interval-month">Monat</label>
-							<input type="radio" name="supporter-interval" id="supporter-interval-quarter" value="pro Quartal" required="required">
-							<label for="supporter-interval-quarter">Quartal</label>
-							<input type="radio" name="supporter-interval" id="supporter-interval-semiannual" value="pro Halbjahr" required="required">
-							<label for="supporter-interval-semiannual">Halbjahr</label>
-							<input type="radio" name="supporter-interval" id="supporter-interval-annual" value="pro Jahr" required="required">
-							<label for="supporter-interval-annual">Jahr</label>
-						</div>
-						<label for="supporter-lastname">Nachname *</label>
-						<input type="text" name="lastname" id="supporter-lastname" required="required">
-						<label for="supporter-firstname">Vorname *</label>
-						<input type="text" name="firstname" id="supporter-firstname" required="required">
-						<label for="supporter-street">Straße</label>
-						<input type="text" name="street" id="supporter-street">
-						<label for="supporter-number">Hausnummer</label>
-						<input type="text" name="number" id="supporter-number">
-						<label for="supporter-zip">Postleitzahl</label>
-						<input type="text" name="zip" id="supporter-zip">
-						<label for="supporter-residence">Ort</label>
-						<input type="text" name="residence" id="supporter-residence">
-						<label for="supporter-email">E-Mail *</label>
-						<input type="email" name="email" id="supporter-email" required="required">
-						<label for="supporter-phone">Telefon</label>
-						<input type="text" name="phone" id="supporter-phone">
-						<label for="supporter-bank">Bank *</label>
-						<input type="text" name="bank" id="supporter-bank" required="required">
-						<label for="supporter-iban">IBAN *</label>
-						<input type="text" name="iban" id="supporter-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
-						<label for="supporter-bic">BIC *</label>
-						<input type="text" name="bic" id="supporter-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
-						<div>
-							<input type="checkbox" name="newsletter" id="supporter-newsletter">
-							<label for="supporter-newsletter">Newsletter abonnieren</label>
-						</div>
-						<button class="btn btn-default">Fördermitglied werden</button>
-					</form>
-				</div>
+			<section id="method-debit" class="method">
+				<h2>Lastschrift</h2>
+				<p>Wenn du schon öfter ein Formular hier generiert hast, könntest du daran interessiert sein, <a href="#method-supporter">Fördermitglied zu werden</a>. Regelmäßige Spenden ermöglichen uns eine besser Planung unserer Arbeit, wodurch die digitalen Grundrechte nachhaltig gestärkt werden.</p>
+				<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung des Lastschriftauftrags. Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <a href="mailto:spenden@akvorrat.at?subject=Antrag%20Lastschrift">sende es uns</a> bitte. Alternativ kannst du das leere Formular auch <a href="./data/antrag-lastschrift.pdf" target="_blank">hier herunterladen</a>.</p>
+				<p>Die Formulardaten werden von uns nur für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
+				<form autocomplete="off" action="javascript:genpdf('debit');">
+					<input type="radio" name="debit-interval" id="debit-interval" class="hidden" value="einmalig" required="required" checked="checked">
+					<div class="grp-amount row">
+						<input type="radio" name="debit-amount" id="debit-amount-100" value="100" required="required">
+						<label for="debit-amount-100">100</label>
+						<input type="radio" name="debit-amount" id="debit-amount-125" value="125" required="required">
+						<label for="debit-amount-125">125</label>
+						<input type="radio" name="debit-amount" id="debit-amount-150" value="150" required="required" checked="checked">
+						<label for="debit-amount-150">150</label>
+						<input type="radio" name="debit-amount" id="debit-amount-200" value="200" required="required">
+						<label for="debit-amount-200">200</label>
+						<input type="radio" name="debit-amount" id="debit-amount-x" value="250" required="required">
+						<label for="debit-amount-x"><input type="number" id="debit-amount-input" class="amount-input" value="250" min="100" step="1"></label>
+					</div>
+					<label for="debit-lastname">Nachname *</label>
+					<input type="text" name="lastname" id="debit-lastname" required="required">
+					<label for="debit-firstname">Vorname *</label>
+					<input type="text" name="firstname" id="debit-firstname" required="required">
+					<label for="debit-street">Straße</label>
+					<input type="text" name="street" id="debit-street">
+					<label for="debit-number">Hausnummer</label>
+					<input type="text" name="number" id="debit-number">
+					<label for="debit-zip">Postleitzahl</label>
+					<input type="text" name="zip" id="debit-zip">
+					<label for="debit-residence">Ort</label>
+					<input type="text" name="residence" id="debit-residence">
+					<label for="debit-email">E-Mail *</label>
+					<input type="email" name="email" id="debit-email" required="required">
+					<label for="debit-phone">Telefon</label>
+					<input type="text" name="phone" id="debit-phone">
+					<label for="debit-bank">Bank *</label>
+					<input type="text" name="bank" id="debit-bank" required="required">
+					<label for="debit-iban">IBAN *</label>
+					<input type="text" name="iban" id="debit-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
+					<label for="debit-bic">BIC *</label>
+					<input type="text" name="bic" id="debit-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
+					<div>
+						<input type="checkbox" name="newsletter" id="debit-newsletter" value="yes">
+						<label for="debit-newsletter">Newsletter abonnieren</label>
+					</div>
+					<button class="btn btn-default">Jetzt spenden</button>
+				</form>
+			</section>
 
-				<div id="method-transfer" class="accordion">
-					<h2>Überweisung</h2>
-					<p>Unsere Arbeit lässt sich leichter planen, wenn wir regelmäßige Spenden erhalten. Möchtest du vielleicht <a href="javascript:becomeSupporter();">Fördermitglied werden</a>?</p>
+			<section id="method-credit" class="method">
+				<h2>Kreditkarte</h2>
+				<p>Die Abwicklung der Zahlung per Kreditkarte findet im <a href="https://www.mpay24.com/" target="_blank">mPay24</a>-Portal statt.</p>
+				<form action="mp24/checkout.php?action=pay" method="post" autocomplete="off">
+					<div class="grp-amount row">
+						<input type="radio" name="amount" id="credit-amount-15" value="15" required="required">
+						<label for="credit-amount-15">15</label>
+						<input type="radio" name="amount" id="credit-amount-25" value="25" required="required">
+						<label for="credit-amount-25">25</label>
+						<input type="radio" name="amount" id="credit-amount-35" value="35" required="required" checked="checked">
+						<label for="credit-amount-35">35</label>
+						<input type="radio" name="amount" id="credit-amount-50" value="50" required="required">
+						<label for="credit-amount-50">50</label>
+						<input type="radio" name="amount" id="credit-amount-x" value="85" required="required">
+						<label for="credit-amount-x"><input type="number" id="credit-amount-input" class="amount-input" value="85" min="5" step="1"></label>
+					</div>
+					<label for="credit-lastname">Nachname</label>
+					<input type="text" name="lastname" id="credit-lastname">
+					<label for="credit-firstname">Vorname</label>
+					<input type="text" name="firstname" id="credit-firstname">
+					<label for="credit-email">E-Mail</label>
+					<input type="email" name="email" id="credit-email">
+					<button class="btn btn-default">Jetzt spenden</button>
+				</form>
+			</section>
+
+			<section id="method-paypal" class="method">
+				<h2>Paypal</h2>
+				<p>Beim Bezahlsystem <a href="https://www.paypal.com/" target="_blank">Paypal</a> bestehen die Möglichkeiten einen Dauerauftrag einzurichten oder einmalig zu spenden. Wir möchten dich darauf hinweisen, dass selbst kleine regelmäßige Spenden unsere Arbeit deutlich erleichtern, da wir längerfristig planen können. Alternierend besteht darum die Option, <a href="#method-supporter">Fördermitglied zu werden</a>.</p>
+				<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
+					<div class="grp-amount row">
+						<input type="radio" name="a3" id="paypal-amount-15" value="15" required="required" checked="checked">
+						<label for="paypal-amount-15">15</label>
+						<input type="radio" name="a3" id="paypal-amount-25" value="25" required="required">
+						<label for="paypal-amount-25">25</label>
+						<input type="radio" name="a3" id="paypal-amount-35" value="35" required="required">
+						<label for="paypal-amount-35">35</label>
+						<input type="radio" name="a3" id="paypal-amount-50" value="50" required="required">
+						<label for="paypal-amount-50">50</label>
+						<input type="radio" name="a3" id="paypal-amount-x" value="85" required="required">
+						<label for="paypal-amount-x"><input type="number" id="paypal-amount-input" class="amount-input" value="85" min="5" step="1"></label>
+					</div>
+					<div class="grp-interval row">
+						<input type="radio" name="p3" id="paypal-interval-once" value="0" required="required">
+						<label for="paypal-interval-once">Einmal</label>
+						<input type="radio" name="p3" id="paypal-interval-month" value="1" required="required" checked="checked">
+						<label for="paypal-interval-month">Monat</label>
+						<input type="radio" name="p3" id="paypal-interval-quarter" value="3" required="required">
+						<label for="paypal-interval-quarter">Quartal</label>
+						<input type="radio" name="p3" id="paypal-interval-semiannual" value="6" required="required">
+						<label for="paypal-interval-semiannual">Halbjahr</label>
+						<input type="radio" name="p3" id="paypal-interval-annual" value="12" required="required">
+						<label for="paypal-interval-annual">Jahr</label>
+					</div>
+					<input type="hidden" name="cmd" value="_xclick-subscriptions">
+					<input type="hidden" name="business" value="info@akvorrat.at">
+					<input type="hidden" name="src" value="1">
+					<input type="hidden" name="t3" value="M">
+					<input type="hidden" name="currency_code" value="EUR">
+				</form>
+				<form id="form-paypal-2" class="hidden" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
+					<input type="hidden" name="business" value="info@akvorrat.at">
+					<input type="hidden" name="amount" value="15.00">
+					<input type="hidden" name="item_name" value="Spende">
+					<input type="hidden" name="cmd" value="_donations">
+					<input type="hidden" name="currency_code" value="EUR">
+				</form>
+				<div class="form">
+					<label for="paypal-lastname">Nachname</label>
+					<input form="form-paypal-1" type="text" name="last_name" id="paypal-lastname">
+					<label for="paypal-firstname">Vorname</label>
+					<input form="form-paypal-1" type="text" name="first_name" id="paypal-firstname">
+					<label for="paypal-email">E-Mail</label>
+					<input form="form-paypal-1" type="email" name="email" id="paypal-email">
+					<button form="form-paypal-1" class="btn btn-default">Jetzt spenden</button>
+				</div>
+			</section>
+
+			<section id="method-alternative" class="method row items2">
+				<div>
+					<h3>Überweisung</h3>
+					<p>Unsere Arbeit lässt sich leichter planen, wenn wir regelmäßige Spenden erhalten. Möchtest du vielleicht <a href="#method-supporter">Fördermitglied werden</a>?</p>
 					<div class="grp-transfer-outer">
 						<div class="grp-transfer border">
-							<strong>Kontoinhaber:</strong> Arbeitskreis Vorratsdaten Österreich<br />
+							<strong>Inhaber:</strong> Arbeitskreis Vorratsdaten Österreich<br />
 							<strong>IBAN:</strong> AT18 2011 1294 2054 4100<br />
 							<strong>BIC:</strong> GIBAATWWXXX
 						</div>
 					</div>
 				</div>
-
-				<div id="method-debit" class="accordion">
-					<h2>Lastschrift</h2>
-					<p>Wenn du schon öfter ein Formular hier generiert hast, könntest du daran interessiert sein, <a href="javascript:becomeSupporter();">Fördermitglied zu werden</a>. Regelmäßige Spenden ermöglichen uns eine besser Planung unserer Arbeit, wodurch die digitalen Grundrechte nachhaltig gestärkt werden.</p>
-					<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung der Lastschrift. Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <a href="mailto:spenden@akvorrat.at?subject=Antrag%20Lastschrift">sende es uns</a> bitte. Alternativ kannst du das leere Formular auch <a href="./data/antrag-lastschrift.pdf" target="_blank">hier herunterladen</a>.</p>
-					<p>Die Formulardaten werden von uns nur für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
-					<form autocomplete="off" action="javascript:genpdf('debit');">
-						<input type="radio" name="debit-interval" id="debit-interval" class="hidden" value="einmalig" required="required" checked="checked">
-						<div class="grp-amount row">
-							<input type="radio" name="debit-amount" id="debit-amount-15" value="15" required="required">
-							<label for="debit-amount-15">15</label>
-							<input type="radio" name="debit-amount" id="debit-amount-25" value="25" required="required">
-							<label for="debit-amount-25">25</label>
-							<input type="radio" name="debit-amount" id="debit-amount-35" value="35" required="required" checked="checked">
-							<label for="debit-amount-35">35</label>
-							<input type="radio" name="debit-amount" id="debit-amount-50" value="50" required="required">
-							<label for="debit-amount-50">50</label>
-							<input type="radio" name="debit-amount" id="debit-amount-x" value="85" required="required">
-							<label for="debit-amount-x"><input type="number" id="debit-amount-input" class="amount-input" value="85" min="5" step="1"></label>
-						</div>
-						<label for="debit-lastname">Nachname *</label>
-						<input type="text" name="lastname" id="debit-lastname" required="required">
-						<label for="debit-firstname">Vorname *</label>
-						<input type="text" name="firstname" id="debit-firstname" required="required">
-						<label for="debit-street">Straße</label>
-						<input type="text" name="street" id="debit-street">
-						<label for="debit-number">Hausnummer</label>
-						<input type="text" name="number" id="debit-number">
-						<label for="debit-zip">Postleitzahl</label>
-						<input type="text" name="zip" id="debit-zip">
-						<label for="debit-residence">Ort</label>
-						<input type="text" name="residence" id="debit-residence">
-						<label for="debit-email">E-Mail *</label>
-						<input type="email" name="email" id="debit-email" required="required">
-						<label for="debit-phone">Telefon</label>
-						<input type="text" name="phone" id="debit-phone">
-						<label for="debit-bank">Bank *</label>
-						<input type="text" name="bank" id="debit-bank" required="required">
-						<label for="debit-iban">IBAN *</label>
-						<input type="text" name="iban" id="debit-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
-						<label for="debit-bic">BIC *</label>
-						<input type="text" name="bic" id="debit-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
-						<div>
-							<input type="checkbox" name="newsletter" id="debit-newsletter" value="yes">
-							<label for="debit-newsletter">Newsletter abonnieren</label>
-						</div>
-						<button class="btn btn-default">Jetzt spenden</button>
-					</form>
-				</div>
-
-				<div id="method-credit" class="accordion">
-					<h2>Kreditkarte</h2>
-					<p>Die Abwicklung der Zahlung per Kreditkarte findet im <a href="https://www.mpay24.com/" target="_blank">mPay24</a>-Portal statt.</p>
-					<form action="mp24/checkout.php?action=pay" method="post" autocomplete="off">
-						<div class="grp-amount row">
-							<input type="radio" name="amount" id="credit-amount-15" value="15" required="required">
-							<label for="credit-amount-15">15</label>
-							<input type="radio" name="amount" id="credit-amount-25" value="25" required="required">
-							<label for="credit-amount-25">25</label>
-							<input type="radio" name="amount" id="credit-amount-35" value="35" required="required" checked="checked">
-							<label for="credit-amount-35">35</label>
-							<input type="radio" name="amount" id="credit-amount-50" value="50" required="required">
-							<label for="credit-amount-50">50</label>
-							<input type="radio" name="amount" id="credit-amount-x" value="85" required="required">
-							<label for="credit-amount-x"><input type="number" id="credit-amount-input" class="amount-input" value="85" min="5" step="1"></label>
-						</div>
-						<label for="credit-lastname">Nachname</label>
-						<input type="text" name="lastname" id="credit-lastname">
-						<label for="credit-firstname">Vorname</label>
-						<input type="text" name="firstname" id="credit-firstname">
-						<label for="credit-email">E-Mail</label>
-						<input type="email" name="email" id="credit-email">
-						<button class="btn btn-default">Jetzt spenden</button>
-					</form>
-				</div>
-
-				<div id="method-paypal" class="accordion">
-					<h2>Paypal</h2>
-					<p>Beim Bezahlsystem <a href="https://www.paypal.com/" target="_blank">Paypal</a> bestehen die Möglichkeiten einen Dauerauftrag einzurichten oder einmalig zu spenden. Wir möchten dich darauf hinweisen, dass selbst kleine regelmäßige Spenden unsere Arbeit deutlich erleichtern, da wir längerfristig planen können. Alternierend besteht darum die Option, <a href="javascript:becomeSupporter();">Fördermitglied zu werden</a>.</p>
-					<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
-						<div class="grp-amount row">
-							<input type="radio" name="a3" id="paypal-amount-15" value="15" required="required" checked="checked">
-							<label for="paypal-amount-15">15</label>
-							<input type="radio" name="a3" id="paypal-amount-25" value="25" required="required">
-							<label for="paypal-amount-25">25</label>
-							<input type="radio" name="a3" id="paypal-amount-35" value="35" required="required">
-							<label for="paypal-amount-35">35</label>
-							<input type="radio" name="a3" id="paypal-amount-50" value="50" required="required">
-							<label for="paypal-amount-50">50</label>
-							<input type="radio" name="a3" id="paypal-amount-x" value="85" required="required">
-							<label for="paypal-amount-x"><input type="number" id="paypal-amount-input" class="amount-input" value="85" min="5" step="1"></label>
-						</div>
-						<div class="grp-interval row">
-							<input type="radio" name="p3" id="paypal-interval-once" value="0" required="required">
-							<label for="paypal-interval-once">Einmal</label>
-							<input type="radio" name="p3" id="paypal-interval-month" value="1" required="required" checked="checked">
-							<label for="paypal-interval-month">Monat</label>
-							<input type="radio" name="p3" id="paypal-interval-quarter" value="3" required="required">
-							<label for="paypal-interval-quarter">Quartal</label>
-							<input type="radio" name="p3" id="paypal-interval-semiannual" value="6" required="required">
-							<label for="paypal-interval-semiannual">Halbjahr</label>
-							<input type="radio" name="p3" id="paypal-interval-annual" value="12" required="required">
-							<label for="paypal-interval-annual">Jahr</label>
-						</div>
-						<input type="hidden" name="cmd" value="_xclick-subscriptions">
-						<input type="hidden" name="business" value="info@akvorrat.at">
-						<input type="hidden" name="src" value="1">
-						<input type="hidden" name="t3" value="M">
-						<input type="hidden" name="currency_code" value="EUR">
-					</form>
-					<form id="form-paypal-2" class="hidden" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
-						<input type="hidden" name="business" value="info@akvorrat.at">
-						<input type="hidden" name="amount" value="15.00">
-						<input type="hidden" name="item_name" value="Spende">
-						<input type="hidden" name="cmd" value="_donations">
-						<input type="hidden" name="currency_code" value="EUR">
-					</form>
-					<div class="form">
-						<label for="paypal-lastname">Nachname</label>
-						<input form="form-paypal-1" type="text" name="last_name" id="paypal-lastname">
-						<label for="paypal-firstname">Vorname</label>
-						<input form="form-paypal-1" type="text" name="first_name" id="paypal-firstname">
-						<label for="paypal-email">E-Mail</label>
-						<input form="form-paypal-1" type="email" name="email" id="paypal-email">
-						<button form="form-paypal-1" class="btn btn-default">Jetzt spenden</button>
-					</div>
-				</div>
-
-				<div id="method-eps" class="accordion">
-					<h2>eps-Überweisung</h2>
-					<p>Das österreichische Bezahlsystem <a href="http://www.eps-ueberweisung.at/" target="_blank">eps-Überweisung</a> ist im Vergleich zu den meisten anderen Systemen datenschutzfreundlich, da an den Empfänger keine sensiblen Daten übermittelt werden und keine Registrierung notwendig ist. Wir werden uns bemühen, dieses Verfahren in Kürze zur Verfügung zu stellen.</p>
-				</div>
-
-				<div id="method-bitcoin" class="accordion">
-					<h2>Bitcoin</h2>
+				<div>
+					<h3>Bitcoin</h3>
 					<p>Mittels Bitcoin kannst du dem Arbeitskreis Vorratsdaten Österreich schnell, einfach und anonym eine Spende zukommen lassen. Der Anbieter <a href="https://www.coinbase.com/" target="_blank">Coinbase</a> erlaubt es auch, einen Dauerauftrag einzurichten, um unsere Arbeit vorausschauend einteilen zu können.</p>
 					<p>Unsere Bitcoin Adresse lautet <a href="bitcoin:12s8Qxk1ZCVi7cAJ7hopLz5U2FBKX5RFU7?label=Arbeitskreis%20Vorratsdaten%20Österreich">12s8Qxk1ZCVi7cAJ7hopLz5U2FBKX5RFU7</a>. Einen zugehörigen QR-Code findest du <a href="./img/akv-bitcoin-qr.gif" target="_blank">hier</a>.</p>
 					<a href="https://www.coinbase.com/checkouts/393cc94c928530046b28f4f1b88811c4" target="_blank" class="btn btn-default">Dauerauftrag</a>
 					<a href="https://www.coinbase.com/checkouts/5f35c6788b2b11faecd3d5bc43aaf427" target="_blank" class="btn">Einzelspende</a>
 				</div>
+			</section>
 
-				<div id="method-flattr" class="accordion">
-					<h2>Flattr</h2>
-					<p>Über <a href="https://flattr.com/" target="_blank">Flattr</a> kann mit wenigen Klicks ein regelmäßiger Spendenbetrag geleistet werden.</p>
-					<a href="https://flattr.com/submit/auto?user_id=AKVorrat_at&url=https://spenden.akvorrat.at/&title=Arbeitskreis%20Vorratsdaten%20Österreich&description=Für%20eine%20starke%20Stimme%20der%20Gesellschaft%20im%20digitalen%20Zeitalter" target="_blank" class="btn btn-default">Jetzt spenden</a>
-				</div>
+			<section id="method-supporter" class="method">
+				<h2>Fördermitglied werden</h2>
+				<p>Als Fördermitglied des Arbeitskreis Vorratsdaten Österreich trittst du unserem Verein als außerordentliches Mitglied bei und hilfst uns in Form eines frei gewählten regelmäßigen Mitgliedsbeitrages. Regelmäßige Spenden helfen uns dabei, die Arbeit besser planen zu können.</p>
+				<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung der Fördermitgliedschaft. Bei Feldern, die mit einem Stern markiert sind, handelt es sich um erforderliche Pflichtfelder. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <a href="mailto:spenden@akvorrat.at?subject=Antrag%20Fördermitgliedschaft">sende es uns</a> bitte. Alternativ kannst du das leere Formular auch <a href="./data/antrag-foerdermitgliedschaft.pdf" target="_blank">hier herunterladen</a>.</p>
+				<p>Die Formulardaten werden von uns nur für den internen Zweck der Verwaltung von Mitgliedschaften sowie für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
+				<form autocomplete="off" action="javascript:genpdf('supporter');">
+					<div class="grp-amount row">
+						<input type="radio" name="supporter-amount" id="supporter-amount-15" value="15" required="required" checked="checked">
+						<label for="supporter-amount-15">15</label>
+						<input type="radio" name="supporter-amount" id="supporter-amount-25" value="25" required="required">
+						<label for="supporter-amount-25">25</label>
+						<input type="radio" name="supporter-amount" id="supporter-amount-35" value="35" required="required">
+						<label for="supporter-amount-35">35</label>
+						<input type="radio" name="supporter-amount" id="supporter-amount-50" value="50" required="required">
+						<label for="supporter-amount-50">50</label>
+						<input type="radio" name="supporter-amount" id="supporter-amount-x" value="85" required="required">
+						<label for="supporter-amount-x"><input type="number" id="supporter-amount-input" class="amount-input" value="85" min="5" step="1"></label>
+					</div>
+					<div class="grp-interval row">
+						<input type="radio" name="supporter-interval" id="supporter-interval-month" value="pro Monat" required="required" checked="checked">
+						<label for="supporter-interval-month">Monat</label>
+						<input type="radio" name="supporter-interval" id="supporter-interval-quarter" value="pro Quartal" required="required">
+						<label for="supporter-interval-quarter">Quartal</label>
+						<input type="radio" name="supporter-interval" id="supporter-interval-semiannual" value="pro Halbjahr" required="required">
+						<label for="supporter-interval-semiannual">Halbjahr</label>
+						<input type="radio" name="supporter-interval" id="supporter-interval-annual" value="pro Jahr" required="required">
+						<label for="supporter-interval-annual">Jahr</label>
+					</div>
+					<label for="supporter-lastname">Nachname *</label>
+					<input type="text" name="lastname" id="supporter-lastname" required="required">
+					<label for="supporter-firstname">Vorname *</label>
+					<input type="text" name="firstname" id="supporter-firstname" required="required">
+					<label for="supporter-street">Straße</label>
+					<input type="text" name="street" id="supporter-street">
+					<label for="supporter-number">Hausnummer</label>
+					<input type="text" name="number" id="supporter-number">
+					<label for="supporter-zip">Postleitzahl</label>
+					<input type="text" name="zip" id="supporter-zip">
+					<label for="supporter-residence">Ort</label>
+					<input type="text" name="residence" id="supporter-residence">
+					<label for="supporter-email">E-Mail *</label>
+					<input type="email" name="email" id="supporter-email" required="required">
+					<label for="supporter-phone">Telefon</label>
+					<input type="text" name="phone" id="supporter-phone">
+					<label for="supporter-bank">Bank *</label>
+					<input type="text" name="bank" id="supporter-bank" required="required">
+					<label for="supporter-iban">IBAN *</label>
+					<input type="text" name="iban" id="supporter-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
+					<label for="supporter-bic">BIC *</label>
+					<input type="text" name="bic" id="supporter-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
+					<div>
+						<input type="checkbox" name="newsletter" id="supporter-newsletter">
+						<label for="supporter-newsletter">Newsletter abonnieren</label>
+					</div>
+					<button class="btn btn-default">Fördermitglied werden</button>
+				</form>
 			</section>
 
 			<section id="sponsoring">
@@ -333,9 +306,9 @@
 			</section>
 
 			<!-- supporters carousel -->
-			<section>
-				<h2>Unsere bisherigen Unterstützer</h2>
-				<div id="supporters" class="owl-carousel owl-theme">
+			<section id="supporters">
+				<h2>Unsere Unterstützer</h2>
+				<div class="owl-carousel owl-theme">
 					<div class="box noselect">
 						<a href="https://www.netidee.at/">
 							<h5>NetIdee</h5>

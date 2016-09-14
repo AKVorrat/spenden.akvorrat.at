@@ -344,31 +344,12 @@ section:nth-child(odd) + section::before {
 
 
 
-/* ACCORDION */
-
-.accordion {
-	overflow: hidden;
-	opacity: 1;
-	-webkit-transition: height 1s ease, opacity 1s ease;
-	transition: height 1s ease, opacity 1s ease;
-}
-
-.accordion:not(.active) {
-	height: 0px;
-	opacity: 0;
-}
-
-
-
-
-
 /* DONATION METHOD */
 
-#methods input {
-	display: none;
+#methods {
+	margin-bottom: 2em;
 }
 
-#methods label,
 #methods a {
 	position: relative;
 	display: -webkit-flex;
@@ -391,39 +372,27 @@ section:nth-child(odd) + section::before {
 	transition: border .3s ease;
 }
 
-#methods label:hover,
 #methods a:hover {
 	border: 6px solid rgba(6, 133, 201, 1);
 }
 
-#methods input[type="radio"]:checked + label {
-	color: #fff;
-	background-color: rgba(6, 133, 201, 1);
-	box-shadow: none;
-	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
-}
-
-#methods input[type="radio"]:checked + label:hover {
-	background-color: rgba(6, 133, 201, 0.7);
-	border: none;
-}
-
-#methods label > *,
 #methods a > * {
 	max-height: 100%;
 	max-width: 100%;
 	transition: transform .3s ease;
 }
 
-#methods label > img,
-#methods a > img {
-	width: 75%;
+#methods a i {
+	color: #0685c9;
 }
 
-#methods label:hover > *,
 #methods a:hover > * {
 	-webkit-transform: scale(1.2,1.2);
 	transform: scale(1.2,1.2);
+}
+
+#payment > p {
+	font-size: 80%;
 }
 
 
@@ -681,7 +650,7 @@ input[type="radio"] + label:hover > .amount-input {
 
 /* SUPPORTERS */
 
-#supporters {
+#supporters > div {
 	margin-top: 2rem;
 	cursor: move;
 }
