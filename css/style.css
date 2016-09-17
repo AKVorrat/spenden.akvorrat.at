@@ -177,6 +177,48 @@ header > h2 {
 	filter: Alpha(opacity=60);
 }
 
+aside.share {
+	display: none;
+	z-index: 10;
+	position: fixed;
+	bottom: 25%;
+	left: 1rem;
+	font-size: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+	aside.share {
+		display: -webkit-flex;
+		display: flex;
+	}
+}
+
+aside.share a,
+aside.share a:hover {
+	border-width: 0;
+}
+
+aside.share a div {
+	width: 3rem;
+	height: 3rem;
+	margin-top: 0.5rem;
+	background-color: #fff;
+	border-radius: 50%;
+}
+
+aside.share a:first-of-type div {
+	margin-top: 0;
+}
+
+aside.share div:hover i {
+	color: #FF438E;
+}
+
+aside.share i {
+	color: #0685c9;
+	transition: color 0.2s ease;
+}
+
 footer {
 	padding: 0.5rem;
 	font-size: 85%;
@@ -313,6 +355,17 @@ section:nth-child(odd) + section::before {
 	flex-direction: column;
 }
 
+div.center {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+
 .items2 > div,
 .items3 > div,
 .items4 > div {
@@ -340,6 +393,10 @@ section:nth-child(odd) + section::before {
 	}
 }
 
+.margin-bottom {
+	margin-bottom: 0.5em;
+}
+
 
 
 
@@ -347,10 +404,11 @@ section:nth-child(odd) + section::before {
 /* DONATION METHOD */
 
 #methods {
-	margin-bottom: 2em;
+	margin: 0 0 1.5em;
 }
 
-#methods a {
+#methods a,
+#methods button {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
@@ -372,27 +430,32 @@ section:nth-child(odd) + section::before {
 	transition: border .3s ease;
 }
 
-#methods a:hover {
+#methods a:hover,
+#methods button:hover {
 	border: 6px solid rgba(6, 133, 201, 1);
 }
 
-#methods a > * {
+#methods .disabled {
+	display: none;
+}
+
+#methods a > *,
+#methods button > * {
 	max-height: 100%;
 	max-width: 100%;
 	transition: transform .3s ease;
 }
 
-#methods a i {
-	color: #0685c9;
-}
-
-#methods a:hover > * {
+#methods a:hover > *,
+#methods button:hover > * {
 	-webkit-transform: scale(1.2,1.2);
 	transform: scale(1.2,1.2);
 }
 
-#payment > p {
-	font-size: 80%;
+#methods a i,
+#methods button i {
+	color: #0685c9;
+	font-size: 500%;
 }
 
 
@@ -405,32 +468,37 @@ label[for] {
 	cursor: pointer;
 }
 
-.method form,
-.method .form {
+form,
+.form {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-direction: column;
 	flex-direction: column;
 	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
-	width: 350px;
 	max-width: 100%;
 }
 
-.method form {
+.method form,
+.method .form {
+	width: 100%;
+	max-width: 350px;
+}
+
+form {
 	margin: 3rem auto 0;
 }
 
-.method .form {
+.form {
 	margin: 0 auto;
 }
 
-.method input {
+input {
 	margin-bottom: 8px;
 }
 
-.method input[type="text"],
-.method input[type="email"] {
+input[type="text"],
+input[type="email"] {
 	padding: .25rem;
 	background-color: #fff;
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) inset, 0 0 4px 0 rgba(0, 0, 0, 0.1) inset;
@@ -438,13 +506,13 @@ label[for] {
 	transition: background-color .3s ease, box-shadow .3s ease;
 }
 
-.method input[type="text"]:focus,
-.method input[type="email"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus {
 	border-color: rgba(6, 133, 201, 1);
 	box-shadow: 0 0 4px 0 rgba(6, 133, 201, .1) inset, 0 0 4px 0 rgba(6, 133, 201, .1) inset;
 }
 
-.method label {
+label {
 	font-size: 80%;
 	text-transform: uppercase;
 }
@@ -600,9 +668,13 @@ input[type="radio"] + label:hover > .amount-input {
 	user-select: none !important;
 }
 
-.center,
-.center > p {
+p.center,
+div.center > p {
 	text-align: center;
+}
+
+.small {
+	font-size: 80%;
 }
 
 .border {

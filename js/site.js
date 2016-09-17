@@ -8,6 +8,7 @@ var columnSpace = 20;
 var columnWidth = innerWidth / 2 - columnSpace / 2;
 var fieldOffset = 4;
 var fontSize;
+var intervals = {0:"einmalig", 1:"pro Monat", 3:"pro Quartal", 6:"pro Halbjahr", 12:"pro Jahr"}
 var logo = new Image();
 logo.src = "./img/akv-logo.jpg";
 
@@ -15,19 +16,17 @@ logo.src = "./img/akv-logo.jpg";
 // Scroll smoothly
 
 jQuery(document).ready(function () {
-	$(function() {
-		$("a[href*='#']:not([href='#'])").click(function() {
-			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-				var target = $(this.hash);
-				target = target.length ? target : $("[name=" + this.hash.slice(1) +"]");
-				if (target.length) {
-					$("html,body").animate({
-						scrollTop: target.offset().top
-					}, 800);
-					return false;
-				}
+	$("a[href*='#']:not([href='#'])").click(function() {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')  || location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			if (target.length) {
+				$('html,body').animate({
+					scrollTop: target.offset().top
+				}, 800);
+				return false;
 			}
-		});
+		}
 	});
 });
 
@@ -48,7 +47,7 @@ jQuery(document).ready(function () {
 	});
 });
 
-// Setup variable input fields
+// variable input field
 
 jQuery(document).ready(function () {
 	$("*[id*='amount-input']").change(function () {
@@ -71,20 +70,92 @@ function getMethodElement(object, string) {
 	return $("#" + method + string);
 }
 
-// Enable Paypal payment switcher
+function becomeSupporter() {
+	$("#methods-amount-25").click();
+	$("#methods-interval-month").click();
+	$("html,body").animate({
+		scrollTop: $("#payment").offset().top
+	}, 800);
+}
 
 jQuery(document).ready(function () {
-	$("#form-paypal-1 input[name='p3']").change(function () {
-		var i = this.value == "0" ? "2" : "1";
-		$("#method-paypal *[form]").attr("form", "form-paypal-" + i);
+	$("#methods input[name='interval']").change(function () {
+		setPaymentInterval(this.value);
 	});
-	$("#form-paypal-1 input[name='a3']").change(function () {
-		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
+	$("#methods input[name='amount']").change(function () {
+		setPaymentAmount(this.value);
 	});
-	$("#form-paypal-1 input[name='a3'] + label > .amount-input").on("keyup mouseup input", function () {
-		$("#form-paypal-2 input[name='amount']").attr("value", this.value);
+	$("#methods input[name='amount'] + label > .amount-input").on("keyup mouseup input", function () {
+		setPaymentAmount(this.value);
 	});
 });
+
+// user selects different amount
+
+function setPaymentAmount(amount) {
+	$("#debit-amount").attr("value", amount);
+	$("#paypal-1-amount").attr("value", amount);
+	$("#paypal-2-amount").attr("value", amount);
+	$("#credit-amount").attr("value", amount);
+	
+	if(amount < 75)
+		$("#button-debit").addClass("disabled");
+	else if($("#methods input[name='interval']:checked").val() == 0)
+		$("#button-debit").removeClass("disabled");
+}
+
+// user selects different interval
+
+function setPaymentInterval(interval) {
+	$("#debit-interval").attr("value", interval);
+	$("#paypal-1-interval").attr("value", interval);
+	
+	if(interval > 0)
+		selectedRepeat();
+	else
+		selectedOnce();
+}
+
+// user selects interval
+
+function selectedRepeat() {
+	// toggle Fördermitglied / Lastschrift
+	$(".lastschrift").addClass("hidden");
+	$(".foemi").removeClass("hidden");
+	
+	// toggle paypal form
+	$("#button-paypal").attr("form", "form-paypal-1");
+	
+	// enable supporter
+	$("#button-supporter").removeClass("disabled");
+	
+	// disable debit
+	$("#button-debit").addClass("disabled");
+	
+	// disable credit
+	$("#button-credit").addClass("disabled");
+}
+
+// user selects single payment
+
+function selectedOnce() {
+	// toggle Fördermitglied / Lastschrift
+	$(".foemi").addClass("hidden");
+	$(".lastschrift").removeClass("hidden");
+	
+	// toggle paypal form
+	$("#button-paypal").attr("form", "form-paypal-2");
+	
+	// disable supporter
+	$("#button-supporter").addClass("disabled");
+	
+	// enable debit
+	if($("#methods input[name='amount']:checked").val() >= 75)
+		$("#button-debit").removeClass("disabled");
+	
+	// enable credit
+	$("#button-credit").removeClass("disabled");
+}
 
 // Format IBAN input field
 
@@ -99,21 +170,21 @@ jQuery(document).ready(function () {
 
 // Generate SEPA PDF
 
-function genpdf(mode) {
+function genpdf() {
 	var user = {
-		lastname: getInput("lastname", mode),
-		firstname: getInput("firstname", mode),
-		street: getInput("street", mode),
-		postcode: getInput("zip", mode),
-		residence: getInput("residence", mode),
-		email: getInput("email", mode),
-		newsletter: $("input[id='" + mode + "-" + "newsletter']").prop("checked"),
-		phone: getInput("phone", mode),
-		bank: getInput("bank", mode),
-		iban: getInput("iban", mode),
-		bic: getInput("bic", mode),
-		interval: $("input[name='" + mode + "-" + "interval']:checked").val(),
-		amount: $("input[name='" + mode + "-" + "amount']:checked").val()
+		lastname: getInput("#debit-lastname"),
+		firstname: getInput("#debit-firstname"),
+		street: getInput("#debit-street"),
+		postcode: getInput("#debit-zip"),
+		residence: getInput("#debit-residence"),
+		email: getInput("#debit-email"),
+		newsletter: $("#debit-newsletter").prop("checked"),
+		phone: getInput("#debit-phone"),
+		bank: getInput("#debit-bank"),
+		iban: getInput("#debit-iban"),
+		bic: getInput("#debit-bic"),
+		interval: $("#methods input[name='interval']:checked").val(),
+		amount: $("#methods input[name='amount']:checked").val()
 	}
 	
 	var dateObj = new Date();
@@ -136,10 +207,10 @@ function genpdf(mode) {
 	
 	setFontSize(doc, 14);
 	doc.setFontType("bold");
-	var title = mode === "supporter" ? "Antrag auf Fördermitgliedschaft" : "Lastschriftantrag";
+	var title = user.interval > 0 ? "Antrag auf Fördermitgliedschaft" : "Spenden per Bankeinzug";
 	text(doc, title, 12);
 	
-	if (mode === "supporter") {
+	if (user.interval > 0) {
 		setFontSize(doc, 10);
 		doc.setFontType("bold");
 		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Arbeitskreis Vorratsdaten Österreich. Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
@@ -155,7 +226,7 @@ function genpdf(mode) {
 	setFontSize(doc, 10);
 	doc.setFontType("bold");
 	var addText = user.newsletter ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
-	block(doc, "Ich unterstütze den Arbeitskreis Vorratsdaten Österreich " + user.interval + " mit " + user.amount + " Euro." + addText, 18);
+	block(doc, "Ich unterstütze den Arbeitskreis Vorratsdaten Österreich " + intervals[user.interval] + " mit " + user.amount + " Euro." + addText, 18);
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
@@ -173,14 +244,18 @@ function genpdf(mode) {
 	doc.setFontType("normal");
 	fieldColumn(doc, user.bank, "Kreditinstitut", user.bic, "BIC", 10);
 	field(doc, user.iban, "IBAN", 10);
-	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift Lastschriftmandat", 16, true);
+	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
 	
-	doc.save("antrag-auf-foerdermitgliedschaft.pdf");
+	if (user.interval > 0)
+		doc.save("akvorrat-antrag-auf-foerdermitgliedschaft.pdf");
+	else
+		doc.save("akvorrat-spenden-per-bankeinzug.pdf");
+	
 	offset = 15;
 }
 
-function getInput(id, mode) {
-	var value = $("#" + mode + "-" + id).val();
+function getInput(id) {
+	var value = $(id).val();
 	if(!value || value.trim().length === 0) return "-";
 	else return value;
 }
