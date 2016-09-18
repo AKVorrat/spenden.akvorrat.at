@@ -126,32 +126,62 @@
 				<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung <span class="foemi hidden">der Fördermitgliedschaft</span><span class="lastschrift">des Lastschriftauftrags</span>. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <span class="foemi hidden"><a href="mailto:spenden@akvorrat.at?subject=Antrag%20auf%20Fördermitgliedschaft">sende es uns</a></span><span class="lastschrift"><a href="mailto:spenden@akvorrat.at?subject=Spende%20per%20Bankeinzug">sende es uns</a></span> bitte. Optional steht ein leeres Formular <span class="lastschrift"><a href="./data/akvorrat-spenden-per-bankeinzug.pdf" target="_blank">hier bereit</a></span><span class="foemi hidden"><a href="./data/akvorrat-antrag-auf-foerdermitgliedschaft.pdf" target="_blank">hier bereit</a></span>.</p>
 				<p>Die Formulardaten werden von uns nur <span class="foemi hidden">für den internen Zweck der Verwaltung von Mitgliedschaften sowie </span>für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://akvorrat.at/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
 				<form autocomplete="off" action="javascript:genpdf();">
-					<label for="debit-lastname">Nachname *</label>
-					<input type="text" name="lastname" id="debit-lastname" required="required">
-					<label for="debit-firstname">Vorname *</label>
-					<input type="text" name="firstname" id="debit-firstname" required="required">
-					<label for="debit-street">Straße</label>
-					<input type="text" name="street" id="debit-street">
-					<label for="debit-number">Hausnummer</label>
-					<input type="text" name="number" id="debit-number">
-					<label for="debit-zip">Postleitzahl</label>
-					<input type="text" name="zip" id="debit-zip">
-					<label for="debit-residence">Ort</label>
-					<input type="text" name="residence" id="debit-residence">
-					<label for="debit-email">E-Mail *</label>
-					<input type="email" name="email" id="debit-email" required="required">
-					<div class="margin-bottom">
-						<input type="checkbox" name="newsletter" id="debit-newsletter" value="yes">
-						<label for="debit-newsletter">Newsletter abonnieren</label>
+					<div class="row row-space align-left">
+						<div class="column">
+							<label for="debit-lastname">Nachname *</label>
+							<input type="text" name="lastname" id="debit-lastname" required="required">
+						</div>
+						<div class="column">
+							<label for="debit-firstname">Vorname *</label>
+							<input type="text" name="firstname" id="debit-firstname" required="required">
+						</div>
+						<div class="row row-space">
+							<div class="column weight75">
+								<label for="debit-street">Straße</label>
+								<input type="text" name="street" id="debit-street">
+							</div>
+							<div class="column weight25">
+								<label for="debit-number">Hausnr.</label>
+								<input type="text" name="number" id="debit-number">
+							</div>
+						</div>
+						<div class="row row-space">
+							<div class="column weight25">
+								<label for="debit-zip">PLZ</label>
+								<input type="text" name="zip" id="debit-zip">
+							</div>
+							<div class="column weight75">
+								<label for="debit-residence">Ort</label>
+								<input type="text" name="residence" id="debit-residence">
+							</div>
+						</div>
+						<div class="column">
+							<label for="debit-email">E-Mail *</label>
+							<input type="email" name="email" id="debit-email" required="required">
+						</div>
+						<div class="column">
+							<label for="debit-newsletter" class="space"><input type="checkbox" name="newsletter" id="debit-newsletter" value="yes">Newsletter abonnieren</label>
+						</div>
+						<div class="column">
+							<label for="debit-phone">Telefon</label>
+							<input type="text" name="phone" id="debit-phone">
+						</div>
+						<div class="column">
+							<!-- PLACEHOLDER -->
+						</div>
+						<div class="column">
+							<label for="debit-bank">Bank *</label>
+							<input type="text" name="bank" id="debit-bank" required="required">
+						</div>
+						<div class="column">
+							<label for="debit-iban">IBAN *</label>
+							<input type="text" name="iban" id="debit-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
+						</div>
+						<div class="column">
+							<label for="debit-bic">BIC *</label>
+							<input type="text" name="bic" id="debit-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
+						</div>
 					</div>
-					<label for="debit-phone">Telefon</label>
-					<input type="text" name="phone" id="debit-phone">
-					<label for="debit-bank">Bank *</label>
-					<input type="text" name="bank" id="debit-bank" required="required">
-					<label for="debit-iban">IBAN *</label>
-					<input type="text" name="iban" id="debit-iban" required="required" pattern="AT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|BG\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{2}|CH\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|CY\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|CZ\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|DE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|DK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|EE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|ES\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|FO\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GB\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|GI\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|GL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|HR\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|HU\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|IE\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IS\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|IT\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|LI\d{2}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|LT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|LU\d{2}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|LV\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}|MC\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}[A-Za-z0-9]{2}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{1}\d{2}|MT\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{1}[A-Za-z0-9]{3}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}|NL\d{2}\s{1}[A-Z]{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{2}|PL\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|PT\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{1}|RO\d{2}\s{1}[A-Z]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}|SE\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SI\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{3}|SK\d{2}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}|SM\d{2}\s{1}[A-Z]{1}\d{3}\s{1}\d{4}\s{1}\d{3}[A-Za-z0-9]{1}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{4}\s{1}[A-Za-z0-9]{3}">
-					<label for="debit-bic">BIC *</label>
-					<input type="text" name="bic" id="debit-bic" required="required" pattern="[A-Z]{6}[A-Z0-9]{2,5}">
 					<p class="small">* Pflichtfeld</p>
 					<button class="btn btn-default"><span class="foemi hidden">Fördermitglied werden</span><span class="lastschrift">Jetzt spenden</span></button>
 				</form>
