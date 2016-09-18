@@ -134,6 +134,14 @@ a:focus:not(.btn) {
 	border-bottom: 1px solid rgba(255, 67, 142, 1);
 }
 
+hr {
+	height: 2px;
+	width: 70px;
+	margin: 1.5em auto;
+	background-color: #0685c9;
+	border: none;
+}
+
 
 
 
@@ -226,8 +234,7 @@ footer {
 	border-top: 3px solid #fff;
 }
 
-footer a,
-#supporters p > a {
+footer a {
 	color: #ccc;
 }
 
@@ -359,7 +366,7 @@ abbr {
 	flex-direction: column;
 }
 
-.row-space > div:first-of-type {
+.row-space > *:first-of-type {
 	margin-left: 0;
 }
 
@@ -374,45 +381,45 @@ div.center {
 	align-items: center;
 }
 
-.row > div {
+.row > * {
 	width: 100%;
 	padding: 1rem;
 }
 
 @media screen and (min-width: 768px) {
-	.row > div {
+	.row > * {
 		width: 50%;
 	}
-	.row-space > div {
+	.row-space > * {
 		width: calc(50% - 0.5em);
 	}
-	.row-space > div:nth-child(even) {
+	.row-space > *:nth-child(even) {
 		margin-left: 1em;
 	}
 }
 
 @media screen and (min-width: 992px) {
-	.items3 > div {
+	.items3 > * {
 		width: 33.33%;
 	}
-	.items3.row-space > div {
+	.items3.row-space > * {
 		width: calc(33.33% - 0.67em);
 		margin-left: 1em;
 	}
-	.items3.row-space > div:nth-child(3n-2) {
+	.items3.row-space > *:nth-child(3n-2) {
 		margin-left: 0;
 	}
 }
 
 @media screen and (min-width: 1200px) {
-	.items4 > div {
+	.items4 > * {
 		width: 25%;
 	}
-	.items4.row-space > div {
+	.items4.row-space > * {
 		width: calc(25% - 0.75em);
 		margin-left: 1em;
 	}
-	.items4.row-space > div:nth-child(4n-3) {
+	.items4.row-space > *:nth-child(4n-3) {
 		margin-left: 0;
 	}
 }
@@ -623,6 +630,7 @@ label {
 .grp-amount > label,
 .grp-interval > label {
 	display: block;
+	width: auto;
 	margin: 6px;
 }
 
@@ -721,6 +729,16 @@ div.center > p {
 	text-align: center;
 }
 
+#packages > a {
+	display: block;
+	color: inherit;
+	border: none;
+}
+
+#packages > a:hover {
+	border: none;
+}
+
 #packages .column {
 	margin-top: 1.5em;
 	padding-top: 2em;
@@ -740,6 +758,10 @@ div.center > p {
 #supporters .amount {
 	font-weight: bold;
 	font-size: 1.4rem;
+}
+
+#packages .amount {
+	margin-top: 1em;
 }
 
 #packages .amount::after,
@@ -776,28 +798,33 @@ div.center > p {
 }
 
 #supporters .box {
+	display: block;
 	position: relative;
 	min-width: 200px;
 	max-width: 240px;
-	padding: 0.5rem;
-	color: #fff;
+	padding: 1rem 0.5rem;
 	text-align: center;
-	background-color: #0685c9;
+	color: inherit;
+	background-color: #EEE;
+	border: none;
 	border-radius: 2px;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+#supporters .box:hover {
+	border: none;
 }
 
 @media screen and (min-width: 768px) {
 	#supporters .box {
 		max-width: 300px;
-		padding: 1rem;
+		padding: 1.5rem 1rem;
 	}
 }
 
 #supporters h5 {
 	width: 100%;
 	padding: .2rem .5rem .5rem;
-	color: #fff;
+	color: inherit;
 }
 
 #supporters img {
