@@ -817,12 +817,16 @@ div.center > p {
 }
 
 #packages ul {
-	margin: 0.5rem 0 auto;
+	max-width: 75%;
+	margin: auto;
+	text-align: left;
 }
 
 #packages li {
+	display: inline-block;
 	margin: 0.4rem;
 	list-style: none;
+	text-indent: -15px;
 }
 
 #packages li::before {
