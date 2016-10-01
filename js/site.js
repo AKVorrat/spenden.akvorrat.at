@@ -102,6 +102,14 @@ function setPaymentAmount(amount) {
 		$("#button-debit").addClass("disabled");
 	else if($("#methods input[name='interval']:checked").val() == 0)
 		$("#button-debit").removeClass("disabled");
+	
+	if($("#methods input[name='interval']:checked").val() != 0 || amount >= 75) {
+		$(".abovelimit").removeClass("hidden");
+		$(".belowlimit").addClass("hidden");
+	} else {
+		$(".abovelimit").addClass("hidden");
+		$(".belowlimit").removeClass("hidden");
+	}
 }
 
 // user selects different interval
@@ -123,6 +131,9 @@ function selectedRepeat() {
 	$(".lastschrift").addClass("hidden");
 	$(".foemi").removeClass("hidden");
 	
+	$(".abovelimit").removeClass("hidden");
+	$(".belowlimit").addClass("hidden");
+	
 	// toggle paypal form
 	$("#button-paypal").attr("form", "form-paypal-1");
 	
@@ -142,6 +153,14 @@ function selectedOnce() {
 	// toggle Fördermitglied / Lastschrift
 	$(".foemi").addClass("hidden");
 	$(".lastschrift").removeClass("hidden");
+	
+	if($("#methods input[name='amount']:checked").val() >= 75) {
+		$(".abovelimit").removeClass("hidden");
+		$(".belowlimit").addClass("hidden");
+	} else {
+		$(".abovelimit").addClass("hidden");
+		$(".belowlimit").removeClass("hidden");
+	}
 	
 	// toggle paypal form
 	$("#button-paypal").attr("form", "form-paypal-2");
