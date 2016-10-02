@@ -51,8 +51,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -125,6 +123,7 @@ a {
 	color: #FF438E;
 	text-decoration: none;
 	border-bottom: 1px solid rgba(255, 67, 142, 0);
+	-webkit-transition: color 0.3s ease, border-bottom 0.3s ease;
 	transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
@@ -197,6 +196,8 @@ aside.share {
 @media screen and (min-width: 992px) {
 	aside.share {
 		display: -webkit-flex;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 }
@@ -224,6 +225,7 @@ aside.share a:hover i {
 
 aside.share i {
 	color: #0685c9;
+	-webkit-transition: color 0.2s ease;
 	transition: color 0.2s ease;
 }
 
@@ -348,30 +350,51 @@ abbr {
 
 .row {
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
 	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	-webkit-align-items: stretch;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
 	align-items: stretch;
 	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
 
 .column {
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	-webkit-align-items: stretch;
+	-webkit-box-align: stretch;
+	-ms-flex-align: stretch;
 	align-items: stretch;
 }
 
 .align-left {
 	-webkit-justify-content: flex-start;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
 
@@ -401,12 +424,21 @@ abbr {
 
 div.center {
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
 	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
 
@@ -471,10 +503,16 @@ form .row > * {
 #methods button {
 	position: relative;
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	cursor: pointer;
 	height: 175px;
@@ -488,6 +526,7 @@ form .row > * {
 	border: 6px solid rgba(6, 133, 201, 0);
 	border-radius: 2px;
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
+	-webkit-transition: border .3s ease;
 	transition: border .3s ease;
 }
 
@@ -504,7 +543,10 @@ form .row > * {
 #methods button > * {
 	max-height: 100%;
 	max-width: 100%;
+	-webkit-transition: -webkit-transform .3s ease;
+	transition: -webkit-transform .3s ease;
 	transition: transform .3s ease;
+	transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
 #methods a:hover > *,
@@ -532,10 +574,16 @@ label[for] {
 form,
 .form {
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	max-width: 100%;
 }
@@ -565,6 +613,7 @@ input[type="email"] {
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) inset, 0 0 4px 0 rgba(0, 0, 0, 0.1) inset;
 	border: 1px solid rgba(31, 31, 31, 0.4);
 	border-radius: 2px;
+	-webkit-transition: background-color .3s ease, box-shadow .3s ease;
 	transition: background-color .3s ease, box-shadow .3s ease;
 }
 
@@ -615,6 +664,7 @@ label.space {
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, .1) inset, 0 0 4px 0 rgba(0, 0, 0, .1) inset;
 	border: none;
 	border-radius: 2px;
+	-webkit-transition: color .3s ease;
 	transition: color .3s ease;
 }
 
@@ -639,6 +689,7 @@ label.space {
 	height: 0%;
 	width: 100%;
 	background-color: rgba(6, 133, 201, 1);
+	-webkit-transition: height 0.3s ease 0s;
 	transition: height 0.3s ease 0s;
 }
 
@@ -656,6 +707,8 @@ label.space {
 
 .grp-transfer-outer {
 	display: -webkit-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -688,6 +741,7 @@ label.space {
 	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: 2px;
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) inset, 0 0 4px 0 rgba(0, 0, 0, 0.1) inset;
+	-webkit-transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 	transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 }
 
@@ -703,11 +757,12 @@ label.space {
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0) inset, 0 0 4px 0 rgba(0, 0, 0, 0) inset;
 }
 
-.grp-interval >  label {
+.grp-interval > label {
 	padding: 2px;
 	cursor: pointer;
 	text-transform: uppercase;
 	border-bottom: 2px solid rgba(6, 133, 201, 0);
+	-webkit-transition: border-bottom .1s ease;
 	transition: border-bottom .1s ease;
 }
 
@@ -723,6 +778,7 @@ label.space {
 	color: rgba(31, 31, 31, 0.7);
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
+	-webkit-transition: color .3s ease;
 	transition: color .3s ease;
 }
 
@@ -792,11 +848,13 @@ div.center > p {
 	background-color: #fff;
 	border-bottom: 2px solid rgba(255, 67, 142, 0);
 	border-radius: 2px;
+	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
 
 #packages .column:hover {
 	border-bottom: 2px solid rgba(255, 67, 142, 1);
+	-webkit-transform: translateY(-0.8em);
 	transform: translateY(-0.8em);
 }
 
