@@ -133,6 +133,10 @@ a:focus:not(.btn) {
 	border-bottom: 1px solid rgba(255, 67, 142, 1);
 }
 
+a.dark {
+	color: inherit;
+}
+
 hr {
 	height: 2px;
 	width: 70px;
@@ -442,6 +446,12 @@ div.center {
 	align-items: center;
 }
 
+.shrunk {
+	width: 100%;
+	max-width: 700px;
+	margin: auto;
+}
+
 .row > * {
 	width: 100%;
 	padding: 1rem;
@@ -586,12 +596,6 @@ form,
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 	max-width: 100%;
-}
-
-.method form,
-.method .form {
-	width: 100%;
-	max-width: 700px;
 }
 
 form {
@@ -845,7 +849,7 @@ div.center > p {
 	margin-top: 1.5em;
 	padding-top: 2em;
 	padding-bottom: 1.5em;
-	background-color: #fff;
+	background-color: #FFF;
 	border-bottom: 2px solid rgba(255, 67, 142, 0);
 	border-radius: 2px;
 	-webkit-transition: all 0.3s ease;
@@ -908,8 +912,9 @@ div.center > p {
 #supporters .box {
 	display: block;
 	position: relative;
-	min-width: 200px;
-	max-width: 240px;
+	width: 450px;
+	max-width: calc(100% - 32px);
+	margin: 0 16px 0;
 	padding: 1rem 0.5rem;
 	text-align: center;
 	color: inherit;
@@ -951,4 +956,24 @@ div.center > p {
 	margin: 1rem 0;
 	padding: 0 1rem;
 	font-size: 85%;
+}
+
+
+
+
+
+/* slick specific */
+
+.slick-slider {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+}
+
+.slick-list.draggable {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }

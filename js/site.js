@@ -30,22 +30,40 @@ jQuery(document).ready(function () {
 	});
 });
 
-// Enable owlCarousel
+// Enable carousels
 
 jQuery(document).ready(function () {
-	$(".owl-carousel").owlCarousel({
-		loop: true,
-		center: true,
-		nav: false,
-		autoWidth: true,
-		dots: false,
-		margin: 32,
+	$("#payment").slick({
+		arrows: false,
+		adaptiveHeight: true,
+		accessibility: false,
+		draggable: false,
+		infinite: false
+	});
+	
+	$("#supporters-box").slick({
+		variableWidth: true,
+		centerMode: true,
+		arrows: false,
 		autoplay: true,
-		autoplayTimeout: 3000,
-		autoplayHoverPause: true,
-		responsive: false
+		autoplaySpeed: 3000
 	});
 });
+
+// payment carousel triggers
+
+function swipe(target) {
+	$("#payment-methods > *").addClass("hidden");
+	$("#" + target).removeClass("hidden");
+	$("#payment").slick("slickGoTo", 1);
+	$("html,body").animate({
+		scrollTop: $("#payment").offset().top
+	}, 800);
+}
+
+function showMenu() {
+	$("#payment").slick("slickGoTo", 0);
+}
 
 // variable input field
 
@@ -73,6 +91,7 @@ function getMethodElement(object, string) {
 function becomeSupporter() {
 	$("#methods-amount-25").click();
 	$("#methods-interval-month").click();
+	$("#payment").slick("slickGoTo", 0);
 	$("html,body").animate({
 		scrollTop: $("#payment").offset().top
 	}, 800);
