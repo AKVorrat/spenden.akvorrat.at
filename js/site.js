@@ -38,6 +38,8 @@ jQuery(document).ready(function () {
 		adaptiveHeight: true,
 		accessibility: false,
 		draggable: false,
+		swipe: false,
+		touchMove: false,
 		infinite: false
 	});
 	

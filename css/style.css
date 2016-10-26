@@ -735,6 +735,7 @@ label.space {
 	display: block;
 	width: auto;
 	margin: 6px;
+	border-radius: 2px;
 }
 
 .grp-amount > label {
@@ -743,7 +744,6 @@ label.space {
 	font-size: 1rem !important;
 	font-weight: bold;
 	background-color: rgba(0, 0, 0, 0.1);
-	border-radius: 2px;
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1) inset, 0 0 4px 0 rgba(0, 0, 0, 0.1) inset;
 	-webkit-transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
 	transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
@@ -766,13 +766,16 @@ label.space {
 	cursor: pointer;
 	text-transform: uppercase;
 	border-bottom: 2px solid rgba(6, 133, 201, 0);
-	-webkit-transition: border-bottom .1s ease;
-	transition: border-bottom .1s ease;
+	-webkit-transition: all .3s ease;
+	transition: all .3s ease;
 }
 
 .grp-interval > input[type="radio"]:checked + label,
 .grp-interval > input[type="radio"] + label:hover {
-	border-bottom: 2px solid rgba(6, 133, 201, 1);
+	padding: 2px 4px;
+	color: rgba(255, 255, 255, 1);
+	font-weight: bold;
+	background-color: rgba(6, 133, 201, 1);
 }
 
 .amount-input {
@@ -912,8 +915,8 @@ div.center > p {
 #supporters .box {
 	display: block;
 	position: relative;
-	width: 450px;
-	max-width: calc(100% - 32px);
+	width: 350px;
+	max-width: 80vw;
 	margin: 0 16px 0;
 	padding: 1rem 0.5rem;
 	text-align: center;
@@ -925,13 +928,6 @@ div.center > p {
 
 #supporters .box:hover {
 	border: none;
-}
-
-@media screen and (min-width: 768px) {
-	#supporters .box {
-		max-width: 300px;
-		padding: 1.5rem 1rem;
-	}
 }
 
 #supporters h5 {
