@@ -828,6 +828,34 @@ div.center > p {
 	border-radius: 2px;
 }
 
+#donationbar {
+	position: relative;
+	height: 50px;
+	margin: 2em auto 1em;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	background-color: #0685c9;
+	border-radius: 2px;
+	overflow: hidden;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+#donationbar div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0px;
+	background-color: #035882;
+	border-radius: 0 8px 8px 0;
+	transition: width 2s ease;
+}
+
+#donationbar span {
+	z-index: 10;
+}
+
 
 
 

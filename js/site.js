@@ -30,6 +30,15 @@ jQuery(document).ready(function () {
 	});
 });
 
+// Load donation value
+
+jQuery(document).ready(function () {
+	$.getJSON("data/donations.json", function(data) {
+		$("#donationbar span").html(data.current.toLocaleString() + "€ von " + data.limit.toLocaleString() + "€ erreicht");
+		$("#donationbar div").css("width", (data.current / data.limit * 100) + "%");
+	});
+});
+
 // Enable carousels
 
 jQuery(document).ready(function () {
