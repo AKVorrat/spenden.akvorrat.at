@@ -224,6 +224,7 @@ function genpdf() {
 		lastname: getInput("#debit-lastname"),
 		firstname: getInput("#debit-firstname"),
 		street: getInput("#debit-street"),
+		number: getInput("#debit-number"),
 		postcode: getInput("#debit-zip"),
 		residence: getInput("#debit-residence"),
 		email: getInput("#debit-email"),
@@ -268,7 +269,7 @@ function genpdf() {
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
 	fieldColumn(doc, user.lastname, "Nachname", user.firstname, "Vorname", 10);
-	field(doc, user.street, "Straße", 10);
+	field(doc, user.street + " " + user.number, "Straße / Hausnr.", 10);
 	fieldColumn(doc, user.postcode, "PLZ", user.residence, "Ort", 10);
 	fieldColumn(doc, user.email, "E-Mail", user.phone, "Telefonnummer", 14);
 	
