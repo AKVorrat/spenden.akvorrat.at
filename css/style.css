@@ -120,9 +120,9 @@ p:last-child {
 }
 
 a {
-	color: #FF438E;
+	color: #0685c9;
 	text-decoration: none;
-	border-bottom: 1px solid rgba(255, 67, 142, 0);
+	border-bottom: 1px solid rgba(6, 133, 201, 0);
 	-webkit-transition: color 0.3s ease, border-bottom 0.3s ease;
 	transition: color 0.3s ease, border-bottom 0.3s ease;
 }
@@ -130,7 +130,7 @@ a {
 a:hover:not(.btn),
 a:focus:not(.btn) {
 	color: inherit;
-	border-bottom: 1px solid rgba(255, 67, 142, 1);
+	border-bottom: 1px solid rgba(6, 133, 201, 1);
 }
 
 a.dark {
