@@ -10,7 +10,7 @@ var fieldOffset = 4;
 var fontSize;
 var intervals = {0:"einmalig", 1:"pro Monat", 3:"pro Quartal", 6:"pro Halbjahr", 12:"pro Jahr"}
 var logo = new Image();
-logo.src = "./img/akv-logo.jpg";
+logo.src = "./img/epicenter-logo.jpg";
 
 
 // Scroll smoothly
@@ -245,15 +245,16 @@ function genpdf() {
 	doc.setDrawColor(0, 0, 0);
 	doc.setLineWidth(0.4);
 	
-	doc.addImage(logo, "JPEG", (width - 160) / 2, offset, 160, 160);
-	offset += 160;
+    offset += 40
+	doc.addImage(logo, "JPEG", (width - 160) / 2, offset, 160, 80);
+	offset += 120;
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
-	text(doc, "Arbeitskreis Vorratsdaten Österreich", 2);
+	text(doc, "Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik", 2);
 	text(doc, "Kirchberggasse 7/5", 2);
 	text(doc, "1070 Wien", 2);
-	text(doc, "office@akvorrat.at", 16);
+	text(doc, "office@epicenter.works", 16);
 	
 	setFontSize(doc, 14);
 	doc.setFontType("bold");
@@ -263,7 +264,7 @@ function genpdf() {
 	if (user.interval > 0) {
 		setFontSize(doc, 10);
 		doc.setFontType("bold");
-		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Arbeitskreis Vorratsdaten Österreich. Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
+		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Verein Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik (hiernach: epicenter.works). Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
 	}
 	
 	setFontSize(doc, 12);
@@ -276,7 +277,7 @@ function genpdf() {
 	setFontSize(doc, 10);
 	doc.setFontType("bold");
 	var addText = user.newsletter ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
-	block(doc, "Ich unterstütze den Arbeitskreis Vorratsdaten Österreich " + intervals[user.interval] + " mit " + user.amount + " Euro." + addText, 18);
+	block(doc, "Ich unterstütze epicenter.works " + intervals[user.interval] + " mit " + user.amount + " Euro." + addText, 18);
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
@@ -288,7 +289,7 @@ function genpdf() {
 	
 	setFontSize(doc, 10);
 	doc.setFontType("normal");
-	block(doc, "Ich ermächtige den Arbeitskreis Vorratsdaten Österreich (ZVR 140062668, Creditor ID: AT58ZZZ00000049332), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die vom Arbeitskreis Vorratsdaten Österreich auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich der Arbeitskreis Vorratsdaten Österreich über den Einzug in dieser Verfahrensart unterrichten.", 16);
+	block(doc, "Ich ermächtige den Verein Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik (ZVR 140062668, Creditor ID: AT58ZZZ00000049332, hiernach: epicenter.works), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von epicenter.works auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich epicenter.works über den Einzug in dieser Verfahrensart unterrichten.", 16);
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
@@ -297,9 +298,9 @@ function genpdf() {
 	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
 	
 	if (user.interval > 0)
-		doc.save("akvorrat-antrag-auf-foerdermitgliedschaft.pdf");
+		doc.save("epizentrum-antrag-auf-foerdermitgliedschaft.pdf");
 	else
-		doc.save("akvorrat-spenden-per-bankeinzug.pdf");
+		doc.save("epizentrum-spenden-per-bankeinzug.pdf");
 	
 	offset = 15;
 }
