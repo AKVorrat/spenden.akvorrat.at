@@ -1,9 +1,9 @@
 # About
-Dieses Repository beinhaltet den Code, der auf unserer [Spendenseite](https://spenden.akvorrat.at/) zum Einsatz kommt.
+Dieses Repository beinhaltet den Code, der auf unserer [Spendenseite](https://spenden.epicenter.works/) zum Einsatz kommt.
 
 # License
-spenden.akvorrat.at
-Copyright (C) 2015-2016 Arbeitskreis Vorratsdaten Österreich
+spenden.epicenter.works
+Copyright (C) 2015-2017 epicenter.works
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
