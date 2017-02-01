@@ -165,7 +165,8 @@ function selectedRepeat() {
 	$(".belowlimit").addClass("hidden");
 	
 	// toggle paypal form
-	$("#button-paypal").attr("form", "form-paypal-1");
+	$("#form-paypal-2").addClass("hidden");
+	$("#form-paypal-1").removeClass("hidden");
 	
 	// enable supporter
 	$("#button-supporter").removeClass("disabled");
@@ -193,7 +194,8 @@ function selectedOnce() {
 	}
 	
 	// toggle paypal form
-	$("#button-paypal").attr("form", "form-paypal-2");
+	$("#form-paypal-1").addClass("hidden");
+	$("#form-paypal-2").removeClass("hidden");
 	
 	// disable supporter
 	$("#button-supporter").addClass("disabled");

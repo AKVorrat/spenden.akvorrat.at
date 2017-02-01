@@ -66,7 +66,7 @@
 			<section id="payment">
 				<div id="payment-selection">
 					<h2 class="hidden">Zahlungsmethoden</h2>
-					<form id="methods">
+					<div id="methods">
 						<div class="grp-amount row">
 							<input type="radio" name="amount" id="methods-amount-15" value="15" required="required">
 							<label for="methods-amount-15">15</label>
@@ -95,25 +95,26 @@
 							<a id="button-supporter" class="disabled" href="javascript:swipe('method-debit')"><div class="column"><img src="./img/method/supporter.png" alt="Fördermitglied" /></i><span>Fördermitglied</span></div></a>
 							<a id="button-debit" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-money" aria-hidden="true"></i><span>Bankeinzug</span></div></a>
 							<a id="button-credit" href="javascript:swipe('method-credit')"><div class="column"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Kreditkarte</span></div></a>
-							<button id="button-paypal" form="form-paypal-2"><div class="column"><i class="fa fa-paypal" aria-hidden="true"></i><span>Paypal</span></div></button>
+							<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="hidden nospace">
+								<input type="hidden" name="a3" id="paypal-1-amount" value="75">
+								<input type="hidden" name="p3" id="paypal-1-interval" value="0">
+								<input type="hidden" name="cmd" value="_xclick-subscriptions">
+								<input type="hidden" name="business" value="spenden@epicenter.works">
+								<input type="hidden" name="src" value="1">
+								<input type="hidden" name="t3" value="M">
+								<input type="hidden" name="currency_code" value="EUR">
+								<button id="button-paypal-1" type="submit"><div class="column"><i class="fa fa-paypal" aria-hidden="true"></i><span>Paypal</span></div></button>
+							</form>
+							<form id="form-paypal-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="nospace">
+								<input type="hidden" name="business" value="spenden@epicenter.works">
+								<input type="hidden" name="amount" id="paypal-2-amount" value="75">
+								<input type="hidden" name="item_name" value="Spende epicenter.works">
+								<input type="hidden" name="cmd" value="_donations">
+								<input type="hidden" name="currency_code" value="EUR">
+								<button id="button-paypal-2" type="submit"><div class="column"><i class="fa fa-paypal" aria-hidden="true"></i><span>Paypal</span></div></button>
+							</form>
 						</div>
-					</form>
-					<form id="form-paypal-1" class="hidden" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
-						<input type="hidden" name="a3" id="paypal-1-amount" value="75">
-						<input type="hidden" name="p3" id="paypal-1-interval" value="0">
-						<input type="hidden" name="cmd" value="_xclick-subscriptions">
-						<input type="hidden" name="business" value="spenden@epicenter.works">
-						<input type="hidden" name="src" value="1">
-						<input type="hidden" name="t3" value="M">
-						<input type="hidden" name="currency_code" value="EUR">
-					</form>
-					<form id="form-paypal-2" class="hidden" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off">
-						<input type="hidden" name="business" value="spenden@epicenter.works">
-						<input type="hidden" name="amount" id="paypal-2-amount" value="75">
-						<input type="hidden" name="item_name" value="Spende epicenter.works">
-						<input type="hidden" name="cmd" value="_donations">
-						<input type="hidden" name="currency_code" value="EUR">
-					</form>
+					</div>
 					<p class="center small">
 						Alternativ per <a href="javascript:swipe('method-transfer')"><span>Überweisung</span></a>, <a href="javascript:swipe('method-bitcoin')">Bitcoin</a>, <a href="https://flattr.com/submit/auto?user_id=AKVorrat_at&url=https://spenden.epicenter.works/&title=Arbeitskreis%20Vorratsdaten%20Österreich&description=Für%20eine%20starke%20Stimme%20der%20Zivilgesellschaft%20im%20digitalen%20Zeitalter" target="_blank">Flattr</a>.
 					</p>
