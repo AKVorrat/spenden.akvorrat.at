@@ -114,9 +114,6 @@
 						<input type="hidden" name="cmd" value="_donations">
 						<input type="hidden" name="currency_code" value="EUR">
 					</form>
-					<form id="form-credit" class="hidden" action="mp24/checkout.php?action=pay" method="post" autocomplete="off">
-						<input type="hidden" name="amount" id="credit-amount" value="75">
-					</form>
 					<p class="center small">
 						Alternativ per <a href="javascript:swipe('method-transfer')"><span>Überweisung</span></a>, <a href="javascript:swipe('method-bitcoin')">Bitcoin</a>, <a href="https://flattr.com/submit/auto?user_id=AKVorrat_at&url=https://spenden.epicenter.works/&title=Arbeitskreis%20Vorratsdaten%20Österreich&description=Für%20eine%20starke%20Stimme%20der%20Zivilgesellschaft%20im%20digitalen%20Zeitalter" target="_blank">Flattr</a>.
 					</p>
@@ -194,23 +191,24 @@
 					<div id="method-credit" class="hidden">
 						<h2>Kreditkarte</h2>
 						<p>Die Abwicklung der Zahlung per Kreditkarte findet im <a href="https://www.mpay24.com/" target="_blank">mPay24</a>-Portal statt.</p>
-						<form class="shrunk">
+						<form id="form-credit" class="shrunk" action="mp24/checkout.php?action=pay" method="post" autocomplete="off">
+							<input type="hidden" name="amount" id="credit-amount" value="75">
 							<div class="row row-space align-left">
 								<div class="column">
 									<label for="credit-lastname">Nachname *</label>
-									<input type="text" name="lastname" id="credit-lastname" form="form-credit" required="required" >
+									<input type="text" name="lastname" id="credit-lastname" required="required">
 								</div>
 								<div class="column">
 									<label for="credit-firstname">Vorname *</label>
-									<input type="text" name="firstname" id="credit-firstname" form="form-credit" required="required" >
+									<input type="text" name="firstname" id="credit-firstname" required="required">
 								</div>
 								<div class="column">
 									<label for="credit-email">E-Mail</label>
-									<input type="email" name="email" id="credit-email" form="form-credit">
+									<input type="email" name="email" id="credit-email">
 								</div>
 							</div>
 							<p class="small">* Pflichtfeld</p>
-							<button class="btn btn-default" form="form-credit">Jetzt spenden</button>
+							<button type="submit" class="btn btn-default">Jetzt spenden</button>
 						</form>
 						<a class="btn btn-back" href="javascript:showMenu()">zurück zur Auswahl</a>
 					</div>
