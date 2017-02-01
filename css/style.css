@@ -60,7 +60,7 @@ html {
 
 body {
 	color: #000;
-	background-color: #0685c9;
+	background-color: #e5f6fd;
 	font-size: 16px;
 	font-family: "OpenSans", "Helvetica Neue", "Helvetica", sans-serif;
 }
@@ -68,7 +68,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif;
 	font-weight: bold;
-	color: inherit;
+	color: #00466e;
 }
 
 h1, h2 {
@@ -120,9 +120,9 @@ p:last-child {
 }
 
 a {
-	color: #0685c9;
+	color: #00a5eb;
 	text-decoration: none;
-	border-bottom: 1px solid rgba(6, 133, 201, 0);
+	border-bottom: 1px solid rgba(0, 165, 235, 0);
 	-webkit-transition: color 0.3s ease, border-bottom 0.3s ease;
 	transition: color 0.3s ease, border-bottom 0.3s ease;
 }
@@ -130,7 +130,7 @@ a {
 a:hover:not(.btn),
 a:focus:not(.btn) {
 	color: inherit;
-	border-bottom: 1px solid rgba(6, 133, 201, 1);
+	border-bottom: 1px solid rgba(0, 165, 235, 1);
 }
 
 a.dark {
@@ -141,7 +141,7 @@ hr {
 	height: 2px;
 	width: 70px;
 	margin: 1.5em auto;
-	background-color: #0685c9;
+	background-color: #c80000;
 	border: none;
 }
 
@@ -160,32 +160,32 @@ footer {
 }
 
 header {
-	padding: 3rem 0.5rem;
-	background-color: #035882;
-	border-bottom: 6px solid #fff;
+	padding: 0 0.5rem;
+	background-color: #fff;
+	border-bottom: 6px solid #c80000;
 }
 
 @media screen and (min-width: 768px) {
 	header {
-		padding: 3rem 1rem;
+		padding: 0 1rem;
 	}
 }
 
 @media screen and (min-width: 992px) {
 	header {
-		padding: 3rem;
+		padding: 0.5rem;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	header {
-		padding: 5rem;
+		padding: 0.5rem;
 	}
 }
 
-header > h2 {
-	opacity: 0.6;
-	filter: Alpha(opacity=60);
+header > img {
+	max-width: 70%;
+	max-height: 200px;
 }
 
 aside.share {
@@ -215,33 +215,33 @@ aside.share a div {
 	width: 3rem;
 	height: 3rem;
 	margin-top: 0.5rem;
-	background-color: #fff;
 	border-radius: 50%;
+	background-color: #00466e;
+	-webkit-transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
 }
 
 aside.share a:first-of-type div {
 	margin-top: 0;
 }
 
-aside.share a:hover i {
-	color: #FF438E;
+aside.share a div:hover {
+	background-color: #c80000;
 }
 
 aside.share i {
-	color: #0685c9;
-	-webkit-transition: color 0.2s ease;
-	transition: color 0.2s ease;
+	color: #fff;
 }
 
 footer {
 	padding: 0.5rem;
 	font-size: 85%;
-	background-color: #111;
+	background-color: #00466e;
 	border-top: 3px solid #fff;
 }
 
 footer a {
-	color: #ccc;
+	color: inherit;
 }
 
 footer ul {
@@ -533,7 +533,7 @@ form .row > * {
 	font-weight: bold;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.1);
-	border: 6px solid rgba(6, 133, 201, 0);
+	border: 6px solid rgba(0, 70, 110, 0);
 	border-radius: 2px;
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
 	-webkit-transition: border .3s ease;
@@ -542,7 +542,7 @@ form .row > * {
 
 #methods a:hover,
 #methods button:hover {
-	border: 6px solid rgba(6, 133, 201, 1);
+	border: 6px solid rgba(0, 70, 110, 1);
 }
 
 #methods .disabled {
@@ -567,7 +567,7 @@ form .row > * {
 
 #methods a i,
 #methods button i {
-	color: #0685c9;
+	color: #00466e;
 	font-size: 500%;
 }
 
@@ -623,8 +623,8 @@ input[type="email"] {
 
 input[type="text"]:focus,
 input[type="email"]:focus {
-	border-color: rgba(6, 133, 201, 1);
-	box-shadow: 0 0 4px 0 rgba(6, 133, 201, .1) inset, 0 0 4px 0 rgba(6, 133, 201, .1) inset;
+	border-color: rgba(200, 0, 0, 1);
+	box-shadow: 0 0 4px 0 rgba(200, 0, 0, .1) inset, 0 0 4px 0 rgba(200, 0, 0, .1) inset;
 }
 
 input[type="checkbox"] {
@@ -692,7 +692,7 @@ label.space {
 	left: 0;
 	height: 0%;
 	width: 100%;
-	background-color: rgba(6, 133, 201, 1);
+	background-color: rgba(200, 0, 0, 1);
 	-webkit-transition: height 0.3s ease 0s;
 	transition: height 0.3s ease 0s;
 }
@@ -757,7 +757,7 @@ label.space {
 .grp-amount > input[type="radio"]:checked + label,
 .grp-amount > input[type="radio"] + label:hover {
 	color: rgba(255, 255, 255, 1);
-	background-color: rgba(6, 133, 201, 1);
+	background-color: rgba(200, 0, 0, 1);
 	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0) inset, 0 0 4px 0 rgba(0, 0, 0, 0) inset;
 }
 
@@ -765,7 +765,7 @@ label.space {
 	padding: 2px;
 	cursor: pointer;
 	text-transform: uppercase;
-	border-bottom: 2px solid rgba(6, 133, 201, 0);
+	border-bottom: 2px solid rgba(200, 0, 0, 0);
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease;
 }
@@ -775,7 +775,7 @@ label.space {
 	padding: 2px 4px;
 	color: rgba(255, 255, 255, 1);
 	font-weight: bold;
-	background-color: rgba(6, 133, 201, 1);
+	background-color: rgba(200, 0, 0, 1);
 }
 
 .amount-input {
@@ -835,7 +835,7 @@ div.center > p {
 	text-align: center;
 	color: #fff;
 	font-weight: bold;
-	background-color: #0685c9;
+	background-color: #00a5eb;
 	border-radius: 2px;
 	overflow: hidden;
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3), 0 0 8px 0 rgba(0, 0, 0, 0.3);
@@ -847,7 +847,7 @@ div.center > p {
 	left: 0;
 	height: 100%;
 	width: 0px;
-	background-color: #035882;
+	background-color: #00466e;
 	border-radius: 0 8px 8px 0;
 	transition: width 2s ease;
 }
@@ -881,14 +881,14 @@ div.center > p {
 	padding-top: 2em;
 	padding-bottom: 1.5em;
 	background-color: #FFF;
-	border-bottom: 2px solid rgba(255, 67, 142, 0);
+	border-bottom: 2px solid RGBA(200, 0, 0, 0);
 	border-radius: 2px;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
 
 #packages .column:hover {
-	border-bottom: 2px solid rgba(255, 67, 142, 1);
+	border-bottom: 2px solid RGBA(200, 0, 0, 1);
 	-webkit-transform: translateY(-0.8em);
 	transform: translateY(-0.8em);
 }
