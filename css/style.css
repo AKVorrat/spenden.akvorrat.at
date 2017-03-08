@@ -862,7 +862,10 @@ div.center > p {
 	z-index: 10;
 }
 
-
+#campaign ul {
+	margin-left: 1.5em;
+	padding: 1ex;
+}
 
 
 
