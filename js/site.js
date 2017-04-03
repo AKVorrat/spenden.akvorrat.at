@@ -1,9 +1,10 @@
 // PDF constants
-var mrgn = 85;
+var mrgnLeft = 45;
+var mrgnRight = 85;
 var offset = 15;
 var width = 595.28;
 var height = 841.89;
-var innerWidth = width - 2 * mrgn;
+var innerWidth = width - mrgnLeft - mrgnRight;
 var columnSpace = 20;
 var columnWidth = innerWidth / 2 - columnSpace / 2;
 var fieldOffset = 4;
@@ -246,16 +247,16 @@ function genpdf() {
 	doc.setTextColor(0, 0, 0);
 	doc.setDrawColor(0, 0, 0);
 	doc.setLineWidth(0.4);
-	
-    offset += 40
-	doc.addImage(logo, "JPEG", (width - 160) / 2, offset, 160, 80);
-	offset += 120;
+
+    offset += 20;
+	doc.addImage(logo, "JPEG", width - 240 - mrgnRight/2, offset, 240, 120);
+	offset += 160;
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
 	text(doc, "Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik", 2);
-	text(doc, "Kirchberggasse 7/5", 2);
-	text(doc, "1070 Wien", 2);
+	text(doc, "Annagasse 8/1/8", 2);
+	text(doc, "1010 Wien", 2);
 	text(doc, "office@epicenter.works", 16);
 	
 	setFontSize(doc, 14);
@@ -320,7 +321,7 @@ function setFontSize(document, size) {
 
 function text(document, text, addOffset) {
 	offset += fontSize;
-	document.text(mrgn, offset, text);
+	document.text(mrgnLeft, offset, text);
 	offset += addOffset;
 }
 
@@ -332,12 +333,12 @@ function block(document, line, addOffset) {
 function field(document, text, description, addOffset) {
 	cachedFontSize = fontSize;
 	offset += fontSize;
-	document.text(mrgn + fieldOffset, offset, text);
+	document.text(mrgnLeft + fieldOffset, offset, text);
 	offset += 3;
-	document.line(mrgn, offset, width - mrgn, offset);
+	document.line(mrgnLeft, offset, width - mrgnRight, offset);
 	setFontSize(document, 8);
 	offset += fontSize;
-	document.text(mrgn, offset, description);
+	document.text(mrgnLeft, offset, description);
 	offset += addOffset;
 	setFontSize(document, cachedFontSize);
 }
@@ -345,18 +346,18 @@ function field(document, text, description, addOffset) {
 function fieldColumn(document, text1, description1, text2, description2, addOffset, highlight) {
 	cachedFontSize = fontSize;
 	offset += fontSize;
-	document.text(mrgn + fieldOffset, offset, text1);
-	document.text(mrgn + columnWidth + columnSpace + fieldOffset, offset, text2);
+	document.text(mrgnLeft + fieldOffset, offset, text1);
+	document.text(mrgnLeft + columnWidth + columnSpace + fieldOffset, offset, text2);
 	offset += 3;
-	document.line(mrgn, offset, mrgn + columnWidth, offset);
-	document.line(mrgn + columnWidth + columnSpace, offset, mrgn + columnWidth + columnSpace + columnWidth, offset);
+	document.line(mrgnLeft, offset, mrgnLeft + columnWidth, offset);
+	document.line(mrgnLeft + columnWidth + columnSpace, offset, mrgnLeft + columnWidth + columnSpace + columnWidth, offset);
 	if(typeof highlight !== "undefined") {
-		drawArrow(document, mrgn + columnWidth + columnSpace + columnWidth, offset - fontSize / 2);
+		drawArrow(document, mrgnLeft + columnWidth + columnSpace + columnWidth, offset - fontSize / 2);
 	}
 	setFontSize(document, 8);
 	offset += fontSize;
-	document.text(mrgn, offset, description1);
-	document.text(mrgn + columnWidth + columnSpace, offset, description2);
+	document.text(mrgnLeft, offset, description1);
+	document.text(mrgnLeft + columnWidth + columnSpace, offset, description2);
 	offset += addOffset;
 	setFontSize(document, cachedFontSize);
 }
