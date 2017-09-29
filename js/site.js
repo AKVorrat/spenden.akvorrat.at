@@ -254,7 +254,7 @@ function genpdf() {
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
-	text(doc, "Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik", 2);
+	text(doc, "epicenter.works - Plattform Grundrechtspolitik", 2);
 	text(doc, "Annagasse 8/1/8", 2);
 	text(doc, "1010 Wien", 2);
 	text(doc, "office@epicenter.works", 16);
@@ -267,7 +267,7 @@ function genpdf() {
 	if (user.interval > 0) {
 		setFontSize(doc, 10);
 		doc.setFontType("bold");
-		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Verein Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik (hiernach: epicenter.works). Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
+		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Verein epicenter.works - Plattform Grundrechtspolitik (hiernach: epicenter.works). Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
 	}
 	
 	setFontSize(doc, 12);
@@ -292,7 +292,7 @@ function genpdf() {
 	
 	setFontSize(doc, 10);
 	doc.setFontType("normal");
-	block(doc, "Ich ermächtige den Verein Epizentrum - Plattform für grundrechtsbasierte Zukunftspolitik (ZVR 140062668, Creditor ID: AT58ZZZ00000049332, hiernach: epicenter.works), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von epicenter.works auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich epicenter.works über den Einzug in dieser Verfahrensart unterrichten.", 16);
+	block(doc, "Ich ermächtige den Verein epicenter.works - Plattform Grundrechtspolitik (ZVR 140062668, Creditor ID: AT58ZZZ00000049332, hiernach: epicenter.works), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von epicenter.works auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich epicenter.works über den Einzug in dieser Verfahrensart unterrichten.", 16);
 	
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
