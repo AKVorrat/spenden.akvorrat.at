@@ -23,5 +23,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 - jsPDF (C) James Hall [MIT]
 - Normalize.css (C) Nicolas Gallagher, Jonathan Neal [MIT]
 - OpenSans (C) Steve Matteson [Apache]
-- OwlCarousel (C) David Deutsch [MIT]
 - Raleway (C) Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida [OFL]
+- Slick (C) Ken Wheeler [MIT]
