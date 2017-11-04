@@ -52,11 +52,13 @@ jQuery(document).ready(function () {
 		touchMove: false,
 		infinite: false
 	});
-	
+
 	$("#supporters-box").slick({
-		variableWidth: true,
+		arrows: true,
+		dots: true,
+		infinite: true,
 		centerMode: true,
-		arrows: false,
+		variableWidth: true,
 		autoplay: true,
 		autoplaySpeed: 3000
 	});
@@ -128,12 +130,12 @@ function setPaymentAmount(amount) {
 	$("#paypal-1-amount").attr("value", amount);
 	$("#paypal-2-amount").attr("value", amount);
 	$("#credit-amount").attr("value", amount);
-	
+
 	if(amount < 75)
 		$("#button-debit").addClass("disabled");
 	else if($("#methods input[name='interval']:checked").val() == 0)
 		$("#button-debit").removeClass("disabled");
-	
+
 	if($("#methods input[name='interval']:checked").val() != 0 || amount >= 75) {
 		$(".abovelimit").removeClass("hidden");
 		$(".belowlimit").addClass("hidden");
@@ -148,7 +150,7 @@ function setPaymentAmount(amount) {
 function setPaymentInterval(interval) {
 	$("#debit-interval").attr("value", interval);
 	$("#paypal-1-interval").attr("value", interval);
-	
+
 	if(interval > 0)
 		selectedRepeat();
 	else
@@ -161,20 +163,20 @@ function selectedRepeat() {
 	// toggle Fördermitglied / Lastschrift
 	$(".lastschrift").addClass("hidden");
 	$(".foemi").removeClass("hidden");
-	
+
 	$(".abovelimit").removeClass("hidden");
 	$(".belowlimit").addClass("hidden");
-	
+
 	// toggle paypal form
 	$("#form-paypal-2").addClass("hidden");
 	$("#form-paypal-1").removeClass("hidden");
-	
+
 	// enable supporter
 	$("#button-supporter").removeClass("disabled");
-	
+
 	// disable debit
 	$("#button-debit").addClass("disabled");
-	
+
 	// disable credit
 	$("#button-credit").addClass("disabled");
 }
@@ -185,7 +187,7 @@ function selectedOnce() {
 	// toggle Fördermitglied / Lastschrift
 	$(".foemi").addClass("hidden");
 	$(".lastschrift").removeClass("hidden");
-	
+
 	if($("#methods input[name='amount']:checked").val() >= 75) {
 		$(".abovelimit").removeClass("hidden");
 		$(".belowlimit").addClass("hidden");
@@ -193,18 +195,18 @@ function selectedOnce() {
 		$(".abovelimit").addClass("hidden");
 		$(".belowlimit").removeClass("hidden");
 	}
-	
+
 	// toggle paypal form
 	$("#form-paypal-1").addClass("hidden");
 	$("#form-paypal-2").removeClass("hidden");
-	
+
 	// disable supporter
 	$("#button-supporter").addClass("disabled");
-	
+
 	// enable debit
 	if($("#methods input[name='amount']:checked").val() >= 75)
 		$("#button-debit").removeClass("disabled");
-	
+
 	// enable credit
 	$("#button-credit").removeClass("disabled");
 }
@@ -239,10 +241,10 @@ function genpdf() {
 		interval: $("#methods input[name='interval']:checked").val(),
 		amount: $("#methods input[name='amount']:checked").val()
 	}
-	
+
 	var dateObj = new Date();
 	date = dateObj.getDate() + "." + (dateObj.getMonth() + 1) + "." + dateObj.getFullYear();
-	
+
 	var doc = new jsPDF("portrait", "pt", "a4");
 	doc.setTextColor(0, 0, 0);
 	doc.setDrawColor(0, 0, 0);
@@ -251,60 +253,60 @@ function genpdf() {
     offset += 20;
 	doc.addImage(logo, "JPEG", width - 240 - mrgnRight/2, offset, 240, 120);
 	offset += 160;
-	
+
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
 	text(doc, "epicenter.works - Plattform Grundrechtspolitik", 2);
 	text(doc, "Annagasse 8/1/8", 2);
 	text(doc, "1010 Wien", 2);
 	text(doc, "office@epicenter.works", 16);
-	
+
 	setFontSize(doc, 14);
 	doc.setFontType("bold");
 	var title = user.interval > 0 ? "Antrag auf Fördermitgliedschaft" : "Spenden per Bankeinzug";
 	text(doc, title, 12);
-	
+
 	if (user.interval > 0) {
 		setFontSize(doc, 10);
 		doc.setFontType("bold");
 		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Verein epicenter.works - Plattform Grundrechtspolitik (hiernach: epicenter.works). Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
 	}
-	
+
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
 	fieldColumn(doc, user.lastname, "Nachname", user.firstname, "Vorname", 10);
 	field(doc, user.street + " " + user.number, "Straße / Hausnr.", 10);
 	fieldColumn(doc, user.postcode, "PLZ", user.residence, "Ort", 10);
 	fieldColumn(doc, user.email, "E-Mail", user.phone, "Telefonnummer", 14);
-	
+
 	setFontSize(doc, 10);
 	doc.setFontType("bold");
 	var addText = user.newsletter ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
 	block(doc, "Ich unterstütze epicenter.works " + intervals[user.interval] + " mit " + user.amount + " Euro." + addText, 18);
-	
+
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
 	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
-	
+
 	setFontSize(doc, 12);
 	doc.setFontType("bold");
 	text(doc, "SEPA Lastschriftmandat", 6);
-	
+
 	setFontSize(doc, 10);
 	doc.setFontType("normal");
 	block(doc, "Ich ermächtige den Verein epicenter.works - Plattform Grundrechtspolitik (ZVR 140062668, Creditor ID: AT58ZZZ00000049332, hiernach: epicenter.works), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von epicenter.works auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich epicenter.works über den Einzug in dieser Verfahrensart unterrichten.", 16);
-	
+
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
 	fieldColumn(doc, user.bank, "Kreditinstitut", user.bic, "BIC", 10);
 	field(doc, user.iban, "IBAN", 10);
 	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
-	
+
 	if (user.interval > 0)
-		doc.save("epizentrum-antrag-auf-foerdermitgliedschaft.pdf");
+		doc.save("epicenter-antrag-auf-foerdermitgliedschaft.pdf");
 	else
-		doc.save("epizentrum-spenden-per-bankeinzug.pdf");
-	
+		doc.save("epicenter-spenden-per-bankeinzug.pdf");
+
 	offset = 15;
 }
 
