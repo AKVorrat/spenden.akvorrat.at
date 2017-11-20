@@ -1,5 +1,5 @@
 # About
-Dieses Repository beinhaltet den Code, der auf unserer [Spendenseite](https://spenden.epicenter.works/) zum Einsatz kommt.
+Dieses Repository beinhaltet die zukünftige Spendenseite des Mosaik-Blog. Diese basiert weitestgehend auf der Spendenseite von epicenter.works. Sie sind die Besten ;)
 
 # License
 spenden.epicenter.works
