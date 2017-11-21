@@ -990,7 +990,10 @@ div.center > p {
 }
 
 
-
+/* Kreditkarte temporär weg*/
+#button-credit {
+	display: none!important;
+}
 
 
 /* slick specific */
