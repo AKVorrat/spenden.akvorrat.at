@@ -256,20 +256,20 @@ function genpdf() {
 
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
-	text(doc, "epicenter.works - Plattform Grundrechtspolitik", 2);
-	text(doc, "Annagasse 8/1/8", 2);
-	text(doc, "1010 Wien", 2);
-	text(doc, "office@epicenter.works", 16);
+	text(doc, "Mosaik – Politik neu zusammensetzen", 2);
+	text(doc, "Gußhausstraße 14/3A", 2);
+	text(doc, "1040 Wien", 2);
+	text(doc, "spenden@mosaik-blog.at", 16);
 
 	setFontSize(doc, 14);
 	doc.setFontType("bold");
-	var title = user.interval > 0 ? "Antrag auf Fördermitgliedschaft" : "Spenden per Bankeinzug";
+	var title = user.interval > 0 ? "Regelmäßige Spende" : "Spenden per Bankeinzug";
 	text(doc, title, 12);
 
 	if (user.interval > 0) {
 		setFontSize(doc, 10);
 		doc.setFontType("bold");
-		block(doc, "Hiermit beantrage ich die Fördermitgliedschaft beim Verein epicenter.works - Plattform Grundrechtspolitik (hiernach: epicenter.works). Als außerordentliches Mitglied bin ich dazu eingeladen, mich aktiv in die Vereinsarbeit einzubringen und dadurch eine etwaige oder ordentliche Mitgliedschaft beim Verein zu erlangen.", 16);
+		block(doc, "Hiermit genehmige ich eine regelmäßige Spende an den Verein Mosaik – Politik neu zusammensetzen (hiernach: Mosaik).", 16);
 	}
 
 	setFontSize(doc, 12);
@@ -282,7 +282,7 @@ function genpdf() {
 	setFontSize(doc, 10);
 	doc.setFontType("bold");
 	var addText = user.newsletter ? " Zusätzlich möchte ich den Newsletter abonnieren, um regelmäßig über die Tätigkeiten des Vereins informiert zu werden." : "";
-	block(doc, "Ich unterstütze epicenter.works " + intervals[user.interval] + " mit " + user.amount + " Euro." + addText, 18);
+	block(doc, "Ich unterstütze Mosaik – Politik neu zusammensetzen " + intervals[user.interval] + " mit " + user.amount + " Euro." + addText, 18);
 
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
@@ -294,7 +294,7 @@ function genpdf() {
 
 	setFontSize(doc, 10);
 	doc.setFontType("normal");
-	block(doc, "Ich ermächtige den Verein epicenter.works - Plattform Grundrechtspolitik (ZVR 140062668, Creditor ID: AT58ZZZ00000049332, hiernach: epicenter.works), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von epicenter.works auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich epicenter.works über den Einzug in dieser Verfahrensart unterrichten.", 16);
+	block(doc, "Ich ermächtige den Verein Mosaik – Politik neu zusammensetzen (ZVR 969264600, Creditor ID: AT49ZZZ00000051046, hiernach: Mosaik), Zahlungen von meinem Konto mittels SEPA-Lastschrift einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Mosaik auf mein Konto gezogenen SEPA-Lastschriften einzulösen. Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut vereinbarten Bedingungen. Vor dem ersten Einzug einer SEPA-Basis-Lastschrift wird mich Mosaik über den Einzug in dieser Verfahrensart unterrichten.", 16);
 
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
@@ -303,9 +303,9 @@ function genpdf() {
 	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
 
 	if (user.interval > 0)
-		doc.save("epicenter-antrag-auf-foerdermitgliedschaft.pdf");
+		doc.save("mosaik-regelmaessige-spende-per-bankeinzug.pdf");
 	else
-		doc.save("epicenter-spenden-per-bankeinzug.pdf");
+		doc.save("mosaik-spenden-per-bankeinzug.pdf");
 
 	offset = 15;
 }
