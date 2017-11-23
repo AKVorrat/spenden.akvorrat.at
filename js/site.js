@@ -11,7 +11,7 @@ var fieldOffset = 4;
 var fontSize;
 var intervals = {0:"einmalig", 1:"pro Monat", 3:"pro Quartal", 6:"pro Halbjahr", 12:"pro Jahr"}
 var logo = new Image();
-logo.src = "./img/epicenter-logo.jpg";
+logo.src = "./img/mosaik_logo.jpg";
 
 
 // Scroll smoothly
@@ -251,7 +251,7 @@ function genpdf() {
 	doc.setLineWidth(0.4);
 
     offset += 20;
-	doc.addImage(logo, "JPEG", width - 240 - mrgnRight/2, offset, 240, 120);
+	doc.addImage(logo, "JPEG", width - 150 - mrgnRight/2, offset, 150, 33);
 	offset += 160;
 
 	setFontSize(doc, 12);
@@ -286,7 +286,7 @@ function genpdf() {
 
 	setFontSize(doc, 12);
 	doc.setFontType("normal");
-	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
+	field(doc, date, "Datum", 10);
 
 	setFontSize(doc, 12);
 	doc.setFontType("bold");
@@ -300,7 +300,7 @@ function genpdf() {
 	doc.setFontType("normal");
 	fieldColumn(doc, user.bank, "Kreditinstitut", user.bic, "BIC", 10);
 	field(doc, user.iban, "IBAN", 10);
-	fieldColumn(doc, date + ", ", "Datum, Ort", "", "Unterschrift", 16, true);
+	field(doc, date, "Datum", 10);
 
 	if (user.interval > 0)
 		doc.save("mosaik-regelmaessige-spende-per-bankeinzug.pdf");
