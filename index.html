@@ -69,21 +69,21 @@ Um diese Stelle langfristig zu finanzieren brauchen wir Deine Unterstützung. <s
 					<h2 class="hidden">Zahlungsmethoden</h2>
 					<div id="methods">
 						<div class="grp-amount row">
-							<input type="radio" name="amount" id="methods-amount-15" value="15" required="required">
-							<label for="methods-amount-15">15</label>
-							<input type="radio" name="amount" id="methods-amount-25" value="25" required="required">
-							<label for="methods-amount-25">25</label>
-							<input type="radio" name="amount" id="methods-amount-50" value="50" required="required">
-							<label for="methods-amount-50">50</label>
-							<input type="radio" name="amount" id="methods-amount-75" value="75" required="required" checked="checked">
-							<label for="methods-amount-75">75</label>
+							<input type="radio" name="amount" id="methods-amount-15" value="5" required="required">
+							<label for="methods-amount-15">5</label>
+							<input type="radio" name="amount" id="methods-amount-25" value="10" required="required" checked="checked">
+							<label for="methods-amount-25">10</label>
+							<input type="radio" name="amount" id="methods-amount-50" value="20" required="required">
+							<label for="methods-amount-50">20</label>
+							<input type="radio" name="amount" id="methods-amount-75" value="50" required="required" >
+							<label for="methods-amount-75">50</label>
 							<input type="radio" name="amount" id="methods-amount-x" value="100" required="required">
 							<label for="methods-amount-x"><input type="number" id="methods-amount-input" class="amount-input" value="100" min="5" step="1"></label>
 						</div>
 						<div class="grp-interval row">
-							<input type="radio" name="interval" id="methods-interval-once" value="0" required="required" checked="checked">
+							<input type="radio" name="interval" id="methods-interval-once" value="0" required="required">
 							<label for="methods-interval-once">Einmal</label>
-							<input type="radio" name="interval" id="methods-interval-month" value="1" required="required">
+							<input type="radio" name="interval" id="methods-interval-month" value="1" required="required" checked="checked">
 							<label for="methods-interval-month">Monat</label>
 							<input type="radio" name="interval" id="methods-interval-quarter" value="3" required="required">
 							<label for="methods-interval-quarter">Quartal</label>
@@ -93,8 +93,8 @@ Um diese Stelle langfristig zu finanzieren brauchen wir Deine Unterstützung. <s
 							<label for="methods-interval-annual">Jahr</label>
 						</div>
 						<div class="row">
-							<a id="button-supporter" class="disabled" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>Bankeinzug</span></div></a>
-							<a id="button-debit" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-money" aria-hidden="true"></i><span>Bankeinzug</span></div></a>
+							<a id="button-supporter" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>Bankeinzug (regelmäßig)</span></div></a>
+							<a id="button-debit" class="disabled" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-money" aria-hidden="true"></i><span>Bankeinzug (einmalig)</span></div></a>
 							<a id="button-credit" href="javascript:swipe('method-credit')"><div class="column"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Kreditkarte</span></div></a>
 							<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="hidden nospace">
 								<input type="hidden" name="a3" id="paypal-1-amount" value="75">
@@ -123,8 +123,8 @@ Um diese Stelle langfristig zu finanzieren brauchen wir Deine Unterstützung. <s
 
 				<div id="payment-methods">
 					<div id="method-debit" class="hidden">
-						<h2><span class="foemi hidden">Bankeinzug (regelmäßig)</span><span class="lastschrift">Bankeinzug (einmalig)</span></h2>
-						<p><span class="lastschrift">Regelmäßige Spenden ermöglichen eine besser Planung unserer Arbeit. Bitte ziehe diese Form der Unterstützung in Erwägung.</p>
+						<h2><span class="foemi">Bankeinzug (regelmäßig)</span><span class="lastschrift hidden">Bankeinzug (einmalig)</span></h2>
+						<p><span class="foemi">Regelmäßige Spenden ermöglichen eine besser Planung unserer Arbeit. Danke für Ihre Unterstützung.</p>
 							<p>Die Einzugsermächtigung (SEPA Lastschriftmandat) ist auch für Sie sehr sicher: Sie haben nämlich das Recht, bis zu 56 Tage nach jedem Einzug bei Ihrer Bank eine Rücküberweisung zu veranlassen - ohne Angabe von Gründen.	Wir bitten Sie aber, eine Rücküberweisung oder einen <strong>Widerruf der Einziehungsermächtigung über Mosaik</strong> zu veranlassen, da uns sonst hohe Stornierungsgebühren entstehen, wenn Sie diese über das Bankinstitut abwickeln.</p>
 							<p><strong>Ein Widerruf der Einzugsermächtigung (SEPA Lastschriftmandat) und ein Austritt ist jederzeit ohne Begründung und Frist möglich. Eine eine E-Mail an <a href="mailto:spenden@mosaik-blog.at">spenden@mosaik-blog.at</a> genügt.</strong></p>
 						<form autocomplete="off" action="javascript:genpdf();" class="shrunk">

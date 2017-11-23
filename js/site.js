@@ -131,12 +131,12 @@ function setPaymentAmount(amount) {
 	$("#paypal-2-amount").attr("value", amount);
 	$("#credit-amount").attr("value", amount);
 
-	if(amount < 75)
+	if(amount < 50)
 		$("#button-debit").addClass("disabled");
 	else if($("#methods input[name='interval']:checked").val() == 0)
 		$("#button-debit").removeClass("disabled");
 
-	if($("#methods input[name='interval']:checked").val() != 0 || amount >= 75) {
+	if($("#methods input[name='interval']:checked").val() != 0 || amount >= 50) {
 		$(".abovelimit").removeClass("hidden");
 		$(".belowlimit").addClass("hidden");
 	} else {
@@ -188,7 +188,7 @@ function selectedOnce() {
 	$(".foemi").addClass("hidden");
 	$(".lastschrift").removeClass("hidden");
 
-	if($("#methods input[name='amount']:checked").val() >= 75) {
+	if($("#methods input[name='amount']:checked").val() >= 50) {
 		$(".abovelimit").removeClass("hidden");
 		$(".belowlimit").addClass("hidden");
 	} else {
