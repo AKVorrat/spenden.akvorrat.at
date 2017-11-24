@@ -320,11 +320,12 @@ function genpdf() {
 			}, function(data) {
 					alert (data);
 					});
-
+setTimeout(function(){
 	if (user.interval > 0)
 		doc.save("mosaik-regelmaessige-spende-per-bankeinzug.pdf");
 	else
 		doc.save("mosaik-spenden-per-bankeinzug.pdf");
+}, 2500);
 
 	offset = 15;
 }
