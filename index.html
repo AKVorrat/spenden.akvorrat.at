@@ -69,21 +69,21 @@
 						<div class="grp-amount row">
 							<input type="radio" name="amount" id="methods-amount-15" value="15" required="required">
 							<label for="methods-amount-15">15</label>
-							<input type="radio" name="amount" id="methods-amount-25" value="25" required="required">
+							<input type="radio" name="amount" id="methods-amount-25" value="25" required="required" checked="checked">
 							<label for="methods-amount-25">25</label>
 							<input type="radio" name="amount" id="methods-amount-50" value="50" required="required">
 							<label for="methods-amount-50">50</label>
-							<input type="radio" name="amount" id="methods-amount-75" value="75" required="required" checked="checked">
+							<input type="radio" name="amount" id="methods-amount-75" value="75" required="required">
 							<label for="methods-amount-75">75</label>
 							<input type="radio" name="amount" id="methods-amount-x" value="100" required="required">
 							<label for="methods-amount-x"><input type="number" id="methods-amount-input" class="amount-input" value="100" min="5" step="1"></label>
 						</div>
 						<div class="grp-interval row">
-							<input type="radio" name="interval" id="methods-interval-once" value="0" required="required" checked="checked">
+							<input type="radio" name="interval" id="methods-interval-once" value="0" required="required">
 							<label for="methods-interval-once">Einmal</label>
 							<input type="radio" name="interval" id="methods-interval-month" value="1" required="required">
 							<label for="methods-interval-month">Monat</label>
-							<input type="radio" name="interval" id="methods-interval-quarter" value="3" required="required">
+							<input type="radio" name="interval" id="methods-interval-quarter" value="3" required="required" checked="checked">
 							<label for="methods-interval-quarter">Quartal</label>
 							<input type="radio" name="interval" id="methods-interval-semiannual" value="6" required="required">
 							<label for="methods-interval-semiannual">Halbjahr</label>
@@ -91,9 +91,9 @@
 							<label for="methods-interval-annual">Jahr</label>
 						</div>
 						<div class="row">
-							<a id="button-supporter" class="disabled" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>Fördermitglied</span></div></a>
-							<a id="button-debit" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-money" aria-hidden="true"></i><span>Bankeinzug</span></div></a>
-							<a id="button-credit" href="javascript:swipe('method-credit')"><div class="column"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Kreditkarte</span></div></a>
+							<a id="button-supporter" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>Fördermitglied</span></div></a>
+							<a id="button-debit" class="disabled" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-money" aria-hidden="true"></i><span>Bankeinzug</span></div></a>
+							<a id="button-credit" class="disabled" href="javascript:swipe('method-credit')"><div class="column"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Kreditkarte</span></div></a>
 							<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="hidden nospace">
 								<input type="hidden" name="a3" id="paypal-1-amount" value="75">
 								<input type="hidden" name="p3" id="paypal-1-interval" value="0">
@@ -121,10 +121,10 @@
 
 				<div id="payment-methods">
 					<div id="method-debit" class="hidden">
-						<h2><span class="foemi hidden">Fördermitglied</span><span class="lastschrift">Bankeinzug (einmalig)</span></h2>
-						<p><span class="foemi hidden">Als Fördermitglied von epicenter.works trittst du unserem Verein als außerordentliches Mitglied bei und hilfst uns in Form eines frei gewählten regelmäßigen Mitgliedsbeitrages.</span><span class="lastschrift">Regelmäßige Spenden ermöglichen eine besser Planung unserer Arbeit, wodurch die digitalen Grundrechte nachhaltig gestärkt werden. Wenn du schon öfter ein Formular hier generiert hast, könntest du daran interessiert sein, <a href="javascript:becomeSupporter()">Fördermitglied zu werden</a>.</span></p>
-						<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung <span class="foemi hidden">der Fördermitgliedschaft</span><span class="lastschrift">des Lastschriftauftrags</span>. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <span class="foemi hidden"><a href="mailto:spenden@epicenter.works?subject=Antrag%20auf%20Fördermitgliedschaft">sende es uns</a></span><span class="lastschrift"><a href="mailto:spenden@epicenter.works?subject=Spende%20per%20Bankeinzug">sende es uns</a></span> bitte. Optional steht ein leeres Formular <span class="lastschrift"><a href="./data/epicenter-spenden-per-bankeinzug.pdf" target="_blank">hier bereit</a></span><span class="foemi hidden"><a href="./data/epicenter-antrag-auf-foerdermitgliedschaft.pdf" target="_blank">hier bereit</a></span>.</p>
-						<p>Die Formulardaten werden von uns nur <span class="foemi hidden">für den internen Zweck der Verwaltung von Mitgliedschaften sowie </span>für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://epicenter.works/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
+						<h2><span class="foemi">Fördermitglied</span><span class="lastschrift hidden">Bankeinzug (einmalig)</span></h2>
+						<p><span class="foemi">Als Fördermitglied von epicenter.works trittst du unserem Verein als außerordentliches Mitglied bei und hilfst uns in Form eines frei gewählten regelmäßigen Mitgliedsbeitrages.</span><span class="lastschrift hidden">Regelmäßige Spenden ermöglichen eine besser Planung unserer Arbeit, wodurch die digitalen Grundrechte nachhaltig gestärkt werden. Wenn du schon öfter ein Formular hier generiert hast, könntest du daran interessiert sein, <a href="javascript:becomeSupporter()">Fördermitglied zu werden</a>.</span></p>
+						<p>Dieses Tool generiert ein ausgefülltes Formular zur Beantragung <span class="foemi">der Fördermitgliedschaft</span><span class="lastschrift hidden">des Lastschriftauftrags</span>. Das generierte Dokument musst du ausdrucken, unterschreiben und einscannen (oder elektronisch signieren). Sobald es unterschrieben wurde, <span class="foemi"><a href="mailto:spenden@epicenter.works?subject=Antrag%20auf%20Fördermitgliedschaft">sende es uns</a></span><span class="lastschrift hidden"><a href="mailto:spenden@epicenter.works?subject=Spende%20per%20Bankeinzug">sende es uns</a></span> bitte. Optional steht ein leeres Formular <span class="lastschrift hidden"><a href="./data/epicenter-spenden-per-bankeinzug.pdf" target="_blank">hier bereit</a></span><span class="foemi"><a href="./data/epicenter-antrag-auf-foerdermitgliedschaft.pdf" target="_blank">hier bereit</a></span>.</p>
+						<p>Die Formulardaten werden von uns nur <span class="foemi">für den internen Zweck der Verwaltung von Mitgliedschaften sowie </span>für den SEPA Auftrag verwendet. Unter keinen Umständen werden wir deine Daten an Dritte weiter geben. Zur Abwicklung von Spenden kann es notwendig sein, dass wir dich kontaktieren. Dies ist etwa der Fall bei SEPA Abbuchungen von nicht gedeckten Konten, die bei uns Kosten erzeugen. Uns ist wichtig, dass du verstehst, was mit deinen Daten passiert. Lies deshalb bitte unsere <a href="https://epicenter.works/kontakt#datenschutz">verständliche Datenschutzerklärung</a> aufmerksam durch.</p>
 						<form autocomplete="off" action="javascript:genpdf();" class="shrunk">
 							<div class="row row-space align-left">
 								<div class="column">
@@ -183,7 +183,7 @@
 								</div>
 							</div>
 							<p class="small">* Pflichtfeld</p>
-							<button class="btn btn-default"><span class="foemi hidden">Fördermitglied werden</span><span class="lastschrift">Jetzt spenden</span></button>
+							<button class="btn btn-default"><span class="foemi">Fördermitglied werden</span><span class="lastschrift hidden">Jetzt spenden</span></button>
 						</form>
 						<a class="btn btn-back" href="javascript:showMenu()">zurück zur Auswahl</a>
 					</div>
