@@ -239,20 +239,33 @@ footer {
 	border-top: 3px solid #fff;
 }
 
+.ref {
+	padding: 0.5rem;
+	color: #fff;
+	font-size: 85%;
+	font-weight: bold;
+	text-align: center;
+	background-color: #00466e;
+}
+
+.ref a,
 footer a {
 	color: inherit;
 }
 
+.ref ul,
 footer ul {
 	list-style: none;
 }
 
+.ref li,
 footer li {
 	display: inline;
 	margin: 0;
 	padding: 0;
 }
 
+.ref li + li::before,
 footer li + li::before {
 	content: "| ";
 }
