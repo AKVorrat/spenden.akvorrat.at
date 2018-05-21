@@ -52,16 +52,6 @@ jQuery(document).ready(function () {
 		touchMove: false,
 		infinite: false
 	});
-
-	$("#supporters-box").slick({
-		arrows: true,
-		dots: true,
-		infinite: true,
-		centerMode: true,
-		variableWidth: true,
-		autoplay: true,
-		autoplaySpeed: 3000
-	});
 });
 
 // payment carousel triggers
