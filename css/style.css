@@ -126,8 +126,8 @@ a {
 	transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-a:hover:not(.btn):not(.noborder),
-a:focus:not(.btn):not(.noborder) {
+main a:hover:not(.btn):not(.noborder),
+main a:focus:not(.btn):not(.noborder) {
 	color: inherit;
 	border-bottom: 1px solid rgba(0, 165, 235, 1);
 }
@@ -265,7 +265,18 @@ footer li {
 	padding: 0;
 }
 
-.ref li + li::before,
+.ref li {
+	margin: 1rem;
+}
+
+.ref li span {
+	margin-left: 8px;
+}
+
+.ref li .fa {
+	vertical-align: middle;
+}
+
 footer li + li::before {
 	content: "| ";
 }
