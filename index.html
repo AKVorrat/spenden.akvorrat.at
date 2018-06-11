@@ -102,9 +102,9 @@
 							<a id="button-supporter" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>Fördermitglied</span></div></a>
 							<a id="button-debit" class="disabled" href="javascript:swipe('method-debit')"><div class="column"><i class="fa fa-money" aria-hidden="true"></i><span>Bankeinzug</span></div></a>
 							<a id="button-credit" class="disabled" href="javascript:swipe('method-credit')"><div class="column"><i class="fa fa-credit-card-alt" aria-hidden="true"></i><span>Kreditkarte</span></div></a>
-							<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="hidden nospace">
-								<input type="hidden" name="a3" id="paypal-1-amount" value="75">
-								<input type="hidden" name="p3" id="paypal-1-interval" value="0">
+							<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="nospace">
+								<input type="hidden" name="a3" id="paypal-1-amount" value="25">
+								<input type="hidden" name="p3" id="paypal-1-interval" value="3">
 								<input type="hidden" name="cmd" value="_xclick-subscriptions">
 								<input type="hidden" name="business" value="spenden@epicenter.works">
 								<input type="hidden" name="src" value="1">
@@ -112,9 +112,9 @@
 								<input type="hidden" name="currency_code" value="EUR">
 								<button id="button-paypal-1" type="submit"><div class="column"><i class="fa fa-paypal" aria-hidden="true"></i><span>Paypal</span></div></button>
 							</form>
-							<form id="form-paypal-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="nospace">
+							<form id="form-paypal-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="nospace hidden">
 								<input type="hidden" name="business" value="spenden@epicenter.works">
-								<input type="hidden" name="amount" id="paypal-2-amount" value="75">
+								<input type="hidden" name="amount" id="paypal-2-amount" value="25">
 								<input type="hidden" name="item_name" value="Spende epicenter.works">
 								<input type="hidden" name="cmd" value="_donations">
 								<input type="hidden" name="currency_code" value="EUR">
