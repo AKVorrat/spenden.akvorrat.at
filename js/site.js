@@ -18,7 +18,7 @@ logo.src = "./img/epicenter-logo.jpg";
 
 jQuery(document).ready(function () {
 	$("a[href*='#']:not([href='#'])").click(function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')  || location.hostname == this.hostname) {
+		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') || location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 			if (target.length) {
@@ -134,6 +134,9 @@ function setPaymentAmount(amount) {
 		$(".abovelimit").addClass("hidden");
 		$(".belowlimit").removeClass("hidden");
 	}
+
+	// Update height.
+	$("#payment").slick('setPosition');
 }
 
 // user selects different interval
@@ -146,6 +149,9 @@ function setPaymentInterval(interval) {
 		selectedRepeat();
 	else
 		selectedOnce();
+
+	// Update height.
+	$("#payment").slick('setPosition');
 }
 
 // user selects interval
@@ -247,7 +253,7 @@ function genpdf() {
 	doc.setDrawColor(0, 0, 0);
 	doc.setLineWidth(0.4);
 
-    offset += 20;
+	offset += 20;
 	doc.addImage(logo, "JPEG", width - 240 - mrgnRight/2, offset, 240, 120);
 	offset += 160;
 
