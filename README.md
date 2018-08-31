@@ -3,7 +3,7 @@ Dieses Repository beinhaltet den Code, der auf unserer [Spendenseite](https://sp
 
 # License
 spenden.epicenter.works
-Copyright (C) 2015-2017 epicenter.works
+Copyright (C) 2015-2018 epicenter.works
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
