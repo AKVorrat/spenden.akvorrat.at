@@ -120,6 +120,7 @@ function setPaymentAmount(amount) {
 	$("#paypal-1-amount").attr("value", amount);
 	$("#paypal-2-amount").attr("value", amount);
 	$("#credit-amount").attr("value", amount);
+	$("#eps-amount").attr("value", amount);
 
 	if(amount < 75)
 		$("#button-debit").addClass("disabled");
@@ -169,6 +170,9 @@ function selectedRepeat() {
 
 	// disable credit
 	$("#button-credit").addClass("disabled");
+
+	// disable eps
+	$("#button-eps").addClass("disabled");
 }
 
 // user selects single payment
@@ -199,6 +203,9 @@ function selectedOnce() {
 
 	// enable credit
 	$("#button-credit").removeClass("disabled");
+
+	// enable eps
+	$("#button-eps").removeClass("disabled");
 }
 
 // Format IBAN input field
