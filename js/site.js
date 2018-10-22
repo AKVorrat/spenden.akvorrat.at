@@ -69,6 +69,19 @@ function showMenu() {
 	$("#payment").slick("slickGoTo", 0);
 }
 
+// redirect to new page
+
+function redirect_supporter() {
+    amount = $("#paypal-1-amount").attr('value');
+    switch ($("#paypal-1-interval").attr('value')) {
+        case '1': interval = 'monthly'; break;
+        case '3': interval = 'quarterly'; break;
+        case '6': interval = 'biannually'; break;
+        case '12': interval = 'annually'; break;
+    }
+    window.location = 'https://support.epicenter.works/join?amount=' + amount + '&interval=' + interval;
+}
+
 // variable input field
 
 jQuery(document).ready(function () {
