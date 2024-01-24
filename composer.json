@@ -1,0 +1,23 @@
+{
+    "name": "epicenterworks/spenden",
+    "type": "project",
+    "description": "Donation Tool for epicenter.works",
+    "license": "AGPLv3",
+    "require": {
+        "php": "^8.2",
+        "unzerdev/php-sdk": "^3.4"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+    },
+    "autoload": {
+    },
+    "autoload-dev": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
