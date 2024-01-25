@@ -22,7 +22,7 @@ jobs:
   deploy-stage:
     name: 🎉 Deploy stage
     environment:
-      name: staging
+      name: stage
       url: https://stage.spenden.epicenter.works
     runs-on: ubuntu-latest
     steps:
