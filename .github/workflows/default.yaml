@@ -1,0 +1,79 @@
+name: Deploy spenden.epicenter.works
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Deployment job
+  deploy-stage:
+    name: 🎉 Deploy stage
+    environment:
+      name: staging
+      url: https://stage.spenden.epicenter.works
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Deploy
+        uses: up9cloud/action-rsync@master
+        env:
+          HOST: webhost.epicenter.works
+          KEY: ${{secrets.SSH_KEY}}
+          TARGET: /home/stage.spenden.epicenter.works/public_html/
+
+          VERBOSE: true
+          USER: stage.spenden.epicenter.works
+          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          SOURCE: ./
+
+          PRE_SCRIPT: |
+            echo start at:
+            date -u
+          POST_SCRIPT: "echo done at: && date -u"
+
+  # Deployment job
+  deploy-production:
+    name: 🎉 Deploy production
+    environment:
+      name: production
+      url: https://spenden.epicenter.works
+    runs-on: ubuntu-latest
+    needs: build-production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Deploy
+        uses: up9cloud/action-rsync@master
+        env:
+          HOST: webhost.epicenter.works
+          KEY: ${{secrets.SSH_KEY}}
+          TARGET: /home/spenden/public_html/
+
+          VERBOSE: true
+          USER: spenden
+          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          SOURCE: ./
+
+          PRE_SCRIPT: |
+            echo start at:
+            date -u
+          POST_SCRIPT: "echo done at: && date -u"
