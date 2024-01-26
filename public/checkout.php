@@ -9,8 +9,8 @@ use Mpay24\Mpay24Config;
 $env = parse_ini_file(__DIR__ . '/../.env');
 
 $mpay24_config = new Mpay24Config($env['MPAY24_MERCHANT_ID'], $env['MPAY24_SOAP_PASS']);
-$mpay24_config->useTestSystem($env['MPAY24_TEST_SYSTEM']);
-$mpay24_config->setDebug($env['MPAY24_DEBUG']);
+$mpay24_config->useTestSystem($env['MPAY24_TEST_SYSTEM'] === "true");
+$mpay24_config->setDebug($env['MPAY24_DEBUG'] === "true");
 $mpay24 = new Mpay24($mpay24_config);
 
 $mdxi = new Mpay24Order();
