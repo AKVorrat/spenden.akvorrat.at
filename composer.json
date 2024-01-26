@@ -4,8 +4,8 @@
     "description": "Donation Tool for epicenter.works",
     "license": "AGPLv3",
     "require": {
-        "php": "^8.2",
-        "unzerdev/php-sdk": "^3.4"
+        "php": ">=7.4",
+        "mpay24/mpay24-php": "^5.1"
     },
     "config": {
         "optimize-autoloader": true,

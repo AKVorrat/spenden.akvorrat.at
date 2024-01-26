@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2491b17d79b3549092af33c8005ec64d",
+    "content-hash": "8cd8a9b0f25a3093600b7766e6c3807d",
     "packages": [
         {
             "name": "mpay24/mpay24-php",
@@ -45,49 +45,6 @@
                 "source": "https://github.com/mpay24/mpay24-php/tree/v5.1.0"
             },
             "time": "2022-08-30T14:27:00+00:00"
-        },
-        {
-            "name": "unzerdev/php-sdk",
-            "version": "3.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unzerdev/php-sdk.git",
-                "reference": "df721cabfcfb7a95160de720ec3239bd3d6177da"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/unzerdev/php-sdk/zipball/df721cabfcfb7a95160de720ec3239bd3d6177da",
-                "reference": "df721cabfcfb7a95160de720ec3239bd3d6177da",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "~7.4.0|~8.0.0|~8.1.0|~8.2.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "phpunit/phpunit": ">6.5 <10.0"
-            },
-            "suggest": {
-                "ext-curl": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "UnzerSDK\\": "src",
-                    "UnzerSDK\\examples\\": "examples"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "This is the php sdk to connect to the Unzer rest api.",
-            "support": {
-                "email": "support@unzer.com",
-                "source": "https://github.com/unzerdev/php-sdk/tree/3.4.1"
-            },
-            "time": "2023-12-04T14:05:49+00:00"
         }
     ],
     "packages-dev": [],
@@ -97,7 +54,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.2"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
