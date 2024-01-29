@@ -3,8 +3,7 @@ name: Deploy spenden.epicenter.works
 on:
   push:
     branches:
-      - master
-      - new
+      - main
 
   workflow_dispatch:
 
