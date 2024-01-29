@@ -1,5 +1,4 @@
 # mPay24 payment system
-/mp24
-
-# deployment script
-deploy.sh
+.env
+**.pid
+vendor/

@@ -1,0 +1,23 @@
+{
+    "name": "epicenterworks/spenden",
+    "type": "project",
+    "description": "Donation Tool for epicenter.works",
+    "license": "AGPLv3",
+    "require": {
+        "php": ">=7.4",
+        "mpay24/mpay24-php": "^5.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+    },
+    "autoload": {
+    },
+    "autoload-dev": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

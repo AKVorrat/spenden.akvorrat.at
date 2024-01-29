@@ -1,0 +1,111 @@
+name: Deploy spenden.epicenter.works
+
+on:
+  push:
+    branches:
+      - master
+      - new
+
+  workflow_dispatch:
+
+env:
+  PHP_VERSION: '8.1'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Deployment job
+  deploy-stage:
+    name: 🎉 Deploy stage
+    environment:
+      name: stage
+      url: https://stage.spenden.epicenter.works
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@7c0b4c8c8ebed23eca9ec2802474895d105b11bc
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+
+      - name: Check if composer.json exists
+        id: check_files
+        uses: andstor/file-existence-action@87d74d4732ddb824259d80c8a508c0124bf1c673
+        with:
+          files: 'composer.json'
+
+      - name: Run composer install if composer.json exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: |
+          composer validate --no-check-publish && composer install --prefer-dist --no-progress --ignore-platform-reqs
+          rm shell.nix
+          rm -rf nixfiles
+
+      - name: Deploy
+        uses: up9cloud/action-rsync@master
+        env:
+          HOST: webhost.epicenter.works
+          KEY: ${{secrets.SSH_KEY}}
+          TARGET: /home/stage.spenden.epicenter.works/public_html/
+
+          VERBOSE: true
+          USER: stage.spenden.epicenter.works
+          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          SOURCE: ./
+
+  # Deployment job
+  deploy-production:
+    name: 🎉 Deploy production
+    environment:
+      name: production
+      url: https://spenden.epicenter.works
+    runs-on: self-hosted
+    needs: deploy-stage
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@7c0b4c8c8ebed23eca9ec2802474895d105b11bc
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+
+      - name: Check if composer.json exists
+        id: check_files
+        uses: andstor/file-existence-action@87d74d4732ddb824259d80c8a508c0124bf1c673
+        with:
+          files: 'composer.json'
+
+      - name: Run composer install if composer.json exists
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: |
+          composer validate --no-check-publish && composer install --prefer-dist --no-progress --ignore-platform-reqs
+          rm shell.nix
+          rm -rf nixfiles
+
+      - name: Deploy
+        uses: up9cloud/action-rsync@master
+        env:
+          HOST: webhost.epicenter.works
+          KEY: ${{secrets.SSH_KEY}}
+          TARGET: /home/spenden/public_html/
+
+          VERBOSE: true
+          USER: spenden
+          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          SOURCE: ./
