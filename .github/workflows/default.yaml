@@ -52,17 +52,27 @@ jobs:
           rm shell.nix
           rm -rf nixfiles
 
-      - name: Deploy
-        uses: up9cloud/action-rsync@master
-        env:
-          HOST: webhost.epicenter.works
-          KEY: ${{secrets.SSH_KEY}}
-          TARGET: /home/stage.spenden.epicenter.works/public_html/
+      - name: Deploy with rsync
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          path: ./
+          remote_path: /home/stage.spenden.epicenter.works/public_html/
+          remote_host: webhost.epicenter.works
+          remote_user: stage.spenden.epicenter.works
+          remote_key: ${{secrets.SSH_KEY}}
 
-          VERBOSE: true
-          USER: stage.spenden.epicenter.works
-          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
-          SOURCE: ./
+      # - name: Deploy
+      #   uses: up9cloud/action-rsync@master
+      #   env:
+      #     HOST: webhost.epicenter.works
+      #     KEY: ${{secrets.SSH_KEY}}
+      #     TARGET: /home/stage.spenden.epicenter.works/public_html/
+      #
+      #     VERBOSE: true
+      #     USER: stage.spenden.epicenter.works
+      #     ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.env --delete --no-perms --no-owner --no-group
+      #     SOURCE: ./
 
   # Deployment job
   deploy-production:
