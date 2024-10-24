@@ -161,8 +161,8 @@ function selectedRepeat() {
 	// enable supporter
 	$("#button-supporter").removeClass("disabled");
 
-	// disable credit
-	$("#button-credit").addClass("disabled");
+	// disable stripe
+	$("#form-stripe").addClass("hidden");
 
 	// disable eps
 	$("#button-eps").addClass("disabled");
@@ -190,8 +190,8 @@ function selectedOnce() {
 	// disable supporter
 	$("#button-supporter").addClass("disabled");
 
-	// enable credit
-	$("#button-credit").removeClass("disabled");
+	// enable stripe
+	$("#form-stripe").removeClass("hidden");
 
 	// enable eps
 	$("#button-eps").removeClass("disabled");
