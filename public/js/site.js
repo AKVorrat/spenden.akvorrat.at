@@ -125,6 +125,7 @@ jQuery(document).ready(function () {
 function setPaymentAmount(amount) {
 	$("#paypal-1-amount").attr("value", amount);
 	$("#paypal-2-amount").attr("value", amount);
+	$("#stripe-amount").attr("value", amount * 100);
 
 	// Update height.
 	$("#payment").slick('setPosition');
