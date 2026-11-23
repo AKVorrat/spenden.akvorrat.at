@@ -20,10 +20,14 @@ Die Seiten werden mit [Hugo](https://gohugo.io/) als statisches HTML nach `publi
 | Krypto-Adressen | `data/crypto.yaml` |
 | CSS, JS, Bilder, `checkout.php`, `donations.json` | `static/` (wird unverändert nach `public/` kopiert) |
 
+Die Hugo-Version ist in `.ddev/web-build/Dockerfile.hugo` und `.github/workflows/default.yaml` festgelegt und muss in beiden Dateien gleich sein.
+
 ## Sprachen
 Deutsch liegt unter `/`, Englisch unter `/en/`. Jeder Text muss in beiden Sprachen gepflegt werden: Fehlt ein Schlüssel in einer `i18n/*.toml`, warnt Hugo, und das Deployment bricht ab.
 
-Die Hugo-Version ist in `.ddev/web-build/Dockerfile.hugo` und `.github/workflows/default.yaml` festgelegt und muss in beiden Dateien gleich sein.
+# Deployment
+- Push auf `main` → Stage (https://stage.spenden.epicenter.works)
+- Tag `v*` (z. B. `git tag v1.2.0 && git push origin v1.2.0`) → Produktion (https://spenden.epicenter.works)
 
 # License
 spenden.epicenter.works
