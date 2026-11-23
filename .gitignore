@@ -1,4 +1,3 @@
 # mPay24 payment system
 .env
-**.pid
 vendor/

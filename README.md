@@ -1,6 +1,15 @@
 # About
 Dieses Repository beinhaltet den Code, der auf unserer [Spendenseite](https://spenden.epicenter.works/) zum Einsatz kommt.
 
+# Lokale Entwicklung
+Die lokale Umgebung läuft mit [DDEV](https://ddev.com/):
+
+```sh
+cp .env.example .env   # ROOT_URL auf https://spenden-epicenter.ddev.site setzen, mPay24-Zugangsdaten eintragen
+ddev start             # führt beim Start automatisch "composer install" aus
+ddev launch            # öffnet https://spenden-epicenter.ddev.site
+```
+
 # License
 spenden.epicenter.works
 Copyright (C) 2015-2018 epicenter.works
