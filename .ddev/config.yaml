@@ -19,6 +19,11 @@ corepack_enable: false
 hooks:
     post-start:
         - composer: install
+# Rebuilds public/ whenever content/, layouts/, i18n/, data/ or static/ change.
+web_extra_daemons:
+    - name: hugo
+      command: hugo --watch --cleanDestinationDir --printI18nWarnings --logLevel warn
+      directory: /var/www/html
 
 # Key features of DDEV's config.yaml:
 

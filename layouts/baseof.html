@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="author" content="epicenter.works" />
+		<meta name="description" content="{{ T "meta_description" }}" />
+		<meta name="keywords" content="{{ T "meta_keywords" }}" />
+
+		<meta property="og:title" content="{{ T "share_title" }}" />
+		<meta property="og:image" content="{{ "img/thumbnail.jpg" | absURL }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="{{ site.Home.Permalink }}" />
+		<meta property="og:description" content="{{ T "meta_description" }}" />
+		<meta property="og:locale" content="{{ replace site.Language.Locale "-" "_" }}" />
+		<meta property="og:site_name" content="epicenter.works"/>
+
+		<meta name="twitter:title" content="{{ T "share_title" }}" />
+		<meta name="twitter:image" content="{{ "img/thumbnail.jpg" | absURL }}" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:url" content="{{ site.Home.Permalink }}" />
+		<meta name="twitter:description" content="{{ T "meta_description" }}" />
+		<meta name="twitter:site" content="@epicenter_works" />
+
+		<link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}" type="image/png" />
+		<link type="text/css" rel="stylesheet" href="{{ "css/normalize.css" | relURL }}" />
+		<link type="text/css" rel="stylesheet" href="{{ "css/slick.css" | relURL }}" />
+		<link type="text/css" rel="stylesheet" href="{{ "css/slick-theme.css" | relURL }}" />
+		<link type="text/css" rel="stylesheet" href="{{ "css/font-awesome.min.css" | relURL }}" />
+		<link type="text/css" rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+		<title>{{ T "site_title" }} | epicenter.works</title>
+	</head>
+
+	<body>
+		<div class="ref">
+			<ul>
+				<li><a href="{{ site.Home.RelPermalink }}"><i class="fa fa-money fa-2x" aria-hidden="true"></i><span>{{ T "nav_donate" }}</span></a></li>
+				<li><a href="https://support.epicenter.works/"><i class="fa fa-heart fa-2x" aria-hidden="true"></i><span>{{ T "nav_supporters" }}</span></a></li>
+			</ul>
+		</div>
+
+		<header>
+			<a class="noborder" href="https://epicenter.works/"><img id="logo" src="{{ "img/epicenter-logo.jpg" | relURL }}" alt="epicenter.works" /></a>
+		</header>
+
+		<aside class="share column">
+			<a href="http://www.facebook.com/sharer.php?u={{ site.Home.Permalink }}" target="_blank">
+				<div class="center"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+			</a>
+			<a href="https://twitter.com/share?url={{ site.Home.Permalink }}" target="_blank">
+				<div class="center"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+			</a>
+			<a href="https://plus.google.com/share?url={{ site.Home.Permalink }}" target="_blank">
+				<div class="center"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+			</a>
+			<a href="https://github.com/AKVorrat/spenden.akvorrat.at/" target="_blank">
+				<div class="center"><i class="fa fa-github" aria-hidden="true"></i></div>
+			</a>
+		</aside>
+
+		<main>
+			{{- block "main" . }}{{ end }}
+		</main>
+
+		<footer>
+			<ul>
+				<li><a href="{{ T "url_imprint" }}">{{ T "footer_imprint" }}</a></li>
+				<li><a href="{{ T "url_press" }}">{{ T "footer_press" }}</a></li>
+				<li><a href="{{ T "url_privacy" }}">{{ T "footer_privacy" }}</a></li>
+			</ul>
+		</footer>
+
+		<!-- scripts -->
+		<script type="text/javascript" src="{{ "js/jquery.min.js" | relURL }}"></script>
+		<script type="text/javascript" src="{{ "js/site.js" | relURL }}"></script>
+		<script type="text/javascript" src="{{ "js/slick.min.js" | relURL }}"></script>
+		<!-- end scripts -->
+
+		<!-- piwik -->
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			_paq.push(['disableCookies']);
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//matomo.epicenter.works/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', 2]);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<noscript><img src="//matomo.epicenter.works/piwik.php?idsite=2" style="border:0;" alt="" /></noscript>
+		<!-- end piwik -->
+	</body>
+</html>

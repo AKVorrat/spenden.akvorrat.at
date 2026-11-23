@@ -1,0 +1,26 @@
+# Wallets shown in the cryptocurrency section (same for every language).
+# image: QR code in static/img/cryptocurrencies/
+- name: Bitcoin
+  address: bc1qhvdearkm0gvjjcmj6rtczv0wyj7vakva5xfff8
+  image: bitcoin.png
+- name: Ethereum
+  address: "0xE6Aff54d7AF469694715602Ef1B82311D7b58F4B"
+  image: ethereum.png
+- name: Polygon
+  address: "0xE6Aff54d7AF469694715602Ef1B82311D7b58F4B"
+  image: polygon.png
+- name: Solana
+  address: 6LNituJpNDGKJy6nXMde4MepCryjDKG2WxpoHDje6Hp5
+  image: solana.png
+- name: ZCash
+  address: t1J71kiWxHxw2AXYj7iDmeFUzjtre3oxXJE
+  image: zcash.png
+- name: Cardano
+  address: addr1qy4k26qwm8h54pytyv605w65hzs8c6jl608jmplj0n4wecmpkxr8rt6glkndu6qqcytpd7rsx9kztlffsclz3tz6vf5qtp9q0g
+  image: cardano.png
+- name: Stellar
+  address: GBMK3CFHKIGRTWTA2SXLSVLBJADHOBKFGOMM7REVCMRTK3IKNEJRYHLD
+  image: stellar.png
+- name: Ripple
+  address: rGBtwYwmcnw3you1Eh55yyAxK9MuefPcen
+  image: ripple.png

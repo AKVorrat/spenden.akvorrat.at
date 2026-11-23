@@ -1,0 +1,16 @@
+# Hugo static site generator. Keep version and checksums in sync with
+# .github/workflows/default.yaml.
+ARG HUGO_VERSION=0.168.0
+ARG HUGO_SHA256_AMD64=fada83ad56bb27ed4cb7dd81590303bdac16140f944ac4e66fc248117e2d5594
+ARG HUGO_SHA256_ARM64=91ce984e998a955a3dc1b5852eb4e65d0ed0f6d12a5c51690df97a548e1fdeeb
+RUN set -eu; \
+    arch="$(dpkg --print-architecture)"; \
+    case "$arch" in \
+        amd64) sha="$HUGO_SHA256_AMD64" ;; \
+        arm64) sha="$HUGO_SHA256_ARM64" ;; \
+        *) echo "Unsupported architecture: $arch" >&2; exit 1 ;; \
+    esac; \
+    curl -fsSL -o /tmp/hugo.tar.gz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${arch}.tar.gz"; \
+    echo "${sha}  /tmp/hugo.tar.gz" | sha256sum -c -; \
+    tar -xzf /tmp/hugo.tar.gz -C /usr/local/bin hugo; \
+    rm /tmp/hugo.tar.gz

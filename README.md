@@ -6,9 +6,21 @@ Die lokale Umgebung läuft mit [DDEV](https://ddev.com/):
 
 ```sh
 cp .env.example .env   # ROOT_URL auf https://spenden-epicenter.ddev.site setzen, mPay24-Zugangsdaten eintragen
-ddev start             # führt beim Start automatisch "composer install" aus
+ddev start             # führt "composer install" aus und startet Hugo im Watch-Modus
 ddev launch            # öffnet https://spenden-epicenter.ddev.site
 ```
+
+Die Seiten werden mit [Hugo](https://gohugo.io/) als statisches HTML nach `public/` gebaut. `public/` wird nicht eingecheckt: In DDEV baut Hugo bei jeder Änderung automatisch neu, beim Deployment baut die GitHub Action.
+
+| Was | Wo |
+|---|---|
+| Texte der Seiten (Einleitung, Danke, Fehler) | `content/*.de.md` |
+| Beschriftungen, Buttons, Links pro Sprache | `i18n/de.toml` |
+| HTML-Gerüst und Zahlungsauswahl | `layouts/` |
+| Krypto-Adressen | `data/crypto.yaml` |
+| CSS, JS, Bilder, `checkout.php`, `donations.json` | `static/` (wird unverändert nach `public/` kopiert) |
+
+Die Hugo-Version ist in `.ddev/web-build/Dockerfile.hugo` und `.github/workflows/default.yaml` festgelegt und muss in beiden Dateien gleich sein.
 
 # License
 spenden.epicenter.works

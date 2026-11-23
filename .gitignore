@@ -1,3 +1,8 @@
 # mPay24 payment system
 .env
 vendor/
+
+# Hugo build output (generated from content/, layouts/, i18n/, data/, static/)
+/public/
+/resources/
+.hugo_build.lock

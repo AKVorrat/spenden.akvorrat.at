@@ -1,0 +1,4 @@
+{{- /* External links open in a new tab so the donation page stays open. */ -}}
+{{- $external := in (slice "http" "https") (urls.Parse .Destination).Scheme -}}
+<a href="{{ .Destination }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Text }}</a>
+{{- /**/ -}}

@@ -1,0 +1,7 @@
+{{ define "main" }}
+			<section>
+				<h2>{{ .Title }}</h2>
+				{{ .Content }}
+				<a class="btn btn-default" href="{{ site.Home.RelPermalink }}">{{ T "back_to_donation_page" }}</a>
+			</section>
+{{- end }}
