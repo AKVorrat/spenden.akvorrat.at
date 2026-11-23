@@ -29,7 +29,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Includes
 - jQuery Core (C) jQuery Foundation, Inc. [MIT]
-- jsPDF (C) James Hall [MIT]
 - Normalize.css (C) Nicolas Gallagher, Jonathan Neal [MIT]
 - OpenSans (C) Steve Matteson [Apache]
 - Raleway (C) Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida [OFL]
