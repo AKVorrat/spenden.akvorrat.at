@@ -14,6 +14,9 @@
 		<meta property="og:url" content="{{ site.Home.Permalink }}" />
 		<meta property="og:description" content="{{ T "meta_description" }}" />
 		<meta property="og:locale" content="{{ replace site.Language.Locale "-" "_" }}" />
+		{{- range .Translations }}
+		<meta property="og:locale:alternate" content="{{ replace .Language.Locale "-" "_" }}" />
+		{{- end }}
 		<meta property="og:site_name" content="epicenter.works"/>
 
 		<meta name="twitter:title" content="{{ T "share_title" }}" />
@@ -22,6 +25,15 @@
 		<meta name="twitter:url" content="{{ site.Home.Permalink }}" />
 		<meta name="twitter:description" content="{{ T "meta_description" }}" />
 		<meta name="twitter:site" content="@epicenter_works" />
+		{{- if .IsTranslated }}
+
+		{{- range .AllTranslations }}
+		<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+		{{- end }}
+		{{- with index .AllTranslations 0 }}
+		<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+		{{- end }}
+		{{- end }}
 
 		<link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}" type="image/png" />
 		<link type="text/css" rel="stylesheet" href="{{ "css/normalize.css" | relURL }}" />
@@ -37,6 +49,9 @@
 			<ul>
 				<li><a href="{{ site.Home.RelPermalink }}"><i class="fa fa-money fa-2x" aria-hidden="true"></i><span>{{ T "nav_donate" }}</span></a></li>
 				<li><a href="https://support.epicenter.works/"><i class="fa fa-heart fa-2x" aria-hidden="true"></i><span>{{ T "nav_supporters" }}</span></a></li>
+				{{- range .Translations }}
+				<li><a href="{{ .RelPermalink }}" hreflang="{{ .Language.Lang }}" lang="{{ .Language.Lang }}"><i class="fa fa-language fa-2x" aria-hidden="true"></i><span>{{ .Language.Label }}</span></a></li>
+				{{- end }}
 			</ul>
 		</div>
 

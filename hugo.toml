@@ -12,3 +12,12 @@ disableHugoGeneratorInject = true
 locale = "de-AT"
 label = "Deutsch"
 weight = 1
+
+[languages.en]
+locale = "en-US"
+label = "English"
+weight = 2
+
+[languages.en.params]
+# PayPal checkout language (PayPal "lc" parameter)
+paypalLocale = "US"

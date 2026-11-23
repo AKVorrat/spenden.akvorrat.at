@@ -1,0 +1,50 @@
+# UI strings for the English site. Longer page texts are in content/*.en.md.
+# Values may contain Markdown links; external links open in a new tab.
+
+# <head> and social previews
+site_title = "Donate"
+meta_description = "As an independent, non-profit civil rights organization, epicenter.works depends on outside support. Individual donations from civil society make our work defending fundamental rights and freedoms in the digital age possible. That's why we're asking for your support."
+meta_keywords = "data retention,data protection,privacy,fundamental rights,civil rights,human rights,Austria,non-profit,AKVorrat,donate,fundraising,epicenter.works"
+share_title = "Help defend our fundamental rights!"
+
+# Top bar and footer
+nav_donate = "Donate"
+nav_supporters = "Supporters"
+footer_imprint = "Legal notice"
+footer_press = "Press"
+footer_privacy = "Privacy"
+url_imprint = "https://epicenter.works/en/contact"
+url_press = "https://epicenter.works/en/press-kit"
+url_privacy = "https://epicenter.works/en/privacy"
+
+# Donation progress bar ({current} and {limit} are filled in by site.js)
+donationbar_progress = "€{current} of €{limit} raised"
+requires_javascript = "This element requires [JavaScript](https://www.enable-javascript.com/)."
+
+# Payment selection
+payment_methods = "Payment methods"
+interval_once = "One-time"
+interval_month = "Monthly"
+interval_quarter = "Quarterly"
+interval_semiannual = "Semiannually"
+interval_annual = "Yearly"
+supporting_member = "Supporting member"
+paypal_item_name = "Donation to epicenter.works"
+alternative_methods = "Alternatively, donate by {{ .Transfer }} or {{ .Crypto }}."
+transfer_link = "bank transfer"
+crypto_link = "cryptocurrency"
+back_to_selection = "back to payment options"
+
+# Bank transfer
+transfer_heading = "Bank transfer"
+transfer_intro = "Regular donations make it easier for us to plan our work. Would you like to [become a supporting member](#become-supporter)?"
+account_holder = "Account holder:"
+
+# Cryptocurrencies (addresses are in data/crypto.yaml)
+crypto_heading = "Cryptocurrencies"
+crypto_intro = "You can donate to us anonymously using any of the cryptocurrencies listed here."
+crypto_address = "Address:"
+crypto_qr_code = "QR code"
+
+# Thank-you and error pages
+back_to_donation_page = "back to the donation page"

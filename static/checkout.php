@@ -13,8 +13,13 @@ $mpay24_config->useTestSystem($env['MPAY24_TEST_SYSTEM'] === "true");
 $mpay24_config->setDebug($env['MPAY24_DEBUG'] === "true");
 $mpay24 = new Mpay24($mpay24_config);
 
+// Language of the donation page the request came from. Only "de" and "en" exist.
+$lang = ($_GET['lang'] ?? '') === 'en' ? 'en' : 'de';
+$page_prefix = $lang === 'en' ? '/en' : '';
+
 $mdxi = new Mpay24Order();
 $mdxi->Order->Tid = "1";
+$mdxi->Order->TemplateSet->setLanguage(strtoupper($lang));
 
 # PaymentType
 $mdxi->Order->PaymentTypes->setEnable("true");
@@ -22,15 +27,15 @@ $mdxi->Order->PaymentTypes->Payment(1)->setType($_GET['paymentProvider']);
 
 
 $mdxi->Order->ShoppingCart->Item(1)->Number = "1";
-$mdxi->Order->ShoppingCart->Item(1)->Description = "Spende";
+$mdxi->Order->ShoppingCart->Item(1)->Description = $lang === 'en' ? "Donation" : "Spende";
 $mdxi->Order->ShoppingCart->Item(1)->Quantity = "1";
 $mdxi->Order->ShoppingCart->Item(1)->ItemPrice = $_GET['amount'];
 $mdxi->Order->ShoppingCart->Item(1)->Price = $_GET['amount'];
 
 $mdxi->Order->Price = $_GET['amount'];
 $mdxi->Order->Currency = 'EUR';
-$mdxi->Order->URL->Success = $env['ROOT_URL']."/danke.html";
-$mdxi->Order->URL->Error = $env['ROOT_URL']."/fehler.html";
+$mdxi->Order->URL->Success = $env['ROOT_URL'].$page_prefix."/danke.html";
+$mdxi->Order->URL->Error = $env['ROOT_URL'].$page_prefix."/fehler.html";
 
 $redirect_url = $mpay24->paymentPage($mdxi)->getLocation();
 

@@ -14,11 +14,14 @@ Die Seiten werden mit [Hugo](https://gohugo.io/) als statisches HTML nach `publi
 
 | Was | Wo |
 |---|---|
-| Texte der Seiten (Einleitung, Danke, Fehler) | `content/*.de.md` |
-| Beschriftungen, Buttons, Links pro Sprache | `i18n/de.toml` |
+| Texte der Seiten (Einleitung, Danke, Fehler) | `content/*.de.md`, `content/*.en.md` |
+| Beschriftungen, Buttons, Links pro Sprache | `i18n/de.toml`, `i18n/en.toml` |
 | HTML-Gerüst und Zahlungsauswahl | `layouts/` |
 | Krypto-Adressen | `data/crypto.yaml` |
 | CSS, JS, Bilder, `checkout.php`, `donations.json` | `static/` (wird unverändert nach `public/` kopiert) |
+
+## Sprachen
+Deutsch liegt unter `/`, Englisch unter `/en/`. Jeder Text muss in beiden Sprachen gepflegt werden: Fehlt ein Schlüssel in einer `i18n/*.toml`, warnt Hugo, und das Deployment bricht ab.
 
 Die Hugo-Version ist in `.ddev/web-build/Dockerfile.hugo` und `.github/workflows/default.yaml` festgelegt und muss in beiden Dateien gleich sein.
 

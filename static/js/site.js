@@ -50,7 +50,8 @@ function swipe(target) {
   if (target === 'CC' || target === 'EPS') {
     let amount = $("#paypal-1-amount").attr("value");
     
-    $.getJSON('/checkout.php?paymentProvider=' + target +'&amount=' + amount, function(data) {
+    var lang = document.documentElement.lang;
+    $.getJSON('/checkout.php?paymentProvider=' + encodeURIComponent(target) + '&amount=' + encodeURIComponent(amount) + '&lang=' + encodeURIComponent(lang), function(data) {
       // console.log(data);
       window.top.location.href = data.redirectUrl;
     });
