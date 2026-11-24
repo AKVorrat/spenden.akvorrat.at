@@ -1,12 +1,19 @@
 name: Deploy spenden.epicenter.works
 
+# Push to main -> stage, version tag (v*) -> production.
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*'
 
 env:
   PHP_VERSION: '8.1'
+  # Keep version and checksums in sync with .ddev/web-build/Dockerfile.hugo
+  HUGO_VERSION: '0.168.0'
+  HUGO_SHA256_AMD64: 'fada83ad56bb27ed4cb7dd81590303bdac16140f944ac4e66fc248117e2d5594'
+  HUGO_SHA256_ARM64: '91ce984e998a955a3dc1b5852eb4e65d0ed0f6d12a5c51690df97a548e1fdeeb'
 
 permissions:
   contents: read
@@ -18,12 +25,14 @@ defaults:
     shell: bash
 
 jobs:
-  # Deployment job
   deploy-stage:
     name: 🎉 Deploy stage
+    if: github.ref == 'refs/heads/main'
     environment:
       name: stage
       url: https://stage.spenden.epicenter.works
+    # One deploy at a time per target, so two rsync --delete runs never overlap.
+    concurrency: deploy-stage
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -47,6 +56,23 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
           composer validate --no-check-publish && composer install --prefer-dist --no-progress --ignore-platform-reqs
+
+      - name: Install Hugo
+        run: |
+          case "$(uname -m)" in
+            x86_64) arch=amd64; sha="$HUGO_SHA256_AMD64" ;;
+            aarch64|arm64) arch=arm64; sha="$HUGO_SHA256_ARM64" ;;
+            *) echo "Unsupported architecture: $(uname -m)" >&2; exit 1 ;;
+          esac
+          curl -fsSL -o "$RUNNER_TEMP/hugo.tar.gz" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${arch}.tar.gz"
+          echo "${sha}  $RUNNER_TEMP/hugo.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/hugo"
+          tar -xzf "$RUNNER_TEMP/hugo.tar.gz" -C "$RUNNER_TEMP/hugo" hugo
+          echo "$RUNNER_TEMP/hugo" >> "$GITHUB_PATH"
+
+      # Fails on any warning, e.g. a string missing from one of the i18n/*.toml files.
+      - name: Build site
+        run: hugo --cleanDestinationDir --printI18nWarnings --panicOnWarning
 
       - name: Deploy
         uses: up9cloud/action-rsync@master
@@ -57,17 +83,17 @@ jobs:
 
           VERBOSE: true
           USER: stage.spenden.epicenter.works
-          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.ddev/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.ddev/ --exclude=/.env --exclude=/content/ --exclude=/layouts/ --exclude=/i18n/ --exclude=/data/ --exclude=/static/ --exclude=/hugo.toml --exclude=/.hugo_build.lock --delete --no-perms --no-owner --no-group
           SOURCE: ./
 
-  # Deployment job
   deploy-production:
     name: 🎉 Deploy production
+    if: startsWith(github.ref, 'refs/tags/v')
     environment:
       name: production
       url: https://spenden.epicenter.works
+    concurrency: deploy-production
     runs-on: self-hosted
-    needs: deploy-stage
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -91,6 +117,23 @@ jobs:
         run: |
           composer validate --no-check-publish && composer install --prefer-dist --no-progress --ignore-platform-reqs
 
+      - name: Install Hugo
+        run: |
+          case "$(uname -m)" in
+            x86_64) arch=amd64; sha="$HUGO_SHA256_AMD64" ;;
+            aarch64|arm64) arch=arm64; sha="$HUGO_SHA256_ARM64" ;;
+            *) echo "Unsupported architecture: $(uname -m)" >&2; exit 1 ;;
+          esac
+          curl -fsSL -o "$RUNNER_TEMP/hugo.tar.gz" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-${arch}.tar.gz"
+          echo "${sha}  $RUNNER_TEMP/hugo.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/hugo"
+          tar -xzf "$RUNNER_TEMP/hugo.tar.gz" -C "$RUNNER_TEMP/hugo" hugo
+          echo "$RUNNER_TEMP/hugo" >> "$GITHUB_PATH"
+
+      # Fails on any warning, e.g. a string missing from one of the i18n/*.toml files.
+      - name: Build site
+        run: hugo --cleanDestinationDir --printI18nWarnings --panicOnWarning
+
       - name: Deploy
         uses: up9cloud/action-rsync@master
         env:
@@ -100,5 +143,5 @@ jobs:
 
           VERBOSE: true
           USER: spenden
-          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.ddev/ --exclude=/.env --delete --no-perms --no-owner --no-group
+          ARGS: -a --exclude=/.git/ --exclude=/.github/ --exclude=/.ddev/ --exclude=/.env --exclude=/content/ --exclude=/layouts/ --exclude=/i18n/ --exclude=/data/ --exclude=/static/ --exclude=/hugo.toml --exclude=/.hugo_build.lock --delete --no-perms --no-owner --no-group
           SOURCE: ./

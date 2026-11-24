@@ -259,7 +259,15 @@ footer li {
 }
 
 .ref li {
-	margin: 1rem;
+	display: inline-block;
+	margin: 0 1rem;
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 480px) {
+	.ref li {
+		margin: 0 0.4rem;
+	}
 }
 
 .ref li span {
@@ -719,6 +727,16 @@ label.space {
 .grp-amount > label::after {
 	content: "€";
 	margin-left: 3px;
+}
+
+/* English: currency sign before the amount (€25) */
+html[lang="en"] .grp-amount > label::after {
+	content: none;
+}
+
+html[lang="en"] .grp-amount > label::before {
+	content: "€";
+	margin-right: 3px;
 }
 
 .grp-amount > input[type="radio"]:checked + label,

@@ -6,9 +6,28 @@ Die lokale Umgebung läuft mit [DDEV](https://ddev.com/):
 
 ```sh
 cp .env.example .env   # ROOT_URL auf https://spenden-epicenter.ddev.site setzen, mPay24-Zugangsdaten eintragen
-ddev start             # führt beim Start automatisch "composer install" aus
+ddev start             # führt "composer install" aus und startet Hugo im Watch-Modus
 ddev launch            # öffnet https://spenden-epicenter.ddev.site
 ```
+
+Die Seiten werden mit [Hugo](https://gohugo.io/) als statisches HTML nach `public/` gebaut. `public/` wird nicht eingecheckt: In DDEV baut Hugo bei jeder Änderung automatisch neu, beim Deployment baut die GitHub Action.
+
+| Was | Wo |
+|---|---|
+| Texte der Seiten (Einleitung, Danke, Fehler) | `content/*.de.md`, `content/*.en.md` |
+| Beschriftungen, Buttons, Links pro Sprache | `i18n/de.toml`, `i18n/en.toml` |
+| HTML-Gerüst und Zahlungsauswahl | `layouts/` |
+| Krypto-Adressen | `data/crypto.yaml` |
+| CSS, JS, Bilder, `checkout.php`, `donations.json` | `static/` (wird unverändert nach `public/` kopiert) |
+
+Die Hugo-Version ist in `.ddev/web-build/Dockerfile.hugo` und `.github/workflows/default.yaml` festgelegt und muss in beiden Dateien gleich sein.
+
+## Sprachen
+Deutsch liegt unter `/`, Englisch unter `/en/`. Jeder Text muss in beiden Sprachen gepflegt werden: Fehlt ein Schlüssel in einer `i18n/*.toml`, warnt Hugo, und das Deployment bricht ab.
+
+# Deployment
+- Push auf `main` → Stage (https://stage.spenden.epicenter.works)
+- Tag `v*` (z. B. `git tag v1.2.0 && git push origin v1.2.0`) → Produktion (https://spenden.epicenter.works)
 
 # License
 spenden.epicenter.works
@@ -29,7 +48,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Includes
 - jQuery Core (C) jQuery Foundation, Inc. [MIT]
-- jsPDF (C) James Hall [MIT]
 - Normalize.css (C) Nicolas Gallagher, Jonathan Neal [MIT]
 - OpenSans (C) Steve Matteson [Apache]
 - Raleway (C) Matt McInerney, Pablo Impallari, Rodrigo Fuenzalida [OFL]

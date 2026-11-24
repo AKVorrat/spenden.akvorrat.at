@@ -1,0 +1,23 @@
+baseURL = "https://spenden.epicenter.works/"
+title = "epicenter.works"
+
+# German lives at /, every other language under /<lang>/.
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = false
+
+disableKinds = ["rss", "sitemap", "taxonomy", "term", "404"]
+disableHugoGeneratorInject = true
+
+[languages.de]
+locale = "de-AT"
+label = "Deutsch"
+weight = 1
+
+[languages.en]
+locale = "en-US"
+label = "English"
+weight = 2
+
+[languages.en.params]
+# PayPal checkout language (PayPal "lc" parameter)
+paypalLocale = "US"

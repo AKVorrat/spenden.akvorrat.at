@@ -1,0 +1,101 @@
+{{ define "main" }}
+			<section id="donate">
+				<h2>{{ .Title }}</h2>
+				{{ .Content }}
+				<div id="donationbar" class="shrunk center hidden" data-progress="{{ T "donationbar_progress" }}"><div class="cover"></div><span>{{ T "requires_javascript" | markdownify }}</span></div>
+			</section>
+
+			<section id="payment">
+				<div id="payment-selection">
+					<h2 class="hidden">{{ T "payment_methods" }}</h2>
+					<div id="methods">
+						<div class="grp-amount row">
+							<input type="radio" name="amount" id="methods-amount-15" value="15" required="required">
+							<label for="methods-amount-15">15</label>
+							<input type="radio" name="amount" id="methods-amount-25" value="25" required="required" checked="checked">
+							<label for="methods-amount-25">25</label>
+							<input type="radio" name="amount" id="methods-amount-50" value="50" required="required">
+							<label for="methods-amount-50">50</label>
+							<input type="radio" name="amount" id="methods-amount-75" value="75" required="required">
+							<label for="methods-amount-75">75</label>
+							<input type="radio" name="amount" id="methods-amount-x" value="100" required="required">
+							<label for="methods-amount-x"><input type="number" id="methods-amount-input" class="amount-input" value="100" min="5" step="1"></label>
+						</div>
+						<div class="grp-interval row">
+							<input type="radio" name="interval" id="methods-interval-once" value="0" required="required" checked="checked">
+							<label for="methods-interval-once">{{ T "interval_once" }}</label>
+							<input type="radio" name="interval" id="methods-interval-month" value="1" required="required">
+							<label for="methods-interval-month">{{ T "interval_month" }}</label>
+							<input type="radio" name="interval" id="methods-interval-quarter" value="3" required="required">
+							<label for="methods-interval-quarter">{{ T "interval_quarter" }}</label>
+							<input type="radio" name="interval" id="methods-interval-semiannual" value="6" required="required">
+							<label for="methods-interval-semiannual">{{ T "interval_semiannual" }}</label>
+							<input type="radio" name="interval" id="methods-interval-annual" value="12" required="required">
+							<label for="methods-interval-annual">{{ T "interval_annual" }}</label>
+						</div>
+						<div class="row">
+							<a id="button-supporter" class="disabled" href="javascript:redirect_supporter()"><div class="column"><i class="fa fa-handshake-o" aria-hidden="true"></i><span>{{ T "supporting_member" }}</span></div></a>
+							<form id="form-stripe" name="_xclick" action="https://donate.stripe.com/00gcN930jboQcr6000" method="get" target="_top" autocomplete="off" class="nospace">
+								<input type="hidden" name="__prefilled_amount" id="stripe-amount" value="2500">
+								<button id="button-stripe" type="submit"><div class="column"><img class="icon" src="{{ "img/stripe-logo.jpg" | relURL }}" alt="" /><span>Stripe</span></div></button>
+							</form>
+							<a id="button-eps" href="javascript:swipe('EPS')"><div class="column"><img class="icon" src="{{ "img/eps-logo.png" | relURL }}" alt="" /><span>EPS</span></div></a>
+							<form id="form-paypal-1" name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="nospace hidden">
+								<input type="hidden" name="a3" id="paypal-1-amount" value="25">
+								<input type="hidden" name="p3" id="paypal-1-interval" value="0">
+								<input type="hidden" name="cmd" value="_xclick-subscriptions">
+								<input type="hidden" name="business" value="spenden@epicenter.works">
+								<input type="hidden" name="src" value="1">
+								<input type="hidden" name="t3" value="M">
+								<input type="hidden" name="currency_code" value="EUR">
+								{{- with site.Params.paypalLocale }}
+								<input type="hidden" name="lc" value="{{ . }}">
+								{{- end }}
+								<button id="button-paypal-1" type="submit"><div class="column"><i class="fa fa-paypal" aria-hidden="true"></i><span>Paypal</span></div></button>
+							</form>
+							<form id="form-paypal-2" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" autocomplete="off" class="nospace">
+								<input type="hidden" name="business" value="spenden@epicenter.works">
+								<input type="hidden" name="amount" id="paypal-2-amount" value="25">
+								<input type="hidden" name="item_name" value="{{ T "paypal_item_name" }}">
+								<input type="hidden" name="cmd" value="_donations">
+								<input type="hidden" name="currency_code" value="EUR">
+								{{- with site.Params.paypalLocale }}
+								<input type="hidden" name="lc" value="{{ . }}">
+								{{- end }}
+								<button id="button-paypal-2" type="submit"><div class="column"><i class="fa fa-paypal" aria-hidden="true"></i><span>Paypal</span></div></button>
+							</form>
+						</div>
+					</div>
+					{{- $transfer := printf `<a href="javascript:swipe('method-transfer')">%s</a>` (T "transfer_link") }}
+					{{- $crypto := printf `<a href="javascript:swipe('method-cryptocurrencies')">%s</a>` (T "crypto_link") }}
+					<p class="center small">
+						{{ T "alternative_methods" (dict "Transfer" $transfer "Crypto" $crypto) | safeHTML }}
+					</p>
+				</div>
+
+				<div id="payment-methods">
+					<div id="method-transfer" class="hidden">
+						<h2>{{ T "transfer_heading" }}</h2>
+						<p>{{ T "transfer_intro" | markdownify }}</p>
+						<div class="grp-transfer-outer">
+							<div class="grp-transfer border">
+								<strong>{{ T "account_holder" }}</strong> epicenter.works - Plattform Grundrechtspolitik<br />
+								<strong>IBAN:</strong> AT18 2011 1294 2054 4100<br />
+								<strong>BIC:</strong> GIBAATWWXXX
+							</div>
+						</div>
+						<a class="btn btn-back" href="javascript:showMenu()">{{ T "back_to_selection" }}</a>
+					</div>
+
+					<div id="method-cryptocurrencies" class="hidden">
+						<h2>{{ T "crypto_heading" }}</h2>
+						<p>{{ T "crypto_intro" | markdownify }}</p>
+						{{- range hugo.Data.crypto }}
+						<h3>{{ .name }}</h3>
+						<p><strong>{{ T "crypto_address" }}</strong> <code>{{ .address }}</code> <img src="{{ printf "img/cryptocurrencies/%s" .image | relURL }}" alt="{{ .name }} {{ T "crypto_qr_code" }}" /></p>
+						{{- end }}
+						<a class="btn btn-back" href="javascript:showMenu()">{{ T "back_to_selection" }}</a>
+					</div>
+				</div>
+			</section>
+{{- end }}

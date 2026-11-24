@@ -17,9 +17,16 @@ jQuery(document).ready(function () {
 // Load donation value
 
 jQuery(document).ready(function () {
-	$.getJSON("data/donations.json", function(data) {
-		$("#donationbar span").html(data.current.toLocaleString() + "€ von " + data.limit.toLocaleString() + "€ erreicht");
-		$("#donationbar div").css("width", (data.current / data.limit * 100) + "%");
+	var bar = $("#donationbar");
+	if (!bar.length) return;
+
+	// The translated text template comes from the page, e.g. "{current}€ von {limit}€ erreicht".
+	var lang = document.documentElement.lang;
+	$.getJSON("/data/donations.json", function(data) {
+		bar.find("span").text(bar.data("progress")
+			.replace("{current}", data.current.toLocaleString(lang))
+			.replace("{limit}", data.limit.toLocaleString(lang)));
+		bar.find("div").css("width", (data.current / data.limit * 100) + "%");
 	});
 });
 
@@ -43,7 +50,8 @@ function swipe(target) {
   if (target === 'CC' || target === 'EPS') {
     let amount = $("#paypal-1-amount").attr("value");
     
-    $.getJSON('/checkout.php?paymentProvider=' + target +'&amount=' + amount, function(data) {
+    var lang = document.documentElement.lang;
+    $.getJSON('/checkout.php?paymentProvider=' + encodeURIComponent(target) + '&amount=' + encodeURIComponent(amount) + '&lang=' + encodeURIComponent(lang), function(data) {
       // console.log(data);
       window.top.location.href = data.redirectUrl;
     });
@@ -107,6 +115,12 @@ function becomeSupporter() {
 		scrollTop: $("#payment").offset().top
 	}, 800);
 }
+
+// "Become a supporting member" links in the (translated) page texts point to #become-supporter.
+jQuery(document).on("click", "a[href='#become-supporter']", function (event) {
+	event.preventDefault();
+	becomeSupporter();
+});
 
 jQuery(document).ready(function () {
 	$("#methods input[name='interval']").change(function () {
